@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Next Waves: Singapore Macro Strategy 2025-2035</title>
+<style>
+:root {
+  --blue-dark:#1a3a5c; --blue-mid:#2471a3; --blue-light:#eaf4fb; --blue-border:#aed6f1;
+  --orange:#b03a2e; --orange-light:#fdf2f0; --orange-border:#e59898;
+  --green:#1e8449; --green-light:#eafaf1;
+  --text:#1c2533; --text-muted:#5a6a7a; --bg:#f2f4f7; --card:#ffffff;
+  --border:#dde4ed; --nav-bg:#1a3a5c; --nav-text:#ffffff;
+  --input-bg:#f8fafc; --input-border:#c8d6e5;
+}
+[data-theme="dark"] {
+  --blue-dark:#2471a3; --blue-mid:#5dade2; --blue-light:#1a2a3a; --blue-border:#2c4a6a;
+  --orange:#e07060; --orange-light:#2a1a18; --orange-border:#8b4040;
+  --green:#52c78a; --green-light:#0f2a1a;
+  --text:#e8edf2; --text-muted:#8a9bac; --bg:#0f1923; --card:#1a2535;
+  --border:#2a3a4a; --nav-bg:#0f1923; --nav-text:#e8edf2;
+  --input-bg:#1e2d3d; --input-border:#2a3a4a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:var(--base-font,16px);line-height:1.65;color:var(--text);background:var(--bg);}
+.sticky-nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);padding:8px 12px;display:flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(0,0,0,.25);flex-wrap:wrap;}
+.nav-title{color:var(--nav-text);font-weight:700;font-size:13px;white-space:nowrap;}
+.nav-pills{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-pill{background:rgba(255,255,255,.15);color:var(--nav-text);border:none;border-radius:12px;padding:3px 8px;font-size:11px;cursor:pointer;text-decoration:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:28px;}
+.nav-pill:hover{background:rgba(255,255,255,.3);}
+.nav-controls{display:flex;gap:4px;flex-shrink:0;margin-left:auto;}
+.ctrl-btn{background:rgba(255,255,255,.15);color:var(--nav-text);border:none;border-radius:6px;padding:4px 8px;font-size:12px;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:36px;}
+.ctrl-btn:hover{background:rgba(255,255,255,.25);}
+.page{max-width:600px;margin:0 auto;padding:16px 14px 80px;}
+@media(min-width:768px){.page{max-width:720px;padding:24px 24px 80px;}body{font-size:var(--base-font,17px);}}
+@media(min-width:1024px){.page{max-width:860px;}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.section-badge{background:var(--blue-mid);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+.section-title{font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--blue-dark);}
+h2{font-size:17px;font-weight:700;color:var(--blue-mid);margin:16px 0 8px;}
+h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:14px 0 6px;color:var(--text);}
+p{margin-bottom:10px;}
+ul,ol{padding-left:20px;margin-bottom:10px;}
+li{margin-bottom:4px;}
+.table-wrap{overflow-x:auto;margin:12px 0;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+th{background:var(--blue-dark);color:#fff;padding:8px 10px;text-align:left;font-weight:700;}
+td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:nth-child(even) td{background:var(--input-bg);}
+.table-hint{font-size:11px;color:var(--text-muted);text-align:center;font-style:italic;margin-top:4px;}
+.callout{background:var(--blue-light);border-left:4px solid var(--blue-mid);border-radius:0 8px 8px 0;padding:12px 14px;margin:14px 0;}
+.callout-orange{background:var(--orange-light);border-left-color:var(--orange);}
+.callout-green{background:var(--green-light);border-left-color:var(--green);}
+.callout-label{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px;color:var(--blue-mid);}
+.callout-orange .callout-label{color:var(--orange);}
+.callout-green .callout-label{color:var(--green);}
+.maturity-bar{display:flex;align-items:center;gap:10px;margin:12px 0;}
+.maturity-dots{display:flex;gap:6px;}
+.dot{width:20px;height:20px;border-radius:50%;background:var(--border);}
+.dot.filled{background:var(--blue-mid);}
+.dot.half{background:linear-gradient(90deg,var(--blue-mid) 50%,var(--border) 50%);}
+.maturity-label{font-weight:700;font-size:14px;color:var(--blue-mid);}
+.tldr-list{list-style:none;padding:0;}
+.tldr-list li{padding:8px 10px 8px 34px;position:relative;border-bottom:1px solid var(--border);}
+.tldr-list li:last-child{border-bottom:none;}
+.tldr-list li::before{content:"→";position:absolute;left:10px;color:var(--blue-mid);font-weight:700;}
+.comment-block{margin-top:16px;border-top:1px solid var(--border);padding-top:14px;}
+.comment-input{width:100%;display:block;font-size:16px;font-family:inherit;padding:8px 10px;border:1px solid var(--input-border);border-radius:8px;background:var(--input-bg);color:var(--text);resize:vertical;-webkit-appearance:none;}
+.comment-actions{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.send-btn{background:var(--blue-mid);color:#fff;border:none;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:36px;}
+.comment-status{font-size:13px;color:var(--text-muted);}
+.submit-block{text-align:center;padding:24px 0;}
+.submit-btn{background:var(--green);color:#fff;border:none;border-radius:10px;padding:12px 28px;font-size:16px;font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:44px;}
+#submit-status{margin-top:8px;font-size:14px;color:var(--text-muted);}
+.source-note{font-size:11px;font-style:italic;color:var(--text-muted);text-align:center;margin-top:8px;}
+.report-meta{font-size:12px;color:var(--text-muted);text-align:center;margin-bottom:16px;}
+.severity-H{color:#b03a2e;font-weight:700;}
+.severity-M{color:#b07820;font-weight:700;}
+.severity-L{color:#1e8449;font-weight:700;}
+</style>
+</head>
+<body>
+<script>
+const CONFIG = {
+  endpoint: 'https://script.google.com/macros/s/AKfycbxebGoKMGmazBwIVA8QilB7Eyqdit4i5riCH1u65p_M3KczcItcS7ey-Az_Y8Kn7XXSQA/exec',
+  token: 'vscc-2026-xk9',
+  reportId: '260426_ai-macro-sg',
+  reportTitle: 'AI Next Waves: Singapore Macro Strategy 2025-2035'
+};
+</script>
+
+<nav class="sticky-nav">
+  <span class="nav-title">&#127480;&#127468; Singapore AI Strategy</span>
+  <div class="nav-pills">
+    <a class="nav-pill" href="#s1">S1</a>
+    <a class="nav-pill" href="#s2">S2</a>
+    <a class="nav-pill" href="#s3">S3</a>
+    <a class="nav-pill" href="#s4">S4</a>
+    <a class="nav-pill" href="#s5">S5</a>
+    <a class="nav-pill" href="#s6">S6</a>
+    <a class="nav-pill" href="#s7">S7</a>
+    <a class="nav-pill" href="#s8">S8</a>
+  </div>
+  <div class="nav-controls">
+    <button class="ctrl-btn" onclick="zoomOut()">A&#8722;</button>
+    <button class="ctrl-btn" onclick="zoomIn()">A+</button>
+    <button class="ctrl-btn" id="theme-btn" onclick="toggleTheme()">&#127769;</button>
+  </div>
+</nav>
+
+<div class="page">
+  <p class="report-meta">Singapore AI Macro Strategy 2025&#8211;2035 &nbsp;|&nbsp; Research Date: 26 Apr 2026 &nbsp;|&nbsp; VSCC Investor Research</p>
+
+  <!-- ============================================================ -->
+  <!-- S1: EXECUTIVE SUMMARY -->
+  <!-- ============================================================ -->
+  <div class="card" id="s1">
+    <div class="section-header">
+      <span class="section-badge">1</span>
+      <span class="section-title">Executive Summary</span>
+    </div>
+
+    <div class="callout callout-green">
+      <span class="callout-label">AI Maturity Rating</span>
+      <div class="maturity-bar">
+        <div class="maturity-dots">
+          <div class="dot filled"></div>
+          <div class="dot filled"></div>
+          <div class="dot filled"></div>
+          <div class="dot filled"></div>
+          <div class="dot half"></div>
+        </div>
+        <span class="maturity-label">4.5 / 5 &mdash; Highly Advanced</span>
+      </div>
+      <p style="font-size:13px;margin-bottom:0;">Singapore ranks among the world&#8217;s top 5 AI-ready nations. Strong policy coherence, disproportionate tech investment, and rule-of-law stability make it the ASEAN AI anchor state.</p>
+    </div>
+
+    <h3>5-Point TLDR</h3>
+    <ul class="tldr-list">
+      <li><strong>S$1B+ public AI commitment</strong> over five years under NAIS 2.0 (Dec 2023), targeting excellence, empowerment, and trustworthy AI across 5 priority sectors.</li>
+      <li><strong>S$27B+ in private tech investment</strong> secured or committed by 2025&#8211;2026: Google US$9B, Microsoft US$5.5B, plus Amazon, Meta, ByteDance &#8212; all anchored in Singapore.</li>
+      <li><strong>Governance-first differentiator:</strong> Voluntary-but-rigorous frameworks (AI Verify, Model AI Governance, MAS AIRG) position SG as ASEAN&#8217;s AI trust layer, opening B2B and regulatory-tech opportunities.</li>
+      <li><strong>Compute infrastructure scaling fast:</strong> 200MW new data centre capacity tendered (2025), S$500M earmarked for HPC/AI compute cluster, and Jurong Island reserved for 700MW low-carbon data centre park.</li>
+      <li><strong>Talent bottleneck is the real constraint:</strong> Target of 15,000 skilled AI professionals by 2029 is ambitious given 5.9M population; immigration policy and overseas partnerships are the relief valve.</li>
+    </ul>
+
+    <div class="callout callout-orange">
+      <span class="callout-label">Investor Bottom Line</span>
+      Singapore is not building an AI industry in isolation &#8212; it is building the governance, compute, and talent stack to be the indispensable gateway through which global AI capital flows into Southeast Asia&#8217;s 700M-person market.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#8230;" data-section="S1 Executive Summary" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- S2: NATIONAL AI VISION & GOALS -->
+  <!-- ============================================================ -->
+  <div class="card" id="s2">
+    <div class="section-header">
+      <span class="section-badge">2</span>
+      <span class="section-title">National AI Vision &amp; Goals</span>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">NAIS 2.0 Vision Statement</span>
+      &#8220;AI for the Public Good &#8212; for Singapore and the World&#8221; &nbsp;|&nbsp; Launched 4 December 2023
+    </div>
+
+    <h2>National AI Strategy 2.0 (NAIS 2.0)</h2>
+    <p>NAIS 2.0 supersedes the original 2019 strategy, reframing AI from an economic opportunity to a <strong>strategic necessity</strong>. It operates on a 3&#8211;5-year planning horizon with two overarching goals, three system layers, and ten enablers.</p>
+
+    <h3>Two Central Goals</h3>
+    <ul>
+      <li><strong>Excellence:</strong> Build globally competitive AI capabilities in research, engineering, and deployment. Target: 50+ AI Centres of Excellence across industry and academia by 2026 (54 established as of end-2025).</li>
+      <li><strong>Empowerment:</strong> Equip every citizen, worker, and enterprise with AI skills and access. Target: 15,000 AI professionals by 2029; 18,000 tech-role workers reskilled in AI &amp; analytics over 3 years (IMDA, 2025).</li>
+    </ul>
+
+    <h3>Three System Layers</h3>
+    <ul>
+      <li><strong>Activity Drivers:</strong> Government, Research, and Industry engines that generate AI activity.</li>
+      <li><strong>People &amp; Communities:</strong> Workers, businesses, and citizens as both producers and beneficiaries of AI.</li>
+      <li><strong>Infrastructure &amp; Environment:</strong> Compute, data, regulations, and international connectivity.</li>
+    </ul>
+
+    <h3>15 Priority Actions (Selected)</h3>
+    <ul>
+      <li>Scale compute access via AI Compute Cluster (AICC) &#8212; S$500M earmarked (MDDI, Feb 2024)</li>
+      <li>S$150M Enterprise Compute Initiative (ECI) &#8212; cloud credits + consultancy for SMEs (Budget 2025)</li>
+      <li>S$120M &#8220;AI for Science&#8221; fund for research breakthroughs (Smart Nation 2.0, Oct 2024)</li>
+      <li>S$20M to expand SG Digital Scholarships in AI (IMDA, 2024)</li>
+      <li>Deploy AI in all 5 priority sectors with measurable productivity targets by 2027</li>
+      <li>Establish Singapore as a global node in AI governance standard-setting (OECD, GPAI, ISO/IEC)</li>
+    </ul>
+
+    <h3>Smart Nation 2.0 Alignment</h3>
+    <p>Launched October 2024, Smart Nation 2.0 embeds NAIS 2.0 into the broader digital governance framework under three pillars: <strong>Trust</strong> (Digital Infrastructure Act 2025), <strong>Growth</strong> (AI-led economic transformation), and <strong>Community</strong> (AI literacy for all age groups, &#8220;AI for Fun&#8221; school modules from 2025).</p>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Key Milestone Tracker</span>
+      <ul style="margin:0;padding-left:18px;font-size:13.5px;">
+        <li>Dec 2023: NAIS 2.0 launched + SCAI (Advisory Council on AI) formed</li>
+        <li>Feb 2024: Committee of Supply &#8212; S$1B+ over 5 years confirmed</li>
+        <li>Oct 2024: Smart Nation 2.0 published</li>
+        <li>Feb 2025: Global AI Assurance Pilot launched at Paris AI Action Summit</li>
+        <li>Apr 2026: Microsoft US$5.5B commitment announced at Asia Tech x Inspire</li>
+      </ul>
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#8230;" data-section="S2 National AI Vision" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- S3: KEY POLICIES & REGULATIONS -->
+  <!-- ============================================================ -->
+  <div class="card" id="s3">
+    <div class="section-header">
+      <span class="section-badge">3</span>
+      <span class="section-title">Key Policies &amp; Regulations</span>
+    </div>
+
+    <p>Singapore&#8217;s regulatory philosophy is <strong>voluntary-first, sector-specific, globally harmonised</strong>. No horizontal AI law is planned; instead, frameworks are layered by risk and sector. This gives businesses operational flexibility while maintaining reputational credibility.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Policy / Framework</th>
+            <th>Date</th>
+            <th>What It Does</th>
+            <th>Investor Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NAIS 2.0</strong></td>
+            <td>Dec 2023</td>
+            <td>National 3&#8211;5-year AI masterplan; S$1B+ public commitment; 15 priority actions across 5 sectors</td>
+            <td>Signals long-term policy stability; roadmap for sector-specific opportunities</td>
+          </tr>
+          <tr>
+            <td><strong>Model AI Governance Framework (GenAI)</strong></td>
+            <td>May 2024</td>
+            <td>Voluntary 9-dimension framework for trustworthy GenAI deployment; covers safety, transparency, accountability (IMDA/PDPC)</td>
+            <td>Compliance blueprint for GenAI product deployment in SG + ASEAN markets</td>
+          </tr>
+          <tr>
+            <td><strong>AI Verify Testing Framework (Updated)</strong></td>
+            <td>May 2025</td>
+            <td>Open-source testing toolkit for 11 AI governance principles; now covers Traditional AI + GenAI (hallucination, bias, data leakage, adversarial prompts); 90+ member orgs</td>
+            <td>De facto assurance standard; firms offering AI testing/audit services benefit directly</td>
+          </tr>
+          <tr>
+            <td><strong>Project Moonshot</strong></td>
+            <td>2024</td>
+            <td>World&#8217;s first open-source LLM red-teaming + benchmarking toolkit; combines evaluation and red teaming in one platform (IMDA/AIVF)</td>
+            <td>Lowers cost of AI safety compliance; builds ecosystem of certified testers</td>
+          </tr>
+          <tr>
+            <td><strong>MAS AI Risk Management Guidelines (AIRG)</strong></td>
+            <td>Nov 2025 (consult); effective 2026</td>
+            <td>Mandatory-level guidelines for all FIs; covers AI inventory, lifecycle controls, board governance, third-party risk, fairness &amp; explainability; 12-month transition post-issuance</td>
+            <td>Creates regtech/compliance market in financial sector; raises bar for AI vendors selling to banks</td>
+          </tr>
+          <tr>
+            <td><strong>Digital Infrastructure Act (DIA)</strong></td>
+            <td>2025</td>
+            <td>Mandatory incident reporting and security standards for critical digital infrastructure operators</td>
+            <td>Compliance cost for data centre / cloud operators; opportunity for cybersecurity vendors</td>
+          </tr>
+          <tr>
+            <td><strong>Agentic AI Governance Framework (Draft)</strong></td>
+            <td>Oct 2025 (ICW)</td>
+            <td>Draft framework by CSA/GovTech/IMDA addressing autonomous AI agent risks; includes human oversight requirements</td>
+            <td>Signals regulatory direction for agentic AI products 12&#8211;18 months ahead of binding rules</td>
+          </tr>
+          <tr>
+            <td><strong>ASEAN AI Governance &amp; Ethics Guide</strong></td>
+            <td>2024</td>
+            <td>SG-led regional framework providing ASEAN&#8217;s first comprehensive AI governance standard</td>
+            <td>Singapore becomes compliance passport issuer for ASEAN market access</td>
+          </tr>
+          <tr>
+            <td><strong>Global AI Assurance Pilot</strong></td>
+            <td>Feb 2025</td>
+            <td>International sandbox for testing GenAI best practices; expanded to agentic AI, prompt injection, data leakage; open to sector regulators</td>
+            <td>Intelligence source for policy direction; first movers in pilot gain regulatory goodwill</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">Sources: IMDA, MDDI, MAS, AI Verify Foundation (2024&#8211;2026)</p>
+
+    <div class="callout callout-orange">
+      <span class="callout-label">Regulatory Watch</span>
+      MAS AIRG consultation closes 31 Jan 2026, with a 12-month implementation window. Financial AI vendors should begin gap analysis now. The agentic AI governance draft (Oct 2025) is likely to move to formal guidance by late 2026.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#8230;" data-section="S3 Policies and Regulations" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- S4: INFRASTRUCTURE & COMPUTE INVESTMENT -->
+  <!-- ============================================================ -->
+  <div class="card" id="s4">
+    <div class="section-header">
+      <span class="section-badge">4</span>
+      <span class="section-title">Infrastructure &amp; Compute Investment</span>
+    </div>
+
+    <p>Singapore is executing a multi-layered compute buildout: public HPC capacity for research/government, private hyperscaler infrastructure for commercial AI, and regulated data centre expansion &#8212; all within a deliberately small, power-constrained geography.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Initiative</th>
+            <th>Investment</th>
+            <th>Timeline</th>
+            <th>Strategic Goal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AI Compute Cluster (AICC)</strong></td>
+            <td>S$500M (public)</td>
+            <td>2024&#8211;2028</td>
+            <td>National HPC for model training; shared access for academia, government, and local industry (MDDI, Feb 2024)</td>
+          </tr>
+          <tr>
+            <td><strong>Enterprise Compute Initiative (ECI)</strong></td>
+            <td>S$150M (public)</td>
+            <td>2025&#8211;2027</td>
+            <td>Cloud credits + AI consultancy for Singapore enterprises; supports MVP development and AI transformation (Budget 2025)</td>
+          </tr>
+          <tr>
+            <td><strong>AI for Science Fund</strong></td>
+            <td>S$120M (public)</td>
+            <td>2025&#8211;2029</td>
+            <td>Push limits of scientific discovery; targets pharma, climate, and materials science AI applications (Smart Nation 2.0)</td>
+          </tr>
+          <tr>
+            <td><strong>Data Centre CFA2 (200MW)</strong></td>
+            <td>Private (tender)</td>
+            <td>2025 onwards</td>
+            <td>Second call for applications; 200MW new capacity to strengthen SG as trusted AI/data hub (IMDA/EDB, 2025)</td>
+          </tr>
+          <tr>
+            <td><strong>Jurong Island Data Centre Park</strong></td>
+            <td>Private (est. multi-billion)</td>
+            <td>2025&#8211;2030</td>
+            <td>20 hectares; up to 700MW potential capacity; Singapore&#8217;s largest low-carbon data centre cluster</td>
+          </tr>
+          <tr>
+            <td><strong>Microsoft Cloud &amp; AI Infrastructure</strong></td>
+            <td>US$5.5B (~S$7.4B)</td>
+            <td>2025&#8211;2029</td>
+            <td>Expand Azure cloud + AI compute; 200,000+ tertiary students get Microsoft 365 Copilot free for 12 months (Apr 2026)</td>
+          </tr>
+          <tr>
+            <td><strong>Google Cloud Infrastructure</strong></td>
+            <td>US$9B (~S$11.6B)</td>
+            <td>by 2028</td>
+            <td>Google Cloud region expansion; support AI/ML workloads for APAC; includes sustainability commitments (EDB, 2025)</td>
+          </tr>
+          <tr>
+            <td><strong>Amazon / AWS AI Capacity</strong></td>
+            <td>US$9B+ (est.)</td>
+            <td>2024&#8211;2028</td>
+            <td>AWS Asia Pacific (Singapore) region; Bedrock and SageMaker capacity for ASEAN enterprises</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">Sources: MDDI, IMDA, EDB, Microsoft News (2024&#8211;2026); figures in USD/SGD as announced</p>
+
+    <div class="callout">
+      <span class="callout-label">Total Estimated Compute Investment (2025&#8211;2029)</span>
+      Public: ~S$770M committed &nbsp;|&nbsp; Private (Google + Microsoft alone): ~S$19B &nbsp;|&nbsp; Total ecosystem estimate: <strong>S$27B+</strong> including Amazon, Meta, and secondary players. Singapore has ~1.4GW of existing data centre capacity; Jurong Island adds a further 700MW potential.
+    </div>
+
+    <div class="callout callout-orange">
+      <span class="callout-label">Power Constraint Risk</span>
+      Singapore&#8217;s electricity grid is already under pressure. Data centre expansion is metered via government CFA quotas. The move to low-carbon Jurong Island sites and mandatory sustainability reporting signals that power access, not capital, is the binding constraint on further expansion.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#8230;" data-section="S4 Infrastructure and Compute" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- S5: PRIORITY SECTORS -->
+  <!-- ============================================================ -->
+  <div class="card" id="s5">
+    <div class="section-header">
+      <span class="section-badge">5</span>
+      <span class="section-title">Priority Sectors</span>
+    </div>
+
+    <p>NAIS 2.0 designates five strategic sectors for targeted AI deployment. These are not just policy labels &#8212; each has dedicated funding, named programmes, and measurable KPIs, making them investable themes.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Sector</th>
+            <th>Key Programme(s)</th>
+            <th>Funding / Scale</th>
+            <th>Why It Matters for Investors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Healthcare</strong></td>
+            <td>National AI in Health Programme; AI diagnostic tools for public hospitals; AI-assisted drug discovery (AI for Science)</td>
+            <td>Portion of S$120M AI for Science; MOH Tech Office AI budget</td>
+            <td>Public hospital system = captive large-scale deployment; regulatory sandbox enables fast clinical AI pilots; gateway to regional healthtech export</td>
+          </tr>
+          <tr>
+            <td><strong>Finance</strong></td>
+            <td>MAS Project MindForge (AI risk toolkit); GenAI Sandbox for FIs; MAS-FCA AI-in-Finance Partnership; AIRG compliance frameworks</td>
+            <td>MAS-backed industry consortia; regtech market est. US$1B+ APAC by 2027</td>
+            <td>MAS AIRG creates mandatory compliance demand; SG is APAC&#8217;s largest AUM hub &#8212; AI portfolio management, fraud detection, and compliance automation are high-value plays</td>
+          </tr>
+          <tr>
+            <td><strong>Smart Cities &amp; Estates</strong></td>
+            <td>Smart Nation 2.0 urban AI pilots; AI-driven public transport optimisation; HDB estate management AI; GovTech AI platform</td>
+            <td>GovTech digital government budget; S$3.8B whole-of-government tech spend (FY2024)</td>
+            <td>Government as anchor customer &#8212; procurement pipelines are large, stable, and replicable to other ASEAN smart city projects</td>
+          </tr>
+          <tr>
+            <td><strong>Education</strong></td>
+            <td>&#8220;AI for Fun&#8221; school modules (2025); Smart Nation Educator Fellowship; SG Digital Scholarships (S$20M over 3 yrs); AISG PhD Fellowship (S$6,700/mth stipend)</td>
+            <td>S$20M scholarships; AISG fellowship (full tuition + stipend up to S$6,700/mth)</td>
+            <td>EdTech + LLM personalisation tools have government tailwind; 200,000+ tertiary students now on Microsoft Copilot &#8212; creates AI-native graduate cohort entering workforce from 2028</td>
+          </tr>
+          <tr>
+            <td><strong>Logistics &amp; Supply Chain</strong></td>
+            <td>Port of Singapore AI optimisation (PSA); Trade Net AI integration; AISG Applied AI projects in maritime</td>
+            <td>PSA + EDB-backed private investment; SG is world&#8217;s 2nd busiest container port</td>
+            <td>Port automation and trade facilitation AI have immediate ROI and replicable ASEAN export potential (Thai, Indonesian, Vietnamese ports all scaling up)</td>
+          </tr>
+          <tr>
+            <td><strong>Safety &amp; Security</strong></td>
+            <td>AI for national security and surveillance (DSTA / DSO); AI in law enforcement (SPF); Cyber AI threat detection (CSA)</td>
+            <td>Defence budget (classified); CSA cybersecurity industry fund</td>
+            <td>Defence-tech and dual-use AI are restricted but present &#8212; primarily accessible via government tenders; cybersecurity AI is the accessible adjacent play</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">Sources: NAIS 2.0 (Dec 2023), IMDA, MAS, GovTech, MDDI press releases (2024&#8211;2025)</p>
+
+    <div class="callout callout-green">
+      <span class="callout-label">GenAI SME Sandbox Results (2025)</span>
+      IMDA ran two GenAI Sandboxes for SMEs covering Marketing &amp; Sales, Customer Engagement, Generative Web Design, and Talent Acquisition. <strong>200+ SMEs supported</strong>; ~30 pre-approved GenAI solutions available with grant support. Demonstrates that SME GenAI adoption is government-subsidised and accelerating.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#8230;" data-section="S5 Priority Sectors" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- S6: INTERNATIONAL STRATEGY -->
+  <!-- ============================================================ -->
+  <div class="card" id="s6">
+    <div class="section-header">
+      <span class="section-badge">6</span>
+      <span class="section-title">International Strategy</span>
+    </div>
+
+    <p>Singapore&#8217;s international AI strategy has three vectors: <strong>great-power hedging</strong> (bilateral agreements with both US and China), <strong>ASEAN leadership</strong> (governance standard-setting), and <strong>multilateral norm-setting</strong> (OECD, GPAI, ISO/IEC). This positions Singapore as the trusted neutral infrastructure layer for global AI flows into the region.</p>
+
+    <h2>US&#8211;Singapore AI Cooperation</h2>
+    <ul>
+      <li><strong>Shared Principles on AI MOU (Jun 2024):</strong> US Secretary of Commerce Raimondo + SG Minister Josephine Teo co-chaired AI Roundtable; MOU on shared AI governance principles signed. NIST and IMDA committed to harmonise AI Risk Management Framework with AI Verify. (US Department of Commerce, Jun 2024)</li>
+      <li><strong>Second US&#8211;SG Critical &amp; Emerging Technology (CET) Dialogue (Jul 2024):</strong> Joint Fact Sheet covering AI safety, secure AI development, digital economic cooperation roadmap. AI Safety Institutes from both nations agreed cooperation scope. (White House / MFA SG, Aug 2024)</li>
+      <li><strong>AI Safety Institute Collaboration:</strong> US&#8211;SG AI scientists met Sep 2024 to align on AI testing and evaluation methodologies.</li>
+      <li><strong>Smart Cities AI Capacity Building (Feb 2025):</strong> US&#8211;SG Third Country Training Program (TCTP) to deliver AI capacity building to ASEAN and Pacific Islands Forum members &#8212; SG as the delivery node.</li>
+      <li><strong>Digital Economic Cooperation Roadmap:</strong> Covers emerging tech, data governance, Global CBPR Forum, digital connectivity, MSMEs, and workforce development.</li>
+    </ul>
+
+    <h2>Private Sector Anchors</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Commitment</th>
+            <th>Strategic Significance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Microsoft</strong></td>
+            <td>US$5.5B, 2025&#8211;2029 (Azure + AI infra + Copilot for students)</td>
+            <td>Largest single tech commitment; positions SG as Microsoft APAC AI hub</td>
+          </tr>
+          <tr>
+            <td><strong>Google</strong></td>
+            <td>US$9B by 2028 (Google Cloud infra)</td>
+            <td>Deepens APAC Cloud region; AI/ML capacity for regional enterprises and government</td>
+          </tr>
+          <tr>
+            <td><strong>Amazon / AWS</strong></td>
+            <td>Multi-billion APAC expansion (ongoing)</td>
+            <td>AWS Singapore region = primary ASEAN cloud backbone; Bedrock GenAI services</td>
+          </tr>
+          <tr>
+            <td><strong>GIC (SG sovereign fund)</strong></td>
+            <td>Led Anthropic US$30B Series G (Feb 2026); Anthropic valued at US$380B</td>
+            <td>SG sovereign capital directly invested in frontier AI; signals confidence in AI sector returns</td>
+          </tr>
+          <tr>
+            <td><strong>Meta</strong></td>
+            <td>Data centre + AI research presence in SG</td>
+            <td>LLAMA open-source models; APAC enterprise AI use cases</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>ASEAN AI Leadership</h2>
+    <ul>
+      <li><strong>ASEAN Guide on AI Governance and Ethics (2024):</strong> Singapore led authorship of the region&#8217;s first comprehensive AI governance framework &#8212; adopted by all 10 ASEAN members.</li>
+      <li><strong>Global AI Assurance Pilot (Feb 2025):</strong> IMDA/AIVF launched at Paris AI Action Summit; expanded to agentic AI and data leakage testing; open to sector regulators from multiple countries.</li>
+      <li><strong>AI Verify Foundation:</strong> 90+ member organisations globally; collaborates with OECD and GPAI to harmonise assurance standards &#8212; SG&#8217;s AI Verify assessments are seeking global mutual recognition.</li>
+      <li><strong>ISO/IEC engagement:</strong> IMDA actively participates in ISO/IEC JTC 1/SC 42 (AI standards) &#8212; SG inputs flow into global AI standards.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">Geopolitical Positioning</span>
+      Singapore signed an AI cooperation agreement with China in 2024 before the US MOU &#8212; deliberately maintaining dual-track relationships. This &#8220;trusted neutral&#8221; positioning is an explicit strategy: SG aims to be the node that both US and Chinese AI supply chains must route through to reach ASEAN.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#8230;" data-section="S6 International Strategy" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- S7: RISKS & CONSTRAINTS -->
+  <!-- ============================================================ -->
+  <div class="card" id="s7">
+    <div class="section-header">
+      <span class="section-badge">7</span>
+      <span class="section-title">Risks &amp; Constraints</span>
+    </div>
+
+    <p>Singapore&#8217;s AI strategy is ambitious for a 5.9M-person city-state. The constraints are structural: talent, power, and geopolitics are the binding limits. Policy coherence and financial reserves are the mitigants.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Risk</th>
+            <th>Severity</th>
+            <th>Likelihood</th>
+            <th>Mitigation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AI Talent Shortage</strong><br><small>Target 15,000 AI professionals by 2029; current pipeline is insufficient domestically</small></td>
+            <td><span class="severity-H">HIGH</span></td>
+            <td><span class="severity-H">HIGH</span></td>
+            <td>S$20M SG Digital Scholarships; AISG PhD fellowships (S$6,700/mth); TeSA reskilling for 18,000; Tech.Pass and ONE Pass to attract global AI talent; overseas internship pipelines</td>
+          </tr>
+          <tr>
+            <td><strong>Power &amp; Land Constraints</strong><br><small>Data centre expansion limited by grid capacity and land scarcity; risk of quota throttling</small></td>
+            <td><span class="severity-H">HIGH</span></td>
+            <td><span class="severity-M">MED</span></td>
+            <td>Government-managed CFA quota system; Jurong Island low-carbon park (700MW potential); mandatory sustainability reporting for data centres; subsea cable diversification</td>
+          </tr>
+          <tr>
+            <td><strong>US&#8211;China Tech Decoupling</strong><br><small>Risk of SG being forced to choose sides in AI chip / cloud access restrictions; ASEAN caught in crossfire</small></td>
+            <td><span class="severity-H">HIGH</span></td>
+            <td><span class="severity-M">MED</span></td>
+            <td>Deliberate dual-track diplomacy (US MOU + China AI MOU); &#8220;trusted neutral&#8221; brand strategy; diversified supplier base; WTO-compliant trade posture</td>
+          </tr>
+          <tr>
+            <td><strong>Small Domestic Market</strong><br><small>SG&#8217;s 5.9M population limits domestic AI market scale; many AI products require ASEAN expansion to justify unit economics</small></td>
+            <td><span class="severity-M">MED</span></td>
+            <td><span class="severity-H">HIGH</span></td>
+            <td>Explicitly positions SG as ASEAN gateway, not end-market; government procurement as anchor customer; export playbooks via EDB and SPRING</td>
+          </tr>
+          <tr>
+            <td><strong>AI Governance Fragmentation</strong><br><small>Voluntary frameworks may diverge from EU AI Act or future US federal rules, creating compliance complexity for multinationals</small></td>
+            <td><span class="severity-M">MED</span></td>
+            <td><span class="severity-M">MED</span></td>
+            <td>Active NIST-IMDA framework mapping; AI Verify seeking global mutual recognition; OECD and GPAI participation to influence global norms from the inside</td>
+          </tr>
+          <tr>
+            <td><strong>AI Safety &amp; Model Risk</strong><br><small>Rapid GenAI deployment without robust testing; hallucination, bias, and adversarial risks in high-stakes sectors (finance, health)</small></td>
+            <td><span class="severity-H">HIGH</span></td>
+            <td><span class="severity-M">MED</span></td>
+            <td>MAS AIRG (financial sector); AI Verify GenAI testing; Project Moonshot red-teaming; Global AI Assurance Pilot; agentic AI governance framework (draft, Oct 2025)</td>
+          </tr>
+          <tr>
+            <td><strong>Brain Drain / Talent Competition</strong><br><small>US, UK, and UAE actively competing for the same AI talent pool; SG&#8217;s cost of living is a deterrent for early-career researchers</small></td>
+            <td><span class="severity-M">MED</span></td>
+            <td><span class="severity-M">MED</span></td>
+            <td>AISG PhD stipend (S$6,700/mth competitive globally); tax incentives; AI Centres of Excellence as career magnets; strong rule-of-law quality-of-life positioning</td>
+          </tr>
+          <tr>
+            <td><strong>Cybersecurity &amp; AI-Enabled Threats</strong><br><small>AI-powered cyberattacks targeting SG&#8217;s financial and critical infrastructure</small></td>
+            <td><span class="severity-H">HIGH</span></td>
+            <td><span class="severity-H">HIGH</span></td>
+            <td>DIA 2025 mandatory incident reporting; CSA quantum + agentic AI threat frameworks; MAS AIRG third-party risk controls; SG&#8211;US cybersecurity cooperation</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">Assessment based on NAIS 2.0, MDDI, MAS, CSA disclosures and geopolitical context (Apr 2026)</p>
+
+    <div class="callout callout-orange">
+      <span class="callout-label">Critical Watch Item</span>
+      US export controls on advanced AI chips (NVIDIA H100/H200, future Blackwell) remain the single largest exogenous risk. If SG is classified outside the &#8220;Tier 1&#8221; country group for chip access, it would directly impair the S$500M AICC compute programme and hyperscaler expansion timelines. Monitor BIS rules closely.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#8230;" data-section="S7 Risks and Constraints" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- S8: KEY TAKEAWAYS FOR INVESTORS -->
+  <!-- ============================================================ -->
+  <div class="card" id="s8">
+    <div class="section-header">
+      <span class="section-badge">8</span>
+      <span class="section-title">Key Takeaways for Investors</span>
+    </div>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Investment Thesis in One Line</span>
+      Singapore is not trying to beat the US or China at frontier AI &#8212; it is positioning itself as the indispensable <strong>governance layer, compute hub, and gateway</strong> for AI capital flowing into 700M-person Southeast Asia. The returns are in infrastructure, compliance, and deployment, not model training.
+    </div>
+
+    <h3>5 Concrete Actionable Bullets</h3>
+
+    <ul>
+      <li style="margin-bottom:14px;">
+        <strong>1. SG as AI Test-Bed &mdash; Compress Your GTM Timeline</strong><br>
+        IMDA&#8217;s GenAI Sandbox (200+ SMEs, 30 pre-approved solutions, grant-subsidised trials), the Global AI Assurance Pilot, and MAS&#8217; Project MindForge provide <em>funded, low-risk test environments</em> unavailable in most markets. AI product companies should use SG as the first commercial deployment market to generate case studies and regulatory clearance before scaling to Indonesia, Thailand, and Vietnam.
+      </li>
+      <li style="margin-bottom:14px;">
+        <strong>2. Gateway to ASEAN &mdash; SG Compliance = Regional Passport</strong><br>
+        Singapore&#8217;s ASEAN AI Governance Guide (2024) and AI Verify global mutual recognition push mean that products certified against SG standards have the highest probability of being accepted across ASEAN. EDB actively brokers market entry into Indonesia, Malaysia, Vietnam. The S$23B in 2025 FDI commitments confirm the market signal &#8212; SG is where ASEAN deals are structured.
+      </li>
+      <li style="margin-bottom:14px;">
+        <strong>3. Regulatory Sandbox Opportunities &mdash; Three Specific Entry Points</strong><br>
+        (a) MAS AIRG compliance: banks and insurers need AI risk management tooling by 2027 &#8212; regtech vendors with AIRG-aligned products have a structured procurement pathway. (b) AI Verify tester certification: becoming an accredited AI Verify tester positions firms as the compliance gatekeeper for SG+ASEAN. (c) Agentic AI governance: the Oct 2025 draft framework signals a 12&#8211;18-month window to build agentic AI safety products before rules harden.
+      </li>
+      <li style="margin-bottom:14px;">
+        <strong>4. Compute &amp; Infrastructure &mdash; Follow the S$19B Private Stack</strong><br>
+        Google (US$9B) and Microsoft (US$5.5B) are building out APAC AI infrastructure in SG. This creates second-order investment opportunities: colocation operators competing for the 200MW DC-CFA2 tender, power and cooling technology vendors for Jurong Island low-carbon park, and managed AI services built on top of hyperscaler capacity. EDB&#8217;s S$14.2B in 2025 FAI commitments validate the pipeline.
+      </li>
+      <li style="margin-bottom:14px;">
+        <strong>5. Talent &amp; GIC as Strategic Signals</strong><br>
+        GIC leading Anthropic&#8217;s US$30B Series G (Feb 2026, valuation US$380B) signals that Singapore&#8217;s sovereign capital has high conviction in frontier AI returns. For co-investors, GIC deal flow in AI is a reliable quality filter. On talent: the 2026&#8211;2028 cohort of AISG PhD fellows and SG Digital Scholarship recipients will be the founding teams of the next generation of SG AI startups &#8212; angel and pre-seed investors should be tracking this pipeline now.
+      </li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">Risk-Adjusted View</span>
+      SG&#8217;s AI opportunity is real but priced for perfection in some verticals. The infrastructure play (data centres, power, connectivity) is the most defensible. The governance/regtech play has a 2&#8211;3-year window before the market matures. The ASEAN expansion play requires SG as the beachhead, not the endpoint.
+    </div>
+
+    <div class="source-note">
+      Primary sources: NAIS 2.0 (MDDI/SNDGG, Dec 2023), Smart Nation 2.0 (Oct 2024), MAS AIRG Consultation (Nov 2025), IMDA press releases (2024&#8211;2026), EDB Investment Statistics 2025, Microsoft News Asia (Apr 2026), GIC Newsroom (Feb 2026), US Department of Commerce (Jun 2024), White House / MFA SG CET Dialogue (Aug 2024), AI Verify Foundation (2025).
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#8230;" data-section="S8 Key Takeaways for Investors" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="submit-block">
+    <button class="submit-btn" id="submit-btn" onclick="submitReview()">Submit Full Review</button>
+    <p id="submit-status"></p>
+  </div>
+</div>
+
+<script>
+const ZOOM_STEPS=[13,14,15,16,17,18,20,22];let zoomIdx=3;
+function zoomIn(){if(zoomIdx<ZOOM_STEPS.length-1)setZoom(++zoomIdx);}
+function zoomOut(){if(zoomIdx>0)setZoom(--zoomIdx);}
+function setZoom(i){document.documentElement.style.setProperty('--base-font',ZOOM_STEPS[i]+'px');}
+function toggleTheme(){const h=document.documentElement;const d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('theme-btn').textContent=d?'\u{1F319}':'\u{2600}️';}
+async function sendComment(btn){const b=btn.closest('.comment-block');const t=b.querySelector('.comment-input');const s=b.querySelector('.comment-status');const txt=t.value.trim();if(!txt)return;btn.disabled=true;s.textContent='Saving…';try{const r=await fetch(CONFIG.endpoint,{method:'POST',body:JSON.stringify({action:'comment',token:CONFIG.token,reportId:CONFIG.reportId,reportTitle:CONFIG.reportTitle,section:t.dataset.section,comment:txt})});const j=await r.json();if(j.status==='ok'){s.textContent='✓ Saved';t.value='';}else{s.textContent='✗ '+j.message;}}catch{s.textContent='✗ Failed';}finally{btn.disabled=false;}}
+async function submitReview(){const btn=document.getElementById('submit-btn');const s=document.getElementById('submit-status');btn.disabled=true;s.textContent='Submitting…';try{const r=await fetch(CONFIG.endpoint,{method:'POST',body:JSON.stringify({action:'submit',token:CONFIG.token,reportId:CONFIG.reportId,reportTitle:CONFIG.reportTitle})});const j=await r.json();s.textContent=j.status==='ok'?'✓ Submitted':'✗ '+j.message;}catch{s.textContent='✗ Failed';}finally{btn.disabled=false;}}
+</script>
+</body>
+</html>

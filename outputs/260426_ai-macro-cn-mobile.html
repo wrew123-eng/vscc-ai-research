@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Next Waves: China Macro Strategy 2025-2035</title>
+<style>
+:root {
+  --blue-dark:#1a3a5c; --blue-mid:#2471a3; --blue-light:#eaf4fb; --blue-border:#aed6f1;
+  --orange:#b03a2e; --orange-light:#fdf2f0; --orange-border:#e59898;
+  --green:#1e8449; --green-light:#eafaf1;
+  --text:#1c2533; --text-muted:#5a6a7a; --bg:#f2f4f7; --card:#ffffff;
+  --border:#dde4ed; --nav-bg:#1a3a5c; --nav-text:#ffffff;
+  --input-bg:#f8fafc; --input-border:#c8d6e5;
+}
+[data-theme="dark"] {
+  --blue-dark:#2471a3; --blue-mid:#5dade2; --blue-light:#1a2a3a; --blue-border:#2c4a6a;
+  --orange:#e07060; --orange-light:#2a1a18; --orange-border:#8b4040;
+  --green:#52c78a; --green-light:#0f2a1a;
+  --text:#e8edf2; --text-muted:#8a9bac; --bg:#0f1923; --card:#1a2535;
+  --border:#2a3a4a; --nav-bg:#0f1923; --nav-text:#e8edf2;
+  --input-bg:#1e2d3d; --input-border:#2a3a4a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:var(--base-font,16px);line-height:1.65;color:var(--text);background:var(--bg);}
+.sticky-nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);padding:8px 12px;display:flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(0,0,0,.25);flex-wrap:wrap;}
+.nav-title{color:var(--nav-text);font-weight:700;font-size:13px;white-space:nowrap;}
+.nav-pills{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-pill{background:rgba(255,255,255,.15);color:var(--nav-text);border:none;border-radius:12px;padding:3px 8px;font-size:11px;cursor:pointer;text-decoration:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:28px;}
+.nav-pill:hover{background:rgba(255,255,255,.3);}
+.nav-controls{display:flex;gap:4px;flex-shrink:0;margin-left:auto;}
+.ctrl-btn{background:rgba(255,255,255,.15);color:var(--nav-text);border:none;border-radius:6px;padding:4px 8px;font-size:12px;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:36px;}
+.ctrl-btn:hover{background:rgba(255,255,255,.25);}
+.page{max-width:600px;margin:0 auto;padding:16px 14px 80px;}
+@media(min-width:768px){.page{max-width:720px;padding:24px 24px 80px;}body{font-size:var(--base-font,17px);}}
+@media(min-width:1024px){.page{max-width:860px;}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.section-badge{background:var(--blue-mid);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+.section-title{font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--blue-dark);}
+h2{font-size:17px;font-weight:700;color:var(--blue-mid);margin:16px 0 8px;}
+h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:14px 0 6px;color:var(--text);}
+p{margin-bottom:10px;}
+ul,ol{padding-left:20px;margin-bottom:10px;}
+li{margin-bottom:4px;}
+.table-wrap{overflow-x:auto;margin:12px 0;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+th{background:var(--blue-dark);color:#fff;padding:8px 10px;text-align:left;font-weight:700;}
+td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:nth-child(even) td{background:var(--input-bg);}
+.table-hint{font-size:11px;color:var(--text-muted);text-align:center;font-style:italic;margin-top:4px;}
+.callout{background:var(--blue-light);border-left:4px solid var(--blue-mid);border-radius:0 8px 8px 0;padding:12px 14px;margin:14px 0;}
+.callout-orange{background:var(--orange-light);border-left-color:var(--orange);}
+.callout-green{background:var(--green-light);border-left-color:var(--green);}
+.callout-label{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px;color:var(--blue-mid);}
+.callout-orange .callout-label{color:var(--orange);}
+.callout-green .callout-label{color:var(--green);}
+.comment-block{margin-top:16px;border-top:1px solid var(--border);padding-top:14px;}
+.comment-input{width:100%;display:block;font-size:16px;font-family:inherit;padding:8px 10px;border:1px solid var(--input-border);border-radius:8px;background:var(--input-bg);color:var(--text);resize:vertical;-webkit-appearance:none;}
+.comment-actions{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.send-btn{background:var(--blue-mid);color:#fff;border:none;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:36px;}
+.comment-status{font-size:13px;color:var(--text-muted);}
+.submit-block{text-align:center;padding:24px 0;}
+.submit-btn{background:var(--green);color:#fff;border:none;border-radius:10px;padding:12px 28px;font-size:16px;font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:44px;}
+#submit-status{margin-top:8px;font-size:14px;color:var(--text-muted);}
+.source-note{font-size:11px;font-style:italic;color:var(--text-muted);text-align:center;margin-top:8px;}
+.rating-bar{display:flex;gap:6px;margin:10px 0;}
+.rating-pip{width:36px;height:12px;border-radius:3px;background:var(--border);}
+.rating-pip.filled{background:var(--blue-mid);}
+.rating-pip.half-filled{background:linear-gradient(90deg,var(--blue-mid) 60%,var(--border) 60%);}
+.meta-row{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--text-muted);margin-bottom:12px;}
+.meta-item strong{color:var(--text);}
+</style>
+</head>
+<body>
+<script>
+const CONFIG = {
+  endpoint: 'https://script.google.com/macros/s/AKfycbxebGoKMGmazBwIVA8QilB7Eyqdit4i5riCH1u65p_M3KczcItcS7ey-Az_Y8Kn7XXSQA/exec',
+  token: 'vscc-2026-xk9',
+  reportId: '260426_ai-macro-cn',
+  reportTitle: 'AI Next Waves: China Macro Strategy 2025-2035'
+};
+</script>
+
+<nav class="sticky-nav">
+  <span class="nav-title">&#x1F1E8;&#x1F1F3; China AI Strategy</span>
+  <div class="nav-pills">
+    <a class="nav-pill" href="#s1">S1</a>
+    <a class="nav-pill" href="#s2">S2</a>
+    <a class="nav-pill" href="#s3">S3</a>
+    <a class="nav-pill" href="#s4">S4</a>
+    <a class="nav-pill" href="#s5">S5</a>
+    <a class="nav-pill" href="#s6">S6</a>
+    <a class="nav-pill" href="#s7">S7</a>
+    <a class="nav-pill" href="#s8">S8</a>
+  </div>
+  <div class="nav-controls">
+    <button class="ctrl-btn" onclick="zoomOut()">A&#8722;</button>
+    <button class="ctrl-btn" onclick="zoomIn()">A+</button>
+    <button class="ctrl-btn" id="theme-btn" onclick="toggleTheme()">&#x1F319;</button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- S1: Executive Summary -->
+  <div class="card" id="s1">
+    <div class="section-header">
+      <div class="section-badge">1</div>
+      <div class="section-title">Executive Summary</div>
+    </div>
+
+    <div class="meta-row">
+      <span><strong>Report Date:</strong> 26 Apr 2026</span>
+      <span><strong>Horizon:</strong> 2025&#8211;2035</span>
+      <span><strong>Currency:</strong> USD unless stated</span>
+    </div>
+
+    <h3>5 TLDR Bullets</h3>
+    <ul>
+      <li><strong>DeepSeek inflection point:</strong> The Jan 2025 release of DeepSeek-R1 demonstrated China can produce frontier-class AI at drastically lower compute cost, forcing a global reassessment of the US&#8211;China AI gap and triggering a "Crossroads Era" in Chinese policy (Carnegie Endowment, Jul 2025).</li>
+      <li><strong>Massive state capital mobilisation:</strong> China's top internet firms are targeting &gt;$70B in AI data-centre capex in 2025 alone; the Bank of China's "AI Industry Development Action Plan" pledges &#165;1 trillion ($137B) over five years to AI infrastructure and applications (Bank of China, Mar 2025).</li>
+      <li><strong>Sovereign hardware stack taking shape:</strong> Huawei Ascend 910C is now the de-facto domestic GPU standard; SMIC is scaling 7nm-class DUV production and targeting 5nm-class nodes, creating a tariff-proof domestic AI supply chain &#8212; albeit still 1&#8211;2 generations behind TSMC/Nvidia (Tom's Hardware, 2025).</li>
+      <li><strong>Comprehensive policy architecture:</strong> The State Council's "AI+ Action Plan" (Aug 2025) sets legally binding sector-penetration targets of 70% by 2027 and 90% by 2030 across six priority domains, backed by MIIT draft ethics rules and mandatory AI content-labelling regulations effective Sep 2025.</li>
+      <li><strong>Military-civilian fusion is accelerating:</strong> The PLA has adopted DeepSeek LLMs for intelligence analysis and is advancing toward AI-enabled battlefield C2 (command &amp; control), with mid-2030s full "intelligentised warfare" as the declared goal (DoD China Military Power Report, Dec 2025).</li>
+    </ul>
+
+    <h3>AI Maturity Rating</h3>
+    <div class="rating-bar">
+      <div class="rating-pip filled"></div>
+      <div class="rating-pip filled"></div>
+      <div class="rating-pip filled"></div>
+      <div class="rating-pip filled"></div>
+      <div class="rating-pip half-filled"></div>
+    </div>
+    <p style="font-size:13px;color:var(--text-muted)"><strong>4.0 / 5</strong> &#8212; China has credible frontier-class AI model capability, a scaling sovereign hardware stack, strong state funding discipline, and a clear regulatory framework. The remaining gap is in leading-edge chip manufacturing (&lt;5nm at scale), EDA tooling, and raw compute density vs. the US. Not a laggard &#8212; a credible challenger.</p>
+
+    <div class="callout callout-orange">
+      <span class="callout-label">Investor Watch</span>
+      The inflection is no longer theoretical. China's AI trajectory is investment-relevant now, not in 2030. The key question is whether domestic compute supply can scale fast enough to match state-mandated deployment targets.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#x2026;" data-section="S1 Executive Summary" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2: National AI Vision & Goals -->
+  <div class="card" id="s2">
+    <div class="section-header">
+      <div class="section-badge">2</div>
+      <div class="section-title">National AI Vision &amp; Goals</div>
+    </div>
+
+    <h2>The Three-Phase Blueprint (2017&#8211;2030)</h2>
+    <p>China's overarching AI strategy is anchored in the <strong>&#26032;&#19968;&#20195;&#20154;&#24037;&#26234;&#33021;&#21457;&#23637;&#35268;&#21010;</strong> (New Generation AI Development Plan, NGAIDP), issued by the State Council in July 2017. It set a three-phase roadmap:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Phase</th><th>Target Year</th><th>Headline Goal</th><th>Industry Size Target</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Phase 1</td><td>2020</td><td>Align with global leaders; key applications world-class</td><td>AI core industry &gt;&#165;150B; related industries &gt;&#165;1T</td></tr>
+          <tr><td>Phase 2</td><td>2025</td><td>Major breakthroughs in AI basic theory; become main driver of industrial upgrading</td><td>AI core industry &gt;&#165;400B (~$56B); related industries &gt;&#165;5T (~$690B)</td></tr>
+          <tr><td>Phase 3</td><td>2030</td><td>Global AI innovation centre; AI industry world-leading</td><td>AI core industry &gt;&#165;1T (~$138B); total AI economy &gt;&#165;10T (~$1.4T)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Source: State Council NGAIDP (Jul 2017); OECD.AI Policy Dashboard</p>
+
+    <h2>2025 Phase 2 Status Check</h2>
+    <p>Phase 2 (2025) milestones were partially met but with important caveats:</p>
+    <ul>
+      <li><strong>Model capability:</strong> Achieved &#8212; DeepSeek-R1 (Jan 2025) matches GPT-4 class on key benchmarks at &lt;10% of training cost.</li>
+      <li><strong>Industry size:</strong> Roughly on track &#8212; China AI market estimated at &#165;580B+ in 2024; core AI industries approaching &#165;400B target.</li>
+      <li><strong>Theory/research:</strong> Mixed &#8212; China is top-2 in AI publications (Stanford HAI, 2025 AI Index) but still trails the US in foundational breakthroughs.</li>
+      <li><strong>Governance framework:</strong> Substantially achieved &#8212; Generative AI rules (Aug 2023), AI content labelling (Sep 2025), and draft AI ethics measures (Aug 2025) all in place.</li>
+      <li><strong>Chip self-sufficiency:</strong> Not achieved &#8212; still dependent on legacy NVIDIA H800/H20 stockpiles; Huawei Ascend is functional but at roughly 60&#8211;70% of NVIDIA H100 throughput for most workloads.</li>
+    </ul>
+
+    <h2>AI+ Action Plan 2025&#8211;2035 (&#20154;&#24037;&#26234;&#33021;+&#34892;&#21160;&#35745;&#21010;)</h2>
+    <p>Released by the State Council on <strong>27 Aug 2025</strong>, the "AI+ Action Plan" is the operative successor to the NGAIDP. It is China's current national AI blueprint. Key declared targets:</p>
+    <ul>
+      <li>By <strong>2027</strong>: AI penetration &gt;70% across six priority domains; &gt;70% of users using AI-integrated smart devices and intelligent agents.</li>
+      <li>By <strong>2030</strong>: AI penetration &gt;90%; "intelligent economy" to be a primary growth driver; China to be a global AI governance standard-setter.</li>
+      <li>By <strong>2035</strong>: Full "intelligentised society"; AI to contribute an estimated 26% of GDP growth (government projection).</li>
+    </ul>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Key Signal for Investors</span>
+      The shift from NGAIDP (aspiration) to AI+ Action Plan (mandated sector targets with enforcement mechanisms) marks a qualitative escalation in policy seriousness. Sector-penetration quotas backed by state procurement = guaranteed revenue streams for compliant domestic vendors.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#x2026;" data-section="S2 National Vision" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3: Key Policies & Regulations -->
+  <div class="card" id="s3">
+    <div class="section-header">
+      <div class="section-badge">3</div>
+      <div class="section-title">Key Policies &amp; Regulations</div>
+    </div>
+
+    <p>China has built one of the world's most comprehensive AI regulatory frameworks &#8212; notable for sequencing innovation-first, with guardrails added sector by sector. The table below covers the most investor-relevant instruments.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Policy Name</th><th>Date</th><th>What It Does</th><th>Investor Impact</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>&#26032;&#19968;&#20195;&#20154;&#24037;&#26234;&#33021;&#21457;&#23637;&#35268;&#21010;</strong><br>New Generation AI Development Plan (NGAIDP)</td>
+            <td>Jul 2017</td>
+            <td>Sets 3-phase national AI roadmap through 2030; designates AI as national strategic priority; mandates military-civilian fusion in AI R&amp;D</td>
+            <td>Foundation for all subsequent AI funding; created license-to-operate for domestic AI champions</td>
+          </tr>
+          <tr>
+            <td><strong>&#20851;&#20110;&#21152;&#24555;&#22580;&#26223;&#21021;&#26500;&#20154;&#24037;&#26234;&#33021;&#24212;&#29992;&#30340;&#25351;&#23548;&#24847;&#35265;</strong><br>Guidance on AI Application in Specific Sectors</td>
+            <td>2019&#8211;2022</td>
+            <td>Rolling sector-specific AI integration mandates: manufacturing (2020), healthcare (2021), education (2021), finance (2022)</td>
+            <td>Created captive domestic market; foreign platforms effectively excluded from regulated sectors</td>
+          </tr>
+          <tr>
+            <td><strong>&#20505;&#35266;&#31639;&#27861;&#25512;&#33616;&#31649;&#29702;&#35268;&#23450;</strong><br>Algorithmic Recommendation Management Provisions</td>
+            <td>Mar 2022</td>
+            <td>Requires labelling of algorithmic recommendations; bans price discrimination and addiction-inducing recommendations; security review for critical algorithms</td>
+            <td>Compliance cost for consumer AI platforms; de facto local-only requirement for key algos</td>
+          </tr>
+          <tr>
+            <td><strong>&#28145;&#24230;&#21512;&#25104;&#31649;&#29702;&#35268;&#23450;</strong><br>Deep Synthesis Management Provisions (Deepfakes)</td>
+            <td>Jan 2023</td>
+            <td>Mandatory watermarking of AI-generated content; provider registration with MIIT; real-name auth for users</td>
+            <td>Raises barriers for foreign deepfake/synthetic media tools in China market</td>
+          </tr>
+          <tr>
+            <td><strong>&#29983;&#25104;&#24615;&#20154;&#24037;&#26234;&#33021;&#26381;&#21153;&#31649;&#29702;&#21150;&#27861;</strong><br>Interim Measures for Generative AI Services (MIIT/CAC)</td>
+            <td>Aug 2023</td>
+            <td>First rules covering large language models and image generators: security assessment before public launch, content compliance, data sourcing rules; covers all providers serving China users</td>
+            <td>Foreign LLM providers effectively locked out of China consumer market; domestic players (Baidu, Alibaba) gain structural advantage</td>
+          </tr>
+          <tr>
+            <td><strong>&#20154;&#24037;&#26234;&#33021;&#23433;&#20840;&#26631;&#20934;&#20307;&#31995;</strong><br>AI Safety Standard System V1.0 (consultation)</td>
+            <td>Feb 2025</td>
+            <td>Establishes comprehensive AI safety testing and certification framework; covers model evaluation, red-teaming, adversarial robustness standards</td>
+            <td>Creates domestic safety certification market; procurement lever to favour Ascend-compatible models</td>
+          </tr>
+          <tr>
+            <td><strong>AI+&#34892;&#21160;&#35745;&#21010;</strong><br>AI+ Action Plan (State Council)</td>
+            <td>Aug 2025</td>
+            <td>National blueprint for AI deployment across 6 sectors; sets binding sector-penetration targets (70% by 2027); establishes 15 "AI+ pilot cities"; prioritises open-source model ecosystem</td>
+            <td>Largest single policy catalyst for domestic AI spending; guarantees government procurement for compliant domestic AI vendors through 2030</td>
+          </tr>
+          <tr>
+            <td><strong>&#20154;&#24037;&#26234;&#33021;&#29983;&#25104;&#21512;&#25104;&#20869;&#23481;&#26631;&#35782;&#21529;&#27861;</strong><br>AI-Generated Content Labelling Measures</td>
+            <td>Sep 2025</td>
+            <td>Mandatory explicit labels on all AI-generated text, audio, images, video; implicit metadata watermarking for all AI outputs; enforced by MIIT/CAC</td>
+            <td>Compliance infrastructure market opportunity; data provenance tracking could evolve into content licensing regimes</td>
+          </tr>
+          <tr>
+            <td><strong>&#20154;&#24037;&#26234;&#33021;&#25216;&#26415;&#20241;&#24481;&#31649;&#29702;&#21150;&#27861;&#65288;&#35797;&#34892;&#65289;</strong><br>Draft Ethics Measures for AI Technology (MIIT + 9 regulators)</td>
+            <td>Aug 2025</td>
+            <td>Establishes AI ethics review requirements; requires algorithmic impact assessments for high-risk applications; creates sector ethics committees</td>
+            <td>Adds compliance layer but also formalises review pipeline that domestic firms can navigate faster than foreign competitors</td>
+          </tr>
+          <tr>
+            <td><strong>&#32593;&#32476;&#23433;&#20840;&#27861;&#&#20462;&#27491;&#26696;</strong><br>Cybersecurity Law Amendments</td>
+            <td>Oct 2025 (effective Jan 2026)</td>
+            <td>First explicit affirmation of national support for AI innovation under cybersecurity law; extends extraterritorial reach to overseas entities affecting China cybersecurity; new AI incident reporting obligations</td>
+            <td>Forces foreign cloud/AI providers serving Chinese users to comply with Chinese cybersecurity reporting &#8212; significant sovereignty risk for foreign operators</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Sources: CAC, MIIT, State Council; Mayer Brown (Oct 2025); White &amp; Case AI Watch; Securiti AI (Aug 2025)</p>
+
+    <div class="callout">
+      <span class="callout-label">Regulatory Architecture Note</span>
+      China has deliberately avoided a single comprehensive AI law (removed from 2025 legislative agenda). Instead it is building a modular, sector-by-sector framework that keeps compliance costs manageable for domestic champions while raising barriers for foreign entrants. Expect 2&#8211;3 new targeted measures per year through 2027.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#x2026;" data-section="S3 Policies and Regulations" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4: Infrastructure & Compute Investment -->
+  <div class="card" id="s4">
+    <div class="section-header">
+      <div class="section-badge">4</div>
+      <div class="section-title">Infrastructure &amp; Compute Investment</div>
+    </div>
+
+    <p>China is executing the largest state-directed AI infrastructure build-out in history. The combination of central government mandates, provincial competition, and corporate capex creates a unique investment dynamic.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Initiative</th><th>Investment</th><th>Timeline</th><th>Strategic Goal</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>National Integrated Computing Network (&#20840;&#22269;&#19968;&#20307;&#21270;&#31639;&#21147;&#32593;&#32476;)</strong><br>Government / NDRC</td>
+            <td>Est. $56B govt contribution in 2025</td>
+            <td>2021&#8211;2030</td>
+            <td>Pool public and private data-centre resources into a unified national compute grid; reduce regional compute imbalances; "East Data, West Compute" project moves AI workloads to inland regions with cheaper power</td>
+          </tr>
+          <tr>
+            <td><strong>Alibaba Cloud + AI Hardware</strong></td>
+            <td>$50B+ over 3 years (2025&#8211;2027)</td>
+            <td>2025&#8211;2027</td>
+            <td>Expand cloud AI infrastructure for Tongyi Qianwen model family; build overseas data centres across SEA, Middle East, EU; provide AI cloud to government clients</td>
+          </tr>
+          <tr>
+            <td><strong>ByteDance Data Centre &amp; GPU Build</strong></td>
+            <td>~$20B in 2025</td>
+            <td>2025</td>
+            <td>Train and serve Doubao (&#35761;&#21351;) models; reduce Nvidia dependency via Huawei Ascend transition; expand overseas infrastructure in Singapore, US, EU</td>
+          </tr>
+          <tr>
+            <td><strong>Bank of China AI Industry Fund</strong></td>
+            <td>&#165;1 trillion ($137B) over 5 years</td>
+            <td>2025&#8211;2030</td>
+            <td>Debt financing for AI infrastructure, robotics, LEO satellite networks; priority lending for companies on the national AI champion list</td>
+          </tr>
+          <tr>
+            <td><strong>Huawei Ascend Production Scale-Up</strong></td>
+            <td>Est. $3&#8211;5B capex 2025&#8211;2026</td>
+            <td>2025&#8211;2026</td>
+            <td>Scale from ~300K Ascend 910C units in 2025 to 600K+ in 2026; target 1.6M total Ascend-family dies by end-2026; displace Nvidia in domestic AI training market</td>
+          </tr>
+          <tr>
+            <td><strong>SMIC Advanced Node Expansion</strong></td>
+            <td>$5.8B subsidiary consolidation (Dec 2025) + ongoing capex</td>
+            <td>2025&#8211;2028</td>
+            <td>Scale 7nm DUV production capacity; develop 5nm-class SAQP process for Huawei Ascend next-gen chips; reduce dependency on TSMC and Samsung for leading-edge foundry</td>
+          </tr>
+          <tr>
+            <td><strong>National AI Data Centre Network (250+ centres)</strong><br>NDRC / Provincial Governments</td>
+            <td>~$98B total AI capex (2025 estimate, incl. private)</td>
+            <td>2024&#8211;2027</td>
+            <td>550+ data centres tracked in pipeline with combined 125 GW planned power capacity; 35% CAGR market growth forecast to 2032 (MarketsandMarkets)</td>
+          </tr>
+          <tr>
+            <td><strong>State AI Start-Up Fund</strong><br>Ministry of Finance / NDRC</td>
+            <td>$8.2B dedicated VC-style fund</td>
+            <td>2024&#8211;2027</td>
+            <td>Seed and Series A funding for AI start-ups in priority sectors; focuses on robotics, AI agents, semiconductor design tools (EDA)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Sources: Goldman Sachs (2025); MIT Technology Review (Mar 2025); SCSP/Strider Intel; Global Times (Aug 2025); SiliconAngle (Dec 2025)</p>
+
+    <div class="callout callout-orange">
+      <span class="callout-label">Structural Risk</span>
+      MIT Technology Review (Mar 2025) found many of China's 250+ AI data centres are significantly underutilised &#8212; speculative construction colliding with weak enterprise AI demand. DeepSeek's efficiency gains simultaneously reduce the compute needed per model run, making some capacity plans oversized. Expect consolidation and write-downs in the 2026&#8211;2027 cycle.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#x2026;" data-section="S4 Infrastructure Investment" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5: Priority Sectors -->
+  <div class="card" id="s5">
+    <div class="section-header">
+      <div class="section-badge">5</div>
+      <div class="section-title">Priority Sectors</div>
+    </div>
+
+    <p>The AI+ Action Plan identifies six mandatory integration domains. These are not aspirational &#8212; they carry procurement mandates and pilot-city quotas enforced through ministerial oversight.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Sector</th><th>Key Programme</th><th>Funding / Scale</th><th>Why It Matters</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Intelligent Manufacturing<br>(&#26234;&#33021;&#21046;&#36896;)</strong></td>
+            <td>AI+ Manufacturing Roadmap 2025&#8211;2027 (MIIT, Jan 2025); covers automotive, aerospace, electronics, biomedicine, green manufacturing</td>
+            <td>Est. &#165;200B+ in direct industrial AI subsidies 2025&#8211;2027; China has 37% of global industrial robot stock</td>
+            <td>AI-driven predictive maintenance, digital twins, and quality control in Chinese factories = competitive cost moat that foreign manufacturers cannot easily replicate; export competitiveness lever</td>
+          </tr>
+          <tr>
+            <td><strong>Healthcare AI<br>(&#26234;&#33021;&#21307;&#30566;)</strong></td>
+            <td>National Medical AI Pilot (State Council, 2025); Zhongshan Hospital (Shanghai) deploying AI across 50 clinical applications; national rollout via National Health Commission</td>
+            <td>&#165;50B+ in dedicated health AI investment 2025&#8211;2027; AI raises cancer detection rates by ~25% in pilot hospitals</td>
+            <td>Largest single AI productivity opportunity given China's 1.4B population and acute shortage of specialist doctors (&lt;3 per 1,000 people in inland provinces); data moat from state-centralised patient records</td>
+          </tr>
+          <tr>
+            <td><strong>Smart Transportation<br>(&#26234;&#33021;&#20132;&#36890;)</strong></td>
+            <td>Autonomous vehicle pilot zones in Wuhan, Shenzhen, Beijing (Baidu Apollo, Huawei); national AV regulatory sandbox expanded Feb 2025</td>
+            <td>&#165;100B+ state + private investment in AV and intelligent transport 2023&#8211;2027; Baidu Apollo operating 1,000+ robotaxis commercially</td>
+            <td>China is the most permissive major market for AV commercialisation; state-owned city bus/taxi fleets = captive customer; first-mover data advantage for Chinese AV players globally</td>
+          </tr>
+          <tr>
+            <td><strong>Financial Services AI<br>(&#26234;&#33021;&#37329;&#34701;)</strong></td>
+            <td>PBoC AI-in-Finance Guidelines (2024); state banks mandated to deploy AI credit scoring, fraud detection, and investment analytics by 2026</td>
+            <td>China's four state banks combined AI technology budget est. &#165;80B 2025&#8211;2027; Ant Group, WeBank processing &gt;60B AI credit decisions/year</td>
+            <td>AI in state banking = direct policy transmission mechanism; financial AI also instruments for capital flow monitoring and geopolitical enforcement</td>
+          </tr>
+          <tr>
+            <td><strong>Energy &amp; Climate AI<br>(&#33021;&#28304;&#20851;&#32852;)</strong></td>
+            <td>National Energy Administration AI integration plan (2025); AI grid optimisation targets in 14th Five-Year Plan; AI-enhanced carbon monitoring</td>
+            <td>State Grid Corp AI budget &#165;30B+ 2025&#8211;2030; China targets 50% renewable share by 2030 &#8212; AI is key to grid balancing</td>
+            <td>China's renewable build-out (world's largest wind + solar) creates massive AI grid management need; energy AI tools with state backing have export potential to BRI countries</td>
+          </tr>
+          <tr>
+            <td><strong>Science &amp; Technology R&amp;D AI<br>(&#31185;&#25216;&#21153;&#21153;)</strong></td>
+            <td>AI for Science initiative (MOST, 2024); protein folding, materials discovery, and drug design using domestic models (domestic AlphaFold equivalents); PanGu Weather Model (Huawei)</td>
+            <td>MOST R&amp;D AI budget est. &#165;50B+ 2025&#8211;2027; China leads in AI-assisted materials science publications (Nature Index 2025)</td>
+            <td>AI-for-science creates dual-use pathways (civilian R&amp;D to military materials, bio); Huawei PanGu Weather Model is already outperforming European forecasting models</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Sources: MIIT AI+ Manufacturing (Jan 2025); State Council AI+ Action Plan (Aug 2025); China Briefing; Trivium China; Merics (2025)</p>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Investable Theme</span>
+      Healthcare AI is the highest-conviction sector: state procurement mandated, data moat via centralised EMR, and the demographic pressure of an ageing population makes the ROI case unimpeachable. Companies to watch: United Imaging, Ping An Good Doctor, iSoftStone Health.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#x2026;" data-section="S5 Priority Sectors" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6: International Strategy -->
+  <div class="card" id="s6">
+    <div class="section-header">
+      <div class="section-badge">6</div>
+      <div class="section-title">International Strategy</div>
+    </div>
+
+    <h2>Digital Silk Road 2.0 (&#25968;&#23383;&#19344;&#32508;&#20043;&#36335;)</h2>
+    <p>China's international AI strategy operates through three overlapping channels: infrastructure export via the Digital Silk Road (DSR), governance norm-setting at multilateral forums, and corporate expansion via Huawei/Alibaba/ByteDance.</p>
+
+    <h3>Belt &amp; Road AI Infrastructure Footprint</h3>
+    <ul>
+      <li><strong>Africa:</strong> Huawei Cloud and Alibaba Cloud have expanded data-centre infrastructure across Kenya, Nigeria, South Africa, Egypt, and Ethiopia. Huawei supports school digitalisation and rural connectivity in Rwanda, Uganda, and Cameroon &#8212; creating AI dependency pathways (East Asia Forum, Apr 2025).</li>
+      <li><strong>Southeast Asia:</strong> ByteDance, Alibaba, and Tencent are the dominant cloud providers in Indonesia, Thailand, Vietnam, and Malaysia. Alibaba Cloud's Singapore hub serves as the regional AI gateway. Singapore is the primary transit node for Chinese AI services reaching global markets.</li>
+      <li><strong>Central Asia:</strong> Post-Ukraine, Central Asian states (Kazakhstan, Uzbekistan, Kyrgyzstan) are deepening Chinese AI partnerships as US/EU tech access becomes politically contested (China-Global South Project, 2025).</li>
+      <li><strong>Middle East:</strong> Saudi Aramco and UAE's G42 have partnered with Chinese AI firms; Huawei is building AI cloud infrastructure in Saudi Arabia and the UAE.</li>
+    </ul>
+
+    <h3>Governance Norm-Setting</h3>
+    <ul>
+      <li>At the <strong>Paris AI Summit (Feb 2025)</strong>, China signed the "Inclusive AI" declaration while the US declined &#8212; a diplomatic win that framed China as the inclusive AI multilateralist vs. US unilateralism.</li>
+      <li>China released its <strong>Global AI Governance Action Plan (&#20840;&#29699;&#20154;&#24037;&#26234;&#33021;&#27835;&#29702;&#34892;&#21160;&#35745;&#21010;)</strong> in July 2025 via the UN Mission, proposing a UN-led multilateral AI governance body and pushing "technology sovereignty" as a framing that resonates with Global South states.</li>
+      <li>China is actively exporting AI governance templates to BRI countries &#8212; replicating its own regulatory model (state oversight, content control, data localisation) as the default for less-developed AI regulatory environments.</li>
+    </ul>
+
+    <h3>US-China Tech Decoupling Dynamics</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Issue</th><th>Status (Apr 2026)</th><th>Investor Implication</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nvidia AI chip sales to China</td>
+            <td>Biden "AI Diffusion Rule" (Jan 2025) blocked H100/H200; Trump partially reversed (Jul 2025), allowing H200 with 15% levy; Nvidia developing China-specific chip (reported Aug 2025)</td>
+            <td>Nvidia China revenue volatile; Huawei Ascend wins market share permanently with each restriction cycle</td>
+          </tr>
+          <tr>
+            <td>EDA Software (Synopsys/Cadence)</td>
+            <td>Export-controlled for advanced node design; China has not yet produced a credible domestic replacement</td>
+            <td>Single largest chokehold on China's chip design ambitions; $1B+ domestic EDA investment being mobilised</td>
+          </tr>
+          <tr>
+            <td>ASML EUV Lithography</td>
+            <td>Full embargo in effect; SMIC is using DUV multi-patterning workarounds (SAQP) to approximate 5nm-class nodes</td>
+            <td>2&#8211;3 generation lag on leading-edge nodes; significant cost and yield penalty for domestic chips vs. TSMC equivalents</td>
+          </tr>
+          <tr>
+            <td>Cloud &amp; AI Services</td>
+            <td>US cloud hyperscalers (AWS, Azure, GCP) effectively absent from China AI market; Chinese firms filling domestically and expanding globally</td>
+            <td>Creates structural moat for Alibaba Cloud, Huawei Cloud, Tencent Cloud in China; offshore expansion into BRI markets accelerating</td>
+          </tr>
+          <tr>
+            <td>Open-Source AI Strategy</td>
+            <td>China (via DeepSeek, Qwen, InternLM) is aggressively open-sourcing frontier models to establish standards and reduce Western model lock-in globally (USCC Report, Mar 2026)</td>
+            <td>Chinese open-source models becoming infrastructure in developing markets; standard-setting power with geopolitical implications</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Sources: East Asia Forum (Apr 2025); USCC "Two Loops" Report (Mar 2026); CFR Digital Silk Road; Foreign Policy (Feb 2025)</p>
+
+    <div class="callout callout-orange">
+      <span class="callout-label">Decoupling Paradox</span>
+      US export controls have accelerated China's domestic AI ecosystem development faster than any state subsidy could. Each restriction creates a forcing function for Huawei/SMIC/domestic EDA. The long-run risk for the US is that China builds a fully indigenous stack that it then exports to 70% of the world's countries at lower cost.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#x2026;" data-section="S6 International Strategy" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S7: Risks & Constraints -->
+  <div class="card" id="s7">
+    <div class="section-header">
+      <div class="section-badge">7</div>
+      <div class="section-title">Risks &amp; Constraints</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Risk</th><th>Severity</th><th>Likelihood</th><th>Mitigation</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Chip Supply Chokehold</strong><br>ASML EUV ban + Nvidia export controls leave China 2&#8211;3 generations behind on leading-edge AI accelerators; Huawei Ascend 910C delivers ~60&#8211;70% of NVIDIA H100 performance per watt</td>
+            <td style="color:var(--orange);font-weight:700">H</td>
+            <td style="color:var(--orange);font-weight:700">H</td>
+            <td>SMIC DUV multi-patterning (SAQP); Hubble Investment backing 60+ chip ecosystem companies; Huawei roadmap targets Ascend 960 (2027) and 970 (2028)</td>
+          </tr>
+          <tr>
+            <td><strong>EDA Software Gap</strong><br>Synopsys and Cadence export controls block China from using best-in-class chip design tools for &lt;5nm nodes; domestic alternatives (Empyrean, Primarius) are 2&#8211;3 generations behind</td>
+            <td style="color:var(--orange);font-weight:700">H</td>
+            <td style="color:var(--orange);font-weight:700">H</td>
+            <td>State investment mobilising &#165;10B+ in domestic EDA; China's fabless community adapting workflows; timeline to close gap: optimistically 2030+</td>
+          </tr>
+          <tr>
+            <td><strong>Data Infrastructure Quality</strong><br>China has massive data volume but patchy data quality, fragmented across provincial silos; cross-border data transfer restrictions limit access to global training datasets</td>
+            <td style="color:#c0392b;font-weight:700">H</td>
+            <td style="color:var(--blue-mid);font-weight:700">M</td>
+            <td>National data exchange pilots in Shanghai, Shenzhen; government mandating inter-agency data sharing; synthetic data generation as workaround</td>
+          </tr>
+          <tr>
+            <td><strong>AI Governance Overreach / Regulatory Capture</strong><br>Increasingly tight content controls and security oversight create compliance risk and may stifle foundation model innovation; CCP fear of uncontrolled AI outputs is a documented constraint on PLA adoption</td>
+            <td style="color:var(--blue-mid);font-weight:700">M</td>
+            <td style="color:var(--orange);font-weight:700">H</td>
+            <td>State is deliberately running dual-track: tighter consumer AI rules + permissive industrial AI pilots; military-AI friction may slow PLA adoption timelines</td>
+          </tr>
+          <tr>
+            <td><strong>Talent Scarcity at Frontier</strong><br>China produces world's largest number of STEM graduates but top-tier AI research talent concentrates in the US; brain drain to Western universities remains significant despite tightening visa restrictions</td>
+            <td style="color:var(--blue-mid);font-weight:700">M</td>
+            <td style="color:var(--blue-mid);font-weight:700">M</td>
+            <td>Thousand Talents Plan 3.0 offering competitive packages; Chinese diaspora researchers increasingly returning post-2023; AI education mandate from secondary school level</td>
+          </tr>
+          <tr>
+            <td><strong>Data Centre Overcapacity / Capital Misallocation</strong><br>Speculative AI data-centre construction has left many facilities underutilised; DeepSeek's efficiency gains reduce compute demand per model; debt-financed provincial projects face refinancing risk</td>
+            <td style="color:var(--blue-mid);font-weight:700">M</td>
+            <td style="color:var(--orange);font-weight:700">H</td>
+            <td>NDRC tightening data-centre project approval criteria from 2025; consolidation among tier-2 facilities expected 2026&#8211;2027</td>
+          </tr>
+          <tr>
+            <td><strong>Geopolitical Escalation (Taiwan / South China Sea)</strong><br>Military conflict or major sanctions event would cascade across semiconductor supply chains, cloud services, and cross-border AI investment; most extreme tail risk</td>
+            <td style="color:#c0392b;font-weight:700">H</td>
+            <td style="color:var(--green);font-weight:700">L</td>
+            <td>Scenario planning required; portfolio hedging via non-China Asian AI exposures (India, Korea, Japan, Singapore)</td>
+          </tr>
+          <tr>
+            <td><strong>Open-Source Blowback</strong><br>China's strategy of open-sourcing frontier models risks exporting dual-use capabilities (deepfakes, disinformation, autonomous weapons aids) that trigger coordinated Western counter-measures</td>
+            <td style="color:var(--blue-mid);font-weight:700">M</td>
+            <td style="color:var(--blue-mid);font-weight:700">M</td>
+            <td>China's Global AI Governance plan attempts to pre-empt this by supporting UN-level oversight that China can shape; uncertain effectiveness</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">Severity/Likelihood: H=High, M=Medium, L=Low. Sources: CFR; Tom's Hardware; MIT Tech Review; DoD PRC Military Power Report (Dec 2025); Defense News (Apr 2026)</p>
+
+    <div class="callout">
+      <span class="callout-label">Bottom Line on Risks</span>
+      The chip gap is the single most consequential constraint. Everything else &#8212; talent, data, regulation &#8212; China has workable mitigation paths. The compute ceiling imposed by EDA + EUV restrictions is the structural limitation that cannot be fully domesticated before 2030 at the earliest. This is why DeepSeek's efficiency innovation matters so much: it makes China competitive at lower compute density.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#x2026;" data-section="S7 Risks and Constraints" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S8: Key Takeaways for Investors -->
+  <div class="card" id="s8">
+    <div class="section-header">
+      <div class="section-badge">8</div>
+      <div class="section-title">Key Takeaways for Investors</div>
+    </div>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Investment Stance</span>
+      China AI is not uninvestable &#8212; but it is a different risk-return profile from US AI. The upside is state-guaranteed procurement scale and structural domestic market advantages. The downside is geopolitical tail risk, governance uncertainty, and a compute ceiling that will periodically bite.
+    </div>
+
+    <h3>5 Actionable Investment Bullets</h3>
+    <ol>
+      <li style="margin-bottom:14px">
+        <strong>Back the sovereign hardware stack, not just models.</strong> The most durable investment thesis in China AI is the domestic chip ecosystem &#8212; Huawei Ascend, SMIC advanced nodes, and the 60+ Hubble-backed semiconductor companies. Every US export-control tightening is a free tailwind for this trade. Relevant listed proxy: SMIC (688981.SS, 0981.HK). The Ascend ecosystem is not yet public but watch for IPOs in the Hubble portfolio 2026&#8211;2028.
+      </li>
+      <li style="margin-bottom:14px">
+        <strong>Lean into the AI+ procurement mandate in healthcare and industrial AI.</strong> The State Council's 70%-by-2027 sector penetration target means government and SOE procurement budgets are legally committed. Companies supplying AI tools to hospitals (United Imaging Healthcare, 688585.SS) and smart manufacturing platforms (iSoftStone, 301236.SZ; Supcon Technology, 688777.SS) have near-captive near-term revenue. These are not speculative &#8212; contracts are being signed now.
+      </li>
+      <li style="margin-bottom:14px">
+        <strong>Treat DeepSeek-class efficiency as a structural thesis, not a one-off event.</strong> China's approach of open-sourcing competitive frontier models at low cost is a deliberate strategic posture (USCC, Mar 2026). This compresses AI margins globally, disadvantages closed-model Western incumbents in emerging markets, and accelerates China's standard-setting role. For global AI portfolios, this means avoiding over-concentration in closed-model API businesses and considering infrastructure (compute, data, deployment tooling) that benefits regardless of which model wins.
+      </li>
+      <li style="margin-bottom:14px">
+        <strong>Monitor the Digital Silk Road as an early-cycle AI infrastructure investment signal.</strong> Chinese cloud and AI companies (Alibaba Cloud, Huawei Cloud, ByteDance) are aggressively building data-centre capacity across SEA, Middle East, and Africa. These are pre-competitive moves establishing standards and switching costs. Singapore-listed infrastructure REITs and regional data-centre operators (e.g. Keppel DC REIT, KDCREIT.SI) benefit from Chinese and US hyperscaler demand simultaneously &#8212; a rare non-zero-sum position.
+      </li>
+      <li style="margin-bottom:14px">
+        <strong>Size the geopolitical tail risk explicitly and hedge it.</strong> A Taiwan conflict or major semiconductor sanctions escalation would be a catastrophic event for China AI positions. Scenario: 2&#8211;3% portfolio allocation to out-of-the-money put options on Chinese tech ETFs (KWEB, CQQQ) as insurance, reviewed quarterly against PLA posture signals. The base case (continued managed competition, no hot conflict) supports a constructive China AI view through 2027 &#8212; but the tail is fat enough to warrant explicit hedging, not just mental noting.
+      </li>
+    </ol>
+
+    <div class="callout">
+      <span class="callout-label">Timing Horizon</span>
+      <strong>12&#8211;18 months (2026&#8211;mid-2027):</strong> AI+ procurement contracts accelerating; Huawei Ascend 910C adoption expanding; SMIC 7nm yield improvements should be visible in quarterly reports.<br><br>
+      <strong>3&#8211;5 years (2027&#8211;2030):</strong> Domestic AI chip stack approaching commercial viability at scale; AI+ sector-penetration targets (70% &#8594; 90%) create secular demand; Digital Silk Road creates global market position difficult to displace.<br><br>
+      <strong>10-year horizon (2030&#8211;2035):</strong> Outcome is binary &#8212; either China closes the compute gap and achieves genuine AI parity with the US, or structural chip constraints cap China's AI ceiling. The policy and investment signals for which scenario is materialising will be visible by 2028.
+    </div>
+
+    <p class="source-note">This report is for research purposes only. Not financial advice. Based on publicly available sources as of Apr 2026.</p>
+
+    <div class="comment-block">
+      <textarea class="comment-input" placeholder="Add a comment on this section&#x2026;" data-section="S8 Investor Takeaways" rows="2"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Send</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="submit-block">
+    <button class="submit-btn" id="submit-btn" onclick="submitReview()">Submit Full Review</button>
+    <p id="submit-status"></p>
+  </div>
+
+</div>
+
+<script>
+const ZOOM_STEPS=[13,14,15,16,17,18,20,22];let zoomIdx=3;
+function zoomIn(){if(zoomIdx<ZOOM_STEPS.length-1)setZoom(++zoomIdx);}
+function zoomOut(){if(zoomIdx>0)setZoom(--zoomIdx);}
+function setZoom(i){document.documentElement.style.setProperty('--base-font',ZOOM_STEPS[i]+'px');}
+function toggleTheme(){const h=document.documentElement;const d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('theme-btn').textContent=d?'\u{1F319}':'☀️';}
+async function sendComment(btn){const b=btn.closest('.comment-block');const t=b.querySelector('.comment-input');const s=b.querySelector('.comment-status');const txt=t.value.trim();if(!txt)return;btn.disabled=true;s.textContent='Saving…';try{const r=await fetch(CONFIG.endpoint,{method:'POST',body:JSON.stringify({action:'comment',token:CONFIG.token,reportId:CONFIG.reportId,reportTitle:CONFIG.reportTitle,section:t.dataset.section,comment:txt})});const j=await r.json();if(j.status==='ok'){s.textContent='✓ Saved';t.value='';}else{s.textContent='✗ '+j.message;}}catch{s.textContent='✗ Failed';}finally{btn.disabled=false;}}
+async function submitReview(){const btn=document.getElementById('submit-btn');const s=document.getElementById('submit-status');btn.disabled=true;s.textContent='Submitting…';try{const r=await fetch(CONFIG.endpoint,{method:'POST',body:JSON.stringify({action:'submit',token:CONFIG.token,reportId:CONFIG.reportId,reportTitle:CONFIG.reportTitle})});const j=await r.json();s.textContent=j.status==='ok'?'✓ Submitted':'✗ '+j.message;}catch{s.textContent='✗ Failed';}finally{btn.disabled=false;}}
+</script>
+</body>
+</html>

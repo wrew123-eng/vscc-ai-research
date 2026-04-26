@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Next Waves: Micro Company Picks</title>
+<style>
+:root{--blue-dark:#1a3a5c;--blue-mid:#2471a3;--blue-light:#eaf4fb;--blue-border:#aed6f1;--orange:#b03a2e;--orange-light:#fdf2f0;--orange-border:#e59898;--green:#1e8449;--green-light:#eafaf1;--text:#1c2533;--text-muted:#5a6a7a;--bg:#f2f4f7;--card:#ffffff;--border:#dde4ed;--nav-bg:#1a3a5c;--nav-text:#ffffff;--input-bg:#f8fafc;--input-border:#c8d6e5;}
+[data-theme="dark"]{--blue-dark:#2471a3;--blue-mid:#5dade2;--blue-light:#1a2a3a;--blue-border:#2c4a6a;--orange:#e07060;--orange-light:#2a1a18;--orange-border:#8b4040;--green:#52c78a;--green-light:#0f2a1a;--text:#e8edf2;--text-muted:#8a9bac;--bg:#0f1923;--card:#1a2535;--border:#2a3a4a;--nav-bg:#0f1923;--nav-text:#e8edf2;--input-bg:#1e2d3d;--input-border:#2a3a4a;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:var(--base-font,16px);line-height:1.65;color:var(--text);background:var(--bg);}
+.sticky-nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);padding:8px 12px;display:flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(0,0,0,.25);flex-wrap:wrap;}
+.nav-title{color:var(--nav-text);font-weight:700;font-size:13px;white-space:nowrap;}
+.nav-pills{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-pill{background:rgba(255,255,255,.15);color:var(--nav-text);border:none;border-radius:12px;padding:3px 8px;font-size:11px;cursor:pointer;text-decoration:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:28px;}
+.nav-pill:hover{background:rgba(255,255,255,.3);}
+.nav-controls{display:flex;gap:4px;flex-shrink:0;margin-left:auto;}
+.ctrl-btn{background:rgba(255,255,255,.15);color:var(--nav-text);border:none;border-radius:6px;padding:4px 8px;font-size:12px;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:36px;}
+.ctrl-btn:hover{background:rgba(255,255,255,.25);}
+.page{max-width:600px;margin:0 auto;padding:16px 14px 80px;}
+@media(min-width:768px){.page{max-width:720px;padding:24px 24px 80px;}body{font-size:var(--base-font,17px);}}
+@media(min-width:1024px){.page{max-width:860px;}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.section-badge{background:var(--blue-mid);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+.section-title{font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--blue-dark);}
+.company-card{border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px;background:var(--input-bg);}
+.company-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:6px;}
+.company-name{font-size:16px;font-weight:800;color:var(--blue-dark);}
+.company-ticker{background:var(--blue-dark);color:#fff;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;}
+.company-exchange{font-size:11px;color:var(--text-muted);margin-top:2px;}
+h2{font-size:17px;font-weight:700;color:var(--blue-mid);margin:16px 0 8px;}
+h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:14px 0 6px;color:var(--text);}
+p{margin-bottom:10px;}
+ul,ol{padding-left:20px;margin-bottom:10px;}
+li{margin-bottom:4px;}
+.table-wrap{overflow-x:auto;margin:12px 0;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+th{background:var(--blue-dark);color:#fff;padding:8px 10px;text-align:left;font-weight:700;}
+td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:nth-child(even) td{background:var(--input-bg);}
+.table-hint{font-size:11px;color:var(--text-muted);text-align:center;font-style:italic;margin-top:4px;}
+.callout{background:var(--blue-light);border-left:4px solid var(--blue-mid);border-radius:0 8px 8px 0;padding:12px 14px;margin:14px 0;}
+.callout-orange{background:var(--orange-light);border-left-color:var(--orange);}
+.callout-green{background:var(--green-light);border-left-color:var(--green);}
+.callout-label{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px;color:var(--blue-mid);}
+.callout-orange .callout-label{color:var(--orange);}
+.callout-green .callout-label{color:var(--green);}
+.risk-label{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;}
+.risk-high{background:#fde8e8;color:#b03a2e;}
+.risk-med{background:#fef3e8;color:#956010;}
+.risk-low{background:#eafaf1;color:#1e8449;}
+.comment-block{margin-top:16px;border-top:1px solid var(--border);padding-top:14px;}
+.comment-input{width:100%;display:block;font-size:16px;font-family:inherit;padding:8px 10px;border:1px solid var(--input-border);border-radius:8px;background:var(--input-bg);color:var(--text);resize:vertical;-webkit-appearance:none;}
+.comment-actions{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.send-btn{background:var(--blue-mid);color:#fff;border:none;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:36px;}
+.comment-status{font-size:13px;color:var(--text-muted);}
+.submit-block{text-align:center;padding:24px 0;}
+.submit-btn{background:var(--green);color:#fff;border:none;border-radius:10px;padding:12px 28px;font-size:16px;font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:44px;}
+#submit-status{margin-top:8px;font-size:14px;color:var(--text-muted);}
+</style>
+</head>
+<body>
+<script>
+const CONFIG={endpoint:'https://script.google.com/macros/s/AKfycbxebGoKMGmazBwIVA8QilB7Eyqdit4i5riCH1u65p_M3KczcItcS7ey-Az_Y8Kn7XXSQA/exec',token:'vscc-2026-xk9',reportId:'260426_ai-micro',reportTitle:'AI Next Waves: Micro Company Picks'};
+</script>
+<nav class="sticky-nav">
+  <span class="nav-title">📊 Micro Picks</span>
+  <div class="nav-pills">
+    <a class="nav-pill" href="#s1">S1</a>
+    <a class="nav-pill" href="#s2">A-US</a>
+    <a class="nav-pill" href="#s3">A-CN</a>
+    <a class="nav-pill" href="#s4">B-US</a>
+    <a class="nav-pill" href="#s5">B-CN</a>
+    <a class="nav-pill" href="#s6">C-US</a>
+    <a class="nav-pill" href="#s7">C-CN</a>
+  </div>
+  <div class="nav-controls">
+    <button class="ctrl-btn" onclick="zoomOut()">A−</button>
+    <button class="ctrl-btn" onclick="zoomIn()">A+</button>
+    <button class="ctrl-btn" id="theme-btn" onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+<div class="page">
+
+<!-- ============================================================ -->
+<!-- S1: METHODOLOGY & THEME OVERVIEW -->
+<!-- ============================================================ -->
+<div class="card" id="s1">
+  <div class="section-header">
+    <span class="section-badge">1</span>
+    <span class="section-title">Methodology &amp; Theme Overview</span>
+  </div>
+
+  <p>This micro report covers 18 investable companies across three structural AI megatrends spanning 2025–2035. Each company was researched using live web data as of April 2026. Coverage spans US-listed and China-listed equities, with a deliberate dual-axis view: US incumbents with capital scale vs. China challengers with policy tailwinds and domestic substitution mandates.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Theme</th>
+          <th>Description</th>
+          <th>US Angle</th>
+          <th>China Angle</th>
+          <th>Key Investable Insight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>A — Compute &amp; Semiconductor Sovereignty</strong></td>
+          <td>The physical substrate of AI: chips, fabs, and the race for supply-chain independence</td>
+          <td>Stargate $500B, CHIPS Act subsidies, export controls as moat; NVDA/AMD/AVGO dominate GPU and ASIC markets</td>
+          <td>NGAIDP Phase 2, Huawei Ascend ecosystem, SMIC fab scale-up, ¥1T AI fund; Cambricon and Haiguang as sovereign chip alternatives</td>
+          <td>US incumbents compound revenue; China plays benefit from forced domestic adoption regardless of competitive gap</td>
+        </tr>
+        <tr>
+          <td><strong>B — Foundation Models &amp; AI Infrastructure</strong></td>
+          <td>The software and cloud layer: LLMs, enterprise copilots, and platform monetisation</td>
+          <td>Hyperscaler capex supercycle ($300B+/yr), OpenAI/Anthropic ecosystem; Azure, GCP, and Meta's Llama defining enterprise AI</td>
+          <td>Post-DeepSeek domestic LLM race; Baidu ERNIE, Alibaba Qwen, Tencent Hunyuan competing for China's cloud AI wallet</td>
+          <td>Recurring SaaS-like AI revenue is beginning to materialise; watch AI revenue run rates overtake traditional cloud growth rates</td>
+        </tr>
+        <tr>
+          <td><strong>C — Autonomous Systems &amp; Physical AI</strong></td>
+          <td>AI moving from servers into the physical world: robotics, autonomous vehicles, and industrial automation</td>
+          <td>DoD autonomous systems demand, Tesla Optimus humanoid ramp, Intuitive Surgical AI-augmented surgery, Rockwell smart factory</td>
+          <td>BYD "God's Eye" ADAS across full lineup, ESTUN as China's #1 domestic robot maker, Hesai as world #1 automotive LiDAR by revenue share</td>
+          <td>Physical AI is 3–5 years behind software AI in monetisation; early movers with recurring consumable or sensor revenue are the structural winners</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="table-hint">Data sourced from company filings, earnings calls, and industry reports. Market caps approximate as of Q1 2026.</p>
+
+  <div class="callout">
+    <span class="callout-label">Methodology</span>
+    Live web research conducted April 2026. Revenue figures from most recent available annual or quarterly filings. Theme Fit (★) is a qualitative score assessing revenue exposure, competitive moat, and policy tailwind on a 1–5 scale. Risk Level reflects regulatory, execution, and geopolitical risk. Not investment advice.
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" placeholder="Add a comment…" data-section="S1 Methodology" rows="2"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S2: THEME A — US PICKS -->
+<!-- ============================================================ -->
+<div class="card" id="s2">
+  <div class="section-header">
+    <span class="section-badge">2</span>
+    <span class="section-title">Theme A — US: Compute &amp; Semiconductor</span>
+  </div>
+
+  <!-- NVIDIA -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">NVIDIA Corporation</div>
+        <div class="company-exchange">NASDAQ</div>
+      </div>
+      <span class="company-ticker">NVDA</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>NVIDIA is the dominant supplier of AI accelerator GPUs, with fiscal 2025 (ended Jan 2026) revenue of $130.5B — up 114% year-on-year. The Data Center segment hit $51.2B in Q3 FY2026 alone, up 66% YoY, almost entirely driven by Blackwell GPU demand from hyperscalers and sovereign cloud buyers. The Hopper-to-Blackwell transition has been NVIDIA's most rapid product cycle yet.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Blackwell "off the charts":</strong> CEO Jensen Huang described Blackwell GPU sales as "off the charts" in Q3 FY2026, with cloud GPUs sold out for multiple quarters. NVIDIA has visibility into $500B in chip orders over the next 14 months.</li>
+      <li><strong>Stargate leverage:</strong> The $500B US Stargate project is essentially a multi-year NVIDIA order book. NVIDIA GPUs are the default compute substrate for every major US hyperscaler AI buildout.</li>
+      <li><strong>Software moat (CUDA):</strong> CUDA's decade-long developer lock-in means switching costs are prohibitively high. NVIDIA's software stack — NIM, NeMo, CUDA-X — generates recurring ecosystem revenue beyond hardware.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>US export controls on H20 chips to China (<span class="risk-label risk-high">HIGH RISK</span>) remove a meaningful revenue stream. Valuation at ~30x forward earnings leaves limited margin of safety if Blackwell demand plateaus or AMD closes the gap faster than expected.</p>
+  </div>
+
+  <!-- AMD -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Advanced Micro Devices</div>
+        <div class="company-exchange">NASDAQ</div>
+      </div>
+      <span class="company-ticker">AMD</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>AMD is NVIDIA's primary GPU competitor in the data centre, with the MI300 series positioning it as a credible alternative for AI inference workloads. Data centre revenue grew 57% YoY to $3.67B in Q1 2025, representing ~49% of total company revenue. AMD's CDNA architecture and competitive HBM3E memory capacity make it attractive for LLM inference at scale.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Meta MI300X deployment:</strong> Meta Platforms broadly deployed MI300X for Llama 3 and Llama 4 inference in mid-2025 — a major enterprise validation from a non-NVIDIA anchor customer.</li>
+      <li><strong>MI350 generational leap:</strong> The MI350 series (June 2025) delivers up to 35× AI inference improvement over MI300, with 288GB HBM3E — directly targeting NVIDIA's H100/H200 installed base.</li>
+      <li><strong>Cost arbitrage:</strong> AMD GPUs offer more memory per dollar for memory-bound LLM workloads (long context windows), giving hyperscalers a real economic reason to diversify supply.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>AMD's software ecosystem (ROCm) remains meaningfully behind CUDA in developer maturity. Execution risk on MI350 → MI400 roadmap is real; AMD has historically missed datacenter product timelines. <span class="risk-label risk-med">MED RISK</span></p>
+  </div>
+
+  <!-- Broadcom -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Broadcom Inc.</div>
+        <div class="company-exchange">NASDAQ</div>
+      </div>
+      <span class="company-ticker">AVGO</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Broadcom is the world's leading custom AI ASIC designer, building bespoke AI accelerator chips (XPUs) for Google, Meta, ByteDance, and others. AI semiconductor revenue reached $5.2B in Q3 FY2025, up 63% YoY. Full-year FY2025 AI revenue guidance was $19.9B, with FY2026 projected at $40.4B as it confirmed a fifth ASIC customer and secured a reported $10B order from OpenAI.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Custom ASIC secular shift:</strong> Hyperscalers are increasingly designing proprietary AI chips to reduce NVIDIA dependency — Broadcom captures ~70% of the custom ASIC market, making it the inevitable pick-and-shovel play on this trend.</li>
+      <li><strong>Networking moat:</strong> Broadcom's Tomahawk and Jericho switch ASICs dominate AI cluster networking. Every major AI data centre runs Broadcom fabric regardless of which GPU is used.</li>
+      <li><strong>OpenAI + Anthropic pipeline:</strong> New ASIC contracts with OpenAI and Anthropic could add $121B in incremental revenue potential per Seeking Alpha analysis, pointing to a decade-long compounding runway.</li>
+    </ul>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Top Pick — Theme A US</span>
+      AVGO offers NVIDIA exposure without NVIDIA's China export risk. Custom ASIC demand is structural and non-cyclical once a design win is secured. The VMware acquisition also adds ~$4B/yr in enterprise software recurring revenue as a ballast. Risk-adjusted, AVGO is the highest-conviction Theme A US name.
+    </div>
+
+    <h3>Key Risk</h3>
+    <p>Customer concentration: Google alone accounts for a large share of ASIC revenue. If Google internalises chip design or shifts architecture, Broadcom's revenue could compress sharply. <span class="risk-label risk-med">MED RISK</span></p>
+  </div>
+
+  <h2>Section Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Ticker</th><th>Exchange</th><th>Market Cap (approx)</th><th>Theme Fit</th><th>Risk Level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>NVDA</td><td>NASDAQ</td><td>~$3.3T</td><td>★★★★★</td><td><span class="risk-label risk-med">Medium</span></td></tr>
+        <tr><td>AMD</td><td>NASDAQ</td><td>~$170B</td><td>★★★★☆</td><td><span class="risk-label risk-med">Medium</span></td></tr>
+        <tr><td>AVGO</td><td>NASDAQ</td><td>~$950B</td><td>★★★★★</td><td><span class="risk-label risk-low">Low-Med</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" placeholder="Add a comment…" data-section="S2 Theme A US" rows="2"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S3: THEME A — CHINA PICKS -->
+<!-- ============================================================ -->
+<div class="card" id="s3">
+  <div class="section-header">
+    <span class="section-badge">3</span>
+    <span class="section-title">Theme A — China: Compute &amp; Semiconductor</span>
+  </div>
+
+  <div class="callout callout-orange">
+    <span class="callout-label">China Context</span>
+    US export controls on advanced chips (A100, H100, H20) have created a forced-adoption environment for domestic Chinese AI chip alternatives. This is not a free market dynamic — it is policy-driven substitution. Valuations reflect speculative sovereign-technology premiums; earnings discipline is a secondary concern for now.
+  </div>
+
+  <!-- Cambricon -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Cambricon Technologies</div>
+        <div class="company-exchange">STAR Market (Shanghai)</div>
+      </div>
+      <span class="company-ticker">688256.SS</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Cambricon is China's leading fabless AI chip designer, founded in 2016 and listed on the STAR Market in 2020. It designs the MLU and Siyuan series of AI accelerator chips for cloud servers, targeting training and inference workloads. Revenue surged 4,348% YoY to RMB 2.88B (US$404M) in H1 2025, with full-year 2025 revenue reaching RMB 6.5B and net profit of RMB 2.06B — its first profitable year.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Domestic substitution mandate:</strong> Chinese cloud providers and state enterprises are under political pressure to replace NVIDIA GPUs with domestic alternatives. Cambricon's Siyuan 590 and 690 chips are the primary beneficiaries, with 500,000 units targeted for 2026 delivery.</li>
+      <li><strong>SMIC partnership:</strong> Cambricon relies on SMIC's N+2 process node (approximately 7nm equivalent), making it a direct play on China's domestic semiconductor ecosystem maturing together.</li>
+      <li><strong>First-mover advantage:</strong> As China's most recognised AI chip brand, Cambricon benefits from brand recognition in government procurement cycles — a structural advantage in a market where politics often precedes performance.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>Extreme valuation — stock trades at 4,000+ P/E and 147× P/S as of late 2025. This is pure option value on China's domestic chip ambitions. Supply constraints from SMIC's limited N+2 capacity could delay the 500,000-unit target. Any normalization of US-China chip access would deflate the narrative. <span class="risk-label risk-high">HIGH RISK</span></p>
+  </div>
+
+  <!-- Haiguang -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Haiguang Information Technology</div>
+        <div class="company-exchange">STAR Market (Shanghai)</div>
+      </div>
+      <span class="company-ticker">688041.SS</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Haiguang (also known as Hygon) develops x86-architecture CPUs and DCU (Deep Computing Unit) GPU-class accelerators. It traces lineage to an AMD joint venture. Revenue reached RMB 9.16B in 2024, up 52.4% YoY, with net profit of RMB 1.93B — making it substantially more profitable and revenue-scaled than Cambricon. Its DCU accelerators are deployed by major Chinese cloud providers for AI training.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>x86 CPU moat:</strong> Haiguang's x86-compatible CPUs (Hygon C86 series) have substantial deployment in Chinese data centres, creating a captive customer base that naturally buys Haiguang DCUs for co-located AI compute.</li>
+      <li><strong>Software stack maturation:</strong> The DTK/DAS software stack is reaching parity with ROCm for common training frameworks, lowering the migration friction for Chinese enterprises already on Haiguang hardware.</li>
+      <li><strong>New generation launch:</strong> Next-generation Haiguang CPU and coprocessor R&amp;D investments were scheduled to reach usable state in September 2025, setting up a product refresh cycle that should accelerate 2026 revenue.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>Haiguang is on the US Entity List, restricting access to cutting-edge EDA tools and advanced packaging from Western suppliers. Sustained compute leadership without TSMC or ASML access is structurally constrained. <span class="risk-label risk-high">HIGH RISK</span></p>
+  </div>
+
+  <!-- SMIC -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Semiconductor Manufacturing International Corp</div>
+        <div class="company-exchange">HKEX / Shanghai</div>
+      </div>
+      <span class="company-ticker">0981.HK</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>SMIC is China's largest and most advanced semiconductor foundry, acting as the manufacturing backbone for the entire China AI chip ecosystem — including Cambricon, Haiguang, and Huawei's HiSilicon. Full-year 2025 revenue reached US$9.33B (+16.2% YoY), with capacity surpassing 1 million 8-inch equivalent wafers per month. Utilisation rates reached 93.5%, indicating a supply-constrained environment.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Ecosystem keystone:</strong> Every Chinese AI chip company that cannot access TSMC goes to SMIC. SMIC is the non-optional infrastructure layer beneath China's entire sovereign chip ambition.</li>
+      <li><strong>7nm capacity doubling:</strong> SMIC is doubling its 7nm-class N+2 capacity in 2026, directly enabling the Cambricon 500,000-unit target and Huawei Ascend 910C ramp. Four new 12-inch fabs are under construction in Beijing, Shanghai, Tianjin, and Shenzhen.</li>
+      <li><strong>Supply-demand imbalance:</strong> SMIC's factories are running near full capacity with demand exceeding supply — a strong pricing environment that should sustain margin expansion.</li>
+    </ul>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Top Pick — Theme A China</span>
+      SMIC is the lowest-volatility way to play China's semiconductor sovereignty push. Unlike fabless chip designers trading at speculative multiples, SMIC has real revenue, improving margins, and structural demand from every Chinese chip company simultaneously. The risk is export control escalation — but SMIC is already operating without ASML EUV access, making it the most "sanctions-hardened" bet in the space.
+    </div>
+
+    <h3>Key Risk</h3>
+    <p>US secondary sanctions risk: pressure on SMIC's suppliers (including ASML, applied materials) could slow capacity expansion. Technology gap vs. TSMC remains at least 2–3 generations, capping the addressable market for leading-edge AI chips. <span class="risk-label risk-med">MED-HIGH</span></p>
+  </div>
+
+  <h2>Section Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Ticker</th><th>Exchange</th><th>Market Cap (approx)</th><th>Theme Fit</th><th>Risk Level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>688256.SS</td><td>Shanghai STAR</td><td>~$50B</td><td>★★★★★</td><td><span class="risk-label risk-high">High</span></td></tr>
+        <tr><td>688041.SS</td><td>Shanghai STAR</td><td>~$35B</td><td>★★★★☆</td><td><span class="risk-label risk-high">High</span></td></tr>
+        <tr><td>0981.HK</td><td>HKEX / SH</td><td>~$50B</td><td>★★★★★</td><td><span class="risk-label risk-med">Med-High</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" placeholder="Add a comment…" data-section="S3 Theme A China" rows="2"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S4: THEME B — US PICKS -->
+<!-- ============================================================ -->
+<div class="card" id="s4">
+  <div class="section-header">
+    <span class="section-badge">4</span>
+    <span class="section-title">Theme B — US: Foundation Models &amp; AI Infrastructure</span>
+  </div>
+
+  <!-- Microsoft -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Microsoft Corporation</div>
+        <div class="company-exchange">NASDAQ</div>
+      </div>
+      <span class="company-ticker">MSFT</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Microsoft is the most direct public-market proxy for OpenAI's commercial success via Azure. Azure surpassed $75B in annual revenue for the first time in FY2025, with Azure cloud services growing 40% YoY — driven almost entirely by AI workload adoption. Microsoft's AI revenue run rate reached $13B as of Q2 FY2026 earnings, with a target of $25B by end-FY2026.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Enterprise Copilot penetration:</strong> Microsoft 365 Copilot is deployed across 90% of Fortune 500 companies. GitHub Copilot reached 26M users by October 2025, nearly doubling from 15M in April 2025 — a compounding recurring revenue engine.</li>
+      <li><strong>OpenAI exclusive cloud:</strong> Microsoft is OpenAI's exclusive cloud provider, capturing compute revenue as OpenAI scales GPT-5 and beyond. Azure commercial bookings surged 230% YoY in Q2 FY2026 from large AI commitments.</li>
+      <li><strong>Enterprise lock-in:</strong> Office 365 + Azure + Copilot creates a three-layer sticky subscription bundle. Enterprises that adopt Copilot are overwhelmingly likely to expand Azure commitments.</li>
+    </ul>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Top Pick — Theme B US</span>
+      Microsoft combines the largest enterprise distribution network in technology with the best AI model partner (OpenAI) and accelerating revenue conversion. At ~$13B AI run rate growing toward $25B, the AI monetisation story is no longer speculative — it is measurable. MSFT is the Theme B anchor.
+    </div>
+
+    <h3>Key Risk</h3>
+    <p>EU and US antitrust scrutiny of the OpenAI relationship is intensifying. Azure growth faces AWS competition on price and GCP on AI model quality. Capex ($150B planned for 2026) creates cash flow pressure if revenue growth decelerates. <span class="risk-label risk-low">LOW-MED</span></p>
+  </div>
+
+  <!-- Google -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Alphabet Inc. (Google)</div>
+        <div class="company-exchange">NASDAQ</div>
+      </div>
+      <span class="company-ticker">GOOGL</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Alphabet operates Google Cloud (GCP) as its AI infrastructure arm, alongside DeepMind as the world's most prolific frontier AI research lab. Gemini 3 (launched November 2025) showed 50%+ improvement over Gemini 2.5 Pro on benchmark tasks; Gemini 3.1 Pro followed in February 2026. GCP is the third-largest cloud by revenue but growing fastest among the Big Three on AI workloads.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Vertical AI integration:</strong> Google owns the full stack — TPU silicon (Theme A), Gemini models (Theme B), and deployment across Search, YouTube, Workspace, and GCP. No other company has this degree of vertical integration in AI.</li>
+      <li><strong>Gemini enterprise expansion:</strong> Gemini 3 is now available in Vertex AI for enterprises and government (accelerated access for all 17 US National Labs). Deep Research Max opens enterprise agent workflows at scale.</li>
+      <li><strong>Search AI monetisation:</strong> AI Overviews in Google Search are now shown to billions of queries daily, preserving Search revenue while evolving the product — a structural advantage OpenAI and Microsoft lack.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>DOJ antitrust case against Google Search monopoly could force structural remedies (e.g., divestiture of Chrome or mandated search choice). AI Overviews risk cannibalising click-through rates if users get answers without visiting advertisers' sites. <span class="risk-label risk-med">MEDIUM</span></p>
+  </div>
+
+  <!-- Meta -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Meta Platforms Inc.</div>
+        <div class="company-exchange">NASDAQ</div>
+      </div>
+      <span class="company-ticker">META</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Meta reported FY2025 revenue of $200.97B (+22% YoY), with AI-driven improvements to ad targeting and content ranking underpinning its core monetisation engine. Llama 4 crossed 1.2 billion cumulative downloads by April 2025, making it the world's most widely distributed open-weight foundation model — enabling Meta to influence the global AI development ecosystem without direct LLM licensing revenue.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>AI advertising flywheel:</strong> Meta's AI recommendation and ad-targeting algorithms directly convert into revenue — every marginal improvement in AI quality translates to higher CPMs. This is the most direct AI-to-revenue link of any company in this report.</li>
+      <li><strong>Llama as developer ecosystem play:</strong> 1.2B Llama downloads create a massive developer base trained on Meta's architecture and tooling, cementing a talent and ecosystem flywheel that reduces Meta's dependence on proprietary model providers.</li>
+      <li><strong>Pivoting to monetised AI:</strong> Meta's "Avocado" project (expected spring 2026) signals the shift from open-source Llama to a commercial AI model Meta can sell access to — opening a direct LLM revenue stream for the first time.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>Open-source Llama creates an ecosystem externality risk: if competitors (particularly Chinese firms) use Llama weights to build superior products, Meta's competitive moat could erode. Regulatory risk in EU (GDPR, DSA) remains elevated. <span class="risk-label risk-low">LOW-MED</span></p>
+  </div>
+
+  <h2>Section Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Ticker</th><th>Exchange</th><th>Market Cap (approx)</th><th>Theme Fit</th><th>Risk Level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>MSFT</td><td>NASDAQ</td><td>~$3.1T</td><td>★★★★★</td><td><span class="risk-label risk-low">Low-Med</span></td></tr>
+        <tr><td>GOOGL</td><td>NASDAQ</td><td>~$2.1T</td><td>★★★★★</td><td><span class="risk-label risk-med">Medium</span></td></tr>
+        <tr><td>META</td><td>NASDAQ</td><td>~$1.5T</td><td>★★★★☆</td><td><span class="risk-label risk-low">Low-Med</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" placeholder="Add a comment…" data-section="S4 Theme B US" rows="2"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S5: THEME B — CHINA PICKS -->
+<!-- ============================================================ -->
+<div class="card" id="s5">
+  <div class="section-header">
+    <span class="section-badge">5</span>
+    <span class="section-title">Theme B — China: Foundation Models &amp; AI Infrastructure</span>
+  </div>
+
+  <div class="callout callout-orange">
+    <span class="callout-label">China LLM Context</span>
+    Post-DeepSeek, China's domestic LLM race has compressed dramatically. DeepSeek's open-source R1 proved that frontier reasoning models can be built at a fraction of US costs, triggering a repricing of Chinese AI stocks and accelerating enterprise adoption of domestic models. The competitive pressure is now on Baidu, Alibaba, and Tencent to monetise before the market commoditises.
+  </div>
+
+  <!-- Baidu -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Baidu Inc.</div>
+        <div class="company-exchange">NASDAQ / HKEX</div>
+      </div>
+      <span class="company-ticker">BIDU / 9888.HK</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Baidu is China's dominant search engine and one of the earliest domestic LLM deployers with ERNIE Bot. AI Cloud Infrastructure revenue reached ~RMB 20B in 2025 (+34% YoY), with the combined AI Cloud and Applications segment reaching RMB 30B for the year. Subscription-based AI accelerator infrastructure revenue grew 143% YoY in Q4 2025 — the fastest-growing segment in the company.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>ERNIE 5.0 and Qianfan platform:</strong> Baidu's Qianfan enterprise AI platform is a full-stack solution (models + deployment + fine-tuning + inference) that gives SME and enterprise customers a one-stop Chinese LLM alternative to Azure OpenAI.</li>
+      <li><strong>Robotaxi as physical AI optionality:</strong> Baidu's Apollo Go robotaxi service in Wuhan has achieved commercial scale, potentially making Baidu the first company in this report with real autonomous mobility revenue beyond pilots.</li>
+      <li><strong>Subscription model transition:</strong> The shift from usage-based to subscription AI cloud revenue improves revenue predictability and compresses churn — a structurally positive development for valuation multiples.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>Core search advertising revenue is declining as users shift to Douyin (TikTok) and AI chatbots. Baidu's ability to fund its AI buildout depends on monetising ERNIE fast enough to offset the ad revenue decline. DeepSeek commoditisation of LLMs puts price pressure on cloud AI services. <span class="risk-label risk-high">HIGH RISK</span></p>
+  </div>
+
+  <!-- Alibaba -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Alibaba Group</div>
+        <div class="company-exchange">NYSE / HKEX</div>
+      </div>
+      <span class="company-ticker">BABA / 9988.HK</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Alibaba Cloud is China's largest cloud provider and the commercial vehicle for the Qwen family of large language models. Cloud division EBITA grew 35% to RMB 3.6B in the most recent quarter, driven by AI workloads. Alibaba says its AI app has topped 300M users, with Qwen3-Max (1T+ parameters) scoring 69.6 on the SWE-Bench coding benchmark — competitive with GPT-4 class models.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Cloud infrastructure moat:</strong> Alibaba Cloud has the deepest enterprise cloud penetration in China, meaning Qwen model adoption rides an existing B2B sales infrastructure rather than starting from scratch.</li>
+      <li><strong>Qwen monetisation pivot:</strong> April 2026 strategic shift to proprietary (non-open-source) Qwen models marks the transition from R&amp;D showcase to revenue-generating product. New models are cloud-only, driving platform lock-in.</li>
+      <li><strong>Diversification hedge:</strong> Unlike Baidu, Alibaba's AI losses are subsidised by e-commerce (Taobao/Tmall) and international commerce (AliExpress), giving it a longer runway to invest in AI cloud without earnings pressure.</li>
+    </ul>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Top Pick — Theme B China</span>
+      Alibaba offers the best risk-adjusted exposure to China's AI cloud buildout. Cloud revenue growing 34–36% YoY, Qwen shifting to monetised models, and a resilient e-commerce cash engine make BABA the most financially stable way to play Chinese LLM infrastructure. Valuation remains undemanding relative to US peers at sub-20× forward earnings.
+    </div>
+
+    <h3>Key Risk</h3>
+    <p>Regulatory risk from Beijing (after the 2021 Ant Financial crackdown, regulatory overhang persists). US-China delisting risk for NYSE-listed BABA cannot be dismissed. Competition from Huawei Cloud using Ascend chips is intensifying. <span class="risk-label risk-med">MEDIUM</span></p>
+  </div>
+
+  <!-- Tencent -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Tencent Holdings</div>
+        <div class="company-exchange">HKEX</div>
+      </div>
+      <span class="company-ticker">700.HK</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Tencent is China's largest technology conglomerate by market cap, with WeChat (1.4B+ MAU) as its distribution moat. Its Hunyuan AI family includes text (Hunyuan T1), image, video (HunyuanVideo), and 3D generation models. Hunyuan T1 outperforms DeepSeek R1 and GPT-4.5 across most benchmarks per internal testing. Tencent has committed over US$5B in annual AI investment.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>WeChat as AI distribution superpower:</strong> Embedding Hunyuan AI directly into WeChat gives Tencent instant access to 1.4B users — no other AI lab in the world has this consumer distribution advantage. WeChat AI features monetise via advertising, mini-programs, and premium tiers.</li>
+      <li><strong>Pricing power emerging:</strong> Tencent Cloud raised Hunyuan model token prices in 2025 due to surging AI agent consumption — a rare instance of a Chinese cloud provider exercising pricing power, indicating genuine demand inelasticity.</li>
+      <li><strong>Gaming × AI synergy:</strong> Tencent's gaming division (world #1 by revenue) benefits from Hunyuan's 3D, video, and code generation capabilities, reducing game development costs and accelerating content pipelines.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>Tencent is subject to ongoing Chinese government scrutiny of gaming content and platform power. The company's heavy investment in AI without a clear enterprise cloud monetisation track record (unlike Alibaba Cloud) creates execution uncertainty. <span class="risk-label risk-med">MEDIUM</span></p>
+  </div>
+
+  <h2>Section Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Ticker</th><th>Exchange</th><th>Market Cap (approx)</th><th>Theme Fit</th><th>Risk Level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>9888.HK</td><td>HKEX / NASDAQ</td><td>~$35B</td><td>★★★★☆</td><td><span class="risk-label risk-high">High</span></td></tr>
+        <tr><td>9988.HK</td><td>HKEX / NYSE</td><td>~$270B</td><td>★★★★★</td><td><span class="risk-label risk-med">Medium</span></td></tr>
+        <tr><td>700.HK</td><td>HKEX</td><td>~$460B</td><td>★★★★☆</td><td><span class="risk-label risk-med">Medium</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" placeholder="Add a comment…" data-section="S5 Theme B China" rows="2"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S6: THEME C — US PICKS -->
+<!-- ============================================================ -->
+<div class="card" id="s6">
+  <div class="section-header">
+    <span class="section-badge">6</span>
+    <span class="section-title">Theme C — US: Autonomous Systems &amp; Physical AI</span>
+  </div>
+
+  <!-- Tesla -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Tesla Inc.</div>
+        <div class="company-exchange">NASDAQ</div>
+      </div>
+      <span class="company-ticker">TSLA</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Tesla is simultaneously an EV manufacturer, an autonomous driving software developer (Full Self-Driving), and the developer of the Optimus humanoid robot. While 2025 Optimus production remains in ramp phase — several thousand units targeting internal factory deployment — the platform has attracted outsized investor attention. Musk has stated Optimus could be priced at $20,000–$30,000 at scale, targeting 10M+ units annually by 2030.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Optimus + FSD convergence:</strong> Tesla's competitive advantage is not just the robot hardware — it is the world's largest real-world fleet of AI-trained autonomous vehicles generating training data. This data flywheel is a structural moat that robot-pure-plays cannot replicate.</li>
+      <li><strong>Factory-to-market pipeline:</strong> Tesla is deploying Optimus V2 internally in its own Gigafactories, creating a proving ground that accelerates development cycles while avoiding public safety regulatory hurdles.</li>
+      <li><strong>Dojo supercomputer:</strong> Tesla's custom AI training cluster (Dojo) reduces dependence on NVIDIA for training FSD and Optimus models, improving margin structure at scale.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>Tesla's near-term earnings are under pressure from EV demand softness and margin compression in its core vehicle business. Optimus is pre-revenue and its commercial timeline is highly uncertain. Political risk from Musk's government role (DOGE) has introduced brand and regulatory complexity. <span class="risk-label risk-high">HIGH RISK</span></p>
+  </div>
+
+  <!-- Intuitive Surgical -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Intuitive Surgical Inc.</div>
+        <div class="company-exchange">NASDAQ</div>
+      </div>
+      <span class="company-ticker">ISRG</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Intuitive Surgical is the definitive market leader in robotic-assisted surgery, with ~60% global market share and near-$10B in FY2025 revenue (up 21% YoY). Approximately 3.15M surgical procedures were performed with da Vinci systems in 2025 (+18% YoY). The company placed 1,721 da Vinci systems in 2025, of which 870 were the next-gen da Vinci 5 — the most AI-integrated surgical platform ever released.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>AI-augmented surgery:</strong> In October 2025, the FDA approved an AI system integrated system-wide into Intuitive's Ion platform (minimally invasive biopsy). Ion procedures grew 51% in 2025, marking AI-assisted biopsy as a new growth vector beyond da Vinci.</li>
+      <li><strong>Razor-and-blade economics:</strong> Da Vinci generates recurring instrument and service revenue (~72% of total revenue) that is contractually tied to system placements. Every new da Vinci 5 placed is a 10-year annuity of consumable revenue — a structural compounding machine.</li>
+      <li><strong>Procedure volume compounding:</strong> Double-digit procedure growth guided for 2026. As AI assistance reduces procedure time and improves outcomes, hospital adoption of robotic surgery expands the addressable market beyond current reach.</li>
+    </ul>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Top Pick — Theme C US</span>
+      ISRG is the best risk-adjusted physical AI play in the US market. Unlike Tesla Optimus or autonomous vehicles, surgical robotics has a proven commercial model, FDA-approved AI integrations, locked-in recurring revenue, and ~60% market share. The da Vinci 5 super-cycle is in early innings. For investors who want Physical AI exposure with a clear earnings path, ISRG is the anchor.
+    </div>
+
+    <h3>Key Risk</h3>
+    <p>Medtronic (Hugo), Johnson &amp; Johnson (Ottava), and CMR Surgical (Versius) are all scaling competing platforms, beginning to erode Intuitive's pricing power in certain geographies. Premium valuation (~65× forward P/E) provides little room for growth misses. <span class="risk-label risk-low">LOW-MED</span></p>
+  </div>
+
+  <!-- Rockwell Automation -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Rockwell Automation Inc.</div>
+        <div class="company-exchange">NYSE</div>
+      </div>
+      <span class="company-ticker">ROK</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Rockwell Automation is the world's largest company dedicated to industrial automation and information. FY2025 revenue was approximately $8.35–8.57B with software revenue up 30% YoY — its fastest-growing segment. Rockwell's FactoryTalk software suite is the dominant IIoT/industrial AI platform in North American manufacturing, deployed across automotive, food and beverage, semiconductor, and life sciences verticals.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Industrial AI demand inflection:</strong> Rockwell's own 2025 State of Smart Manufacturing survey found 95% of manufacturers are actively investing in AI for operations. Rockwell sits at the software/hardware intersection — it sells the control hardware and the AI analytics software simultaneously.</li>
+      <li><strong>Smart factory secular tailwind:</strong> US reshoring (driven by CHIPS Act, IRA, and tariff policy) is driving a wave of greenfield factory construction that requires advanced automation from day one. Rockwell is the preferred automation integrator for US semiconductor fabs.</li>
+      <li><strong>Logix L9 and AI-native PLC:</strong> The new Logix L9 processor (launched 2025) is designed for AI-adjacent workloads, processing sensor data at the edge without cloud round-trips — a structural upgrade cycle across Rockwell's installed base.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>Rockwell's revenue growth has been modest (+0.94–5.84% in FY2025) as customers work through destocking cycles. Industrial automation capex is cyclical and highly sensitive to manufacturing PMI. If US economic conditions weaken, factory investment discretionary spending contracts rapidly. <span class="risk-label risk-med">MEDIUM</span></p>
+  </div>
+
+  <h2>Section Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Ticker</th><th>Exchange</th><th>Market Cap (approx)</th><th>Theme Fit</th><th>Risk Level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>TSLA</td><td>NASDAQ</td><td>~$900B</td><td>★★★★☆</td><td><span class="risk-label risk-high">High</span></td></tr>
+        <tr><td>ISRG</td><td>NASDAQ</td><td>~$190B</td><td>★★★★★</td><td><span class="risk-label risk-low">Low-Med</span></td></tr>
+        <tr><td>ROK</td><td>NYSE</td><td>~$25B</td><td>★★★★☆</td><td><span class="risk-label risk-med">Medium</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" placeholder="Add a comment…" data-section="S6 Theme C US" rows="2"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- S7: THEME C — CHINA PICKS -->
+<!-- ============================================================ -->
+<div class="card" id="s7">
+  <div class="section-header">
+    <span class="section-badge">7</span>
+    <span class="section-title">Theme C — China: Autonomous Systems &amp; Physical AI</span>
+  </div>
+
+  <div class="callout callout-orange">
+    <span class="callout-label">China Physical AI Context</span>
+    China's physical AI buildout is accelerating faster than any other country on a unit-shipment basis. BYD leads EV-AI convergence, ESTUN dominates domestic industrial robotics, and Hesai is the world's #1 automotive LiDAR supplier by revenue share. China's 14th and 15th Five-Year Plans explicitly mandate smart manufacturing upgrades and autonomous vehicle deployment at scale.
+  </div>
+
+  <!-- BYD -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">BYD Company Limited</div>
+        <div class="company-exchange">HKEX / Shenzhen</div>
+      </div>
+      <span class="company-ticker">1211.HK</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>BYD is the world's largest EV manufacturer by volume, with FY2025 revenue of RMB 804B — a 3.46% YoY increase that masks a significant product mix shift toward higher-value AI-enabled vehicles. In February 2025, BYD integrated DeepSeek AI into its TianShen (God's Eye) ADAS system and deployed it across 21 models, with pricing starting at RMB 100,000 — democratising advanced driver assistance across the mass market.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>"God's Eye" ADAS as standard equipment:</strong> BYD announced it will equip all models priced above RMB 100,000 with the God's Eye ADAS system — a fleet deployment of autonomous AI at a scale no other automaker has matched. This creates the world's largest real-world autonomous driving dataset outside Tesla.</li>
+      <li><strong>DeepSeek AI integration:</strong> BYD's partnership with DeepSeek for its ADAS AI stack means it benefits from China's most efficient reasoning model without the capex of building a proprietary LLM — a cost-effective approach that accelerates deployment.</li>
+      <li><strong>EV-AI flywheel:</strong> BYD's vertical integration (batteries via CATL + BYD Blade, chips via BYD Semiconductor, software via DiLink) means AI improvements compound across the entire value chain internally, unlike Western OEMs that depend on Tier 1 suppliers.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>EU and US tariffs on Chinese EVs (EU up to 45%) are compressing BYD's international expansion. Domestic price war in China is eroding margins — Q3 2025 revenue declined 3% YoY in RMB terms. Autonomous driving regulatory approval in non-Chinese markets remains years away. <span class="risk-label risk-med">MEDIUM</span></p>
+  </div>
+
+  <!-- ESTUN -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">ESTUN Automation Co. Ltd.</div>
+        <div class="company-exchange">Shenzhen Stock Exchange</div>
+      </div>
+      <span class="company-ticker">002747.SZ</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>ESTUN is China's largest domestic industrial robot manufacturer by shipments, ranked #2 overall in China (including foreign brands). Founded in 1993 and headquartered in Nanjing, ESTUN covers the full industrial automation stack from motion control components and servo drives to six-axis articulated robots, SCARA robots, and complete intelligent manufacturing systems. Trailing twelve-month revenue is approximately US$680M with a market cap of ~$2.76B.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>China's robot density catch-up:</strong> China's robot density (robots per 10,000 workers) is still well below South Korea, Germany, and Japan. The 14th Five-Year Plan targets a major uplift in manufacturing automation — ESTUN as the #1 domestic brand captures the national industrial policy tailwind directly.</li>
+      <li><strong>Foreign brand substitution:</strong> Chinese manufacturers that previously purchased FANUC, KUKA, or ABB robots are under increasing political pressure to source from domestic suppliers. ESTUN is the primary beneficiary of this substitution trend, backed by preferential procurement policies for state-linked manufacturers.</li>
+      <li><strong>AI-enhanced robot portfolio:</strong> ESTUN's latest robot generations incorporate AI-vision systems, force-sensing, and edge AI for adaptive manufacturing tasks — positioning it beyond pure motion control into the physical AI space.</li>
+    </ul>
+
+    <h3>Key Risk</h3>
+    <p>ESTUN competes against FANUC, ABB, Yaskawa, and KUKA — all of which have deeper technology IP, larger R&amp;D budgets, and more proven AI-robot integration. Margin pressure from aggressive domestic competition (Siasun, Inovance) is a persistent headwind. Small cap liquidity risk for international investors. <span class="risk-label risk-med">MED-HIGH</span></p>
+  </div>
+
+  <!-- Hesai -->
+  <div class="company-card">
+    <div class="company-header">
+      <div>
+        <div class="company-name">Hesai Group</div>
+        <div class="company-exchange">NASDAQ</div>
+      </div>
+      <span class="company-ticker">HSAI</span>
+    </div>
+
+    <h3>Background</h3>
+    <p>Hesai is the world's #1 automotive LiDAR supplier by revenue, commanding 33% global market share (40% in long-range automotive LiDAR as of August 2025). FY2025 revenue reached US$432.9M (+45.8% YoY), with GAAP net income of US$62M — making Hesai the world's first profitable LiDAR company. Q3 2025 standalone LiDAR shipments were 441,398 units, with the robotics/autonomy segment growing 1,311% YoY.</p>
+
+    <h3>Why This Theme</h3>
+    <ul>
+      <li><strong>Market leadership with profitability:</strong> Hesai is the only LiDAR company globally that has achieved scale (>400K units/quarter) combined with GAAP profitability — a combination that validates the business model and de-risks the investment vs. pure-play loss-making LiDAR peers (Luminar, Ouster).</li>
+      <li><strong>Li Auto exclusive design win:</strong> Hesai secured an exclusive LiDAR supply contract with Li Auto — a top-tier Chinese premium EV maker selling 50,000+ vehicles per month. Exclusive design wins are multi-year revenue locks with high switching costs.</li>
+      <li><strong>Dual-market exposure:</strong> Hesai supplies both automotive OEMs (ADAS) and the robotics/autonomous mobility segment (Pony.ai, Motional, JD Logistics). The robotics segment grew 1,311% YoY in Q3 2025 — even a small allocation to this segment creates significant upside optionality.</li>
+    </ul>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Top Pick — Theme C China</span>
+      Hesai is the highest-quality physical AI play in China by financial metrics. Profitable, growing 45% revenue YoY, world #1 market share, and exposed to both automotive and robotics waves simultaneously. NASDAQ listing gives international investors clean access without HKEX or Shenzhen liquidity constraints. For a pure Physical AI China bet with actual earnings, HSAI is the name.
+    </div>
+
+    <h3>Key Risk</h3>
+    <p>US-listed Chinese company faces ADR delisting risk from PCAOB audit access disputes. Commodity risk: LiDAR ASPs have been declining industry-wide as competition intensifies; Hesai must sustain volume growth faster than price declines. Luminar and Innoviz competing for autonomous vehicle design wins in non-Chinese markets. <span class="risk-label risk-med">MEDIUM</span></p>
+  </div>
+
+  <h2>Section Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Ticker</th><th>Exchange</th><th>Market Cap (approx)</th><th>Theme Fit</th><th>Risk Level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1211.HK</td><td>HKEX / SZ</td><td>~$110B</td><td>★★★★★</td><td><span class="risk-label risk-med">Medium</span></td></tr>
+        <tr><td>002747.SZ</td><td>Shenzhen</td><td>~$2.8B</td><td>★★★★☆</td><td><span class="risk-label risk-med">Med-High</span></td></tr>
+        <tr><td>HSAI</td><td>NASDAQ</td><td>~$2.0B</td><td>★★★★★</td><td><span class="risk-label risk-med">Medium</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <span class="callout-label">Portfolio Construction Note</span>
+    Across all three themes and both geographies, the top-conviction cluster is: <strong>AVGO + MSFT + ISRG + HSAI</strong> — combining US compute infrastructure, enterprise AI monetisation, proven surgical AI economics, and China's physical AI sensor leader. This quad offers geographic diversification, theme diversification, and meaningfully different risk profiles. Add SMIC for China semiconductor exposure with lower speculative premium than Cambricon.
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" placeholder="Add a comment…" data-section="S7 Theme C China" rows="2"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+  <div class="submit-block">
+    <button class="submit-btn" id="submit-btn" onclick="submitReview()">Submit Full Review</button>
+    <p id="submit-status"></p>
+  </div>
+</div>
+<script>
+const ZOOM_STEPS=[13,14,15,16,17,18,20,22];let zoomIdx=3;
+function zoomIn(){if(zoomIdx<ZOOM_STEPS.length-1)setZoom(++zoomIdx);}
+function zoomOut(){if(zoomIdx>0)setZoom(--zoomIdx);}
+function setZoom(i){document.documentElement.style.setProperty('--base-font',ZOOM_STEPS[i]+'px');}
+function toggleTheme(){const h=document.documentElement;const d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('theme-btn').textContent=d?'🌙':'☀️';}
+async function sendComment(btn){const b=btn.closest('.comment-block');const t=b.querySelector('.comment-input');const s=b.querySelector('.comment-status');const txt=t.value.trim();if(!txt)return;btn.disabled=true;s.textContent='Saving…';try{const r=await fetch(CONFIG.endpoint,{method:'POST',body:JSON.stringify({action:'comment',token:CONFIG.token,reportId:CONFIG.reportId,reportTitle:CONFIG.reportTitle,section:t.dataset.section,comment:txt})});const j=await r.json();if(j.status==='ok'){s.textContent='✓ Saved';t.value='';}else{s.textContent='✗ '+j.message;}}catch{s.textContent='✗ Failed';}finally{btn.disabled=false;}}
+async function submitReview(){const btn=document.getElementById('submit-btn');const s=document.getElementById('submit-status');btn.disabled=true;s.textContent='Submitting…';try{const r=await fetch(CONFIG.endpoint,{method:'POST',body:JSON.stringify({action:'submit',token:CONFIG.token,reportId:CONFIG.reportId,reportTitle:CONFIG.reportTitle})});const j=await r.json();s.textContent=j.status==='ok'?'✓ Submitted':'✗ '+j.message;}catch{s.textContent='✗ Failed';}finally{btn.disabled=false;}}
+</script>
+</body>
+</html>

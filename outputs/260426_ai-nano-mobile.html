@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Next Waves: Nano Supplier & Niche Clusters</title>
+<style>
+:root{--blue-dark:#1a3a5c;--blue-mid:#2471a3;--blue-light:#eaf4fb;--blue-border:#aed6f1;--orange:#b03a2e;--orange-light:#fdf2f0;--orange-border:#e59898;--green:#1e8449;--green-light:#eafaf1;--text:#1c2533;--text-muted:#5a6a7a;--bg:#f2f4f7;--card:#ffffff;--border:#dde4ed;--nav-bg:#1a3a5c;--nav-text:#ffffff;--input-bg:#f8fafc;--input-border:#c8d6e5;}
+[data-theme="dark"]{--blue-dark:#2471a3;--blue-mid:#5dade2;--blue-light:#1a2a3a;--blue-border:#2c4a6a;--orange:#e07060;--orange-light:#2a1a18;--orange-border:#8b4040;--green:#52c78a;--green-light:#0f2a1a;--text:#e8edf2;--text-muted:#8a9bac;--bg:#0f1923;--card:#1a2535;--border:#2a3a4a;--nav-bg:#0f1923;--nav-text:#e8edf2;--input-bg:#1e2d3d;--input-border:#2a3a4a;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:var(--base-font,16px);line-height:1.65;color:var(--text);background:var(--bg);}
+.sticky-nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);padding:8px 12px;display:flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(0,0,0,.25);flex-wrap:wrap;}
+.nav-title{color:var(--nav-text);font-weight:700;font-size:13px;white-space:nowrap;}
+.nav-pills{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-pill{background:rgba(255,255,255,.15);color:var(--nav-text);border:none;border-radius:12px;padding:3px 8px;font-size:11px;cursor:pointer;text-decoration:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:28px;}
+.nav-pill:hover{background:rgba(255,255,255,.3);}
+.nav-controls{display:flex;gap:4px;flex-shrink:0;margin-left:auto;}
+.ctrl-btn{background:rgba(255,255,255,.15);color:var(--nav-text);border:none;border-radius:6px;padding:4px 8px;font-size:12px;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:36px;}
+.ctrl-btn:hover{background:rgba(255,255,255,.25);}
+.page{max-width:600px;margin:0 auto;padding:16px 14px 80px;}
+@media(min-width:768px){.page{max-width:720px;padding:24px 24px 80px;}body{font-size:var(--base-font,17px);}}
+@media(min-width:1024px){.page{max-width:860px;}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.section-badge{background:var(--blue-mid);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+.section-title{font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--blue-dark);}
+.cluster-badge{display:inline-block;background:var(--blue-dark);color:#fff;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:10px;}
+.company-card{border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:12px;background:var(--input-bg);}
+.company-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px;}
+.company-name{font-size:15px;font-weight:800;color:var(--blue-dark);}
+.company-ticker{background:var(--blue-dark);color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;}
+h2{font-size:17px;font-weight:700;color:var(--blue-mid);margin:16px 0 8px;}
+h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:12px 0 6px;color:var(--text);}
+p{margin-bottom:10px;}
+ul,ol{padding-left:20px;margin-bottom:10px;}
+li{margin-bottom:4px;}
+.table-wrap{overflow-x:auto;margin:12px 0;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+th{background:var(--blue-dark);color:#fff;padding:8px 10px;text-align:left;font-weight:700;}
+td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:nth-child(even) td{background:var(--input-bg);}
+.table-hint{font-size:11px;color:var(--text-muted);text-align:center;font-style:italic;margin-top:4px;}
+.callout{background:var(--blue-light);border-left:4px solid var(--blue-mid);border-radius:0 8px 8px 0;padding:12px 14px;margin:14px 0;}
+.callout-orange{background:var(--orange-light);border-left-color:var(--orange);}
+.callout-green{background:var(--green-light);border-left-color:var(--green);}
+.callout-label{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px;color:var(--blue-mid);}
+.callout-orange .callout-label{color:var(--orange);}
+.callout-green .callout-label{color:var(--green);}
+.comment-block{margin-top:16px;border-top:1px solid var(--border);padding-top:14px;}
+.comment-input{width:100%;display:block;font-size:16px;font-family:inherit;padding:8px 10px;border:1px solid var(--input-border);border-radius:8px;background:var(--input-bg);color:var(--text);resize:vertical;-webkit-appearance:none;}
+.comment-actions{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.send-btn{background:var(--blue-mid);color:#fff;border:none;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:36px;}
+.comment-status{font-size:13px;color:var(--text-muted);}
+.submit-block{text-align:center;padding:24px 0;}
+.submit-btn{background:var(--green);color:#fff;border:none;border-radius:10px;padding:12px 28px;font-size:16px;font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:44px;}
+#submit-status{margin-top:8px;font-size:14px;color:var(--text-muted);}
+.meta-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+.meta-tag{background:var(--blue-light);border:1px solid var(--blue-border);color:var(--blue-dark);padding:3px 9px;border-radius:10px;font-size:12px;font-weight:600;}
+.cluster-map-table{font-size:13px;}
+.high{color:#1e8449;font-weight:700;}
+.med{color:#b7950b;font-weight:700;}
+.low-risk{color:#2471a3;font-weight:700;}
+.section-intro{color:var(--text-muted);font-size:14px;margin-bottom:14px;line-height:1.6;}
+</style>
+</head>
+<body>
+<script>
+const CONFIG={endpoint:'https://script.google.com/macros/s/AKfycbxebGoKMGmazBwIVA8QilB7Eyqdit4i5riCH1u65p_M3KczcItcS7ey-Az_Y8Kn7XXSQA/exec',token:'vscc-2026-xk9',reportId:'260426_ai-nano',reportTitle:'AI Next Waves: Nano Supplier & Niche Clusters'};
+</script>
+<nav class="sticky-nav">
+  <span class="nav-title">🔬 Nano Clusters</span>
+  <div class="nav-pills">
+    <a class="nav-pill" href="#s1">Map</a>
+    <a class="nav-pill" href="#s2">C1</a>
+    <a class="nav-pill" href="#s3">C2</a>
+    <a class="nav-pill" href="#s4">C3</a>
+    <a class="nav-pill" href="#s5">C4</a>
+    <a class="nav-pill" href="#s6">C5</a>
+    <a class="nav-pill" href="#s7">C6</a>
+  </div>
+  <div class="nav-controls">
+    <button class="ctrl-btn" onclick="zoomOut()">A−</button>
+    <button class="ctrl-btn" onclick="zoomIn()">A+</button>
+    <button class="ctrl-btn" id="theme-btn" onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+<div class="page">
+
+<!-- ===== S1: METHODOLOGY & CLUSTER MAP ===== -->
+<div class="card" id="s1">
+  <div class="section-header">
+    <div class="section-badge">S1</div>
+    <div class="section-title">Methodology &amp; Cluster Map</div>
+  </div>
+  <div class="meta-row">
+    <span class="meta-tag">Stage 3 of 3</span>
+    <span class="meta-tag">Nano: Enablers &amp; Suppliers</span>
+    <span class="meta-tag">6 Clusters · 18 Companies</span>
+    <span class="meta-tag">26 Apr 2026</span>
+  </div>
+
+  <h2>Why Nano? The Logic of Supplier Investing</h2>
+  <p>The Macro stage identified the structural forces (US–China AI race, physical AI, sovereign infrastructure). The Micro stage named 18 specific beneficiaries across Compute, Foundation Models, and Autonomous/Physical AI. Nano goes one level deeper: <strong>who do all 18 of those companies depend on?</strong></p>
+  <p>The method is a supply chain intersection analysis. For each of the 18 Micro companies, we map backwards to identify critical inputs — packaging, EDA tools, power, sensors, memory, and data infrastructure — then cluster companies where the customer base overlaps across multiple Micro themes. The result is 6 clusters of non-obvious, high-conviction enablers.</p>
+  <p>Why prefer these over headline names? Three reasons: (1) Enablers capture AI capex regardless of which GPU or model wins. (2) They face less valuation competition from retail flows — most are not "AI stocks" in public narrative. (3) Switching costs and supply constraints create durable pricing power that pure software or chip names rarely achieve at scale.</p>
+
+  <h2>Master Cluster Map</h2>
+  <div class="table-wrap">
+    <table class="cluster-map-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Cluster Name</th>
+          <th>Theme Linkage</th>
+          <th>Listed Cos</th>
+          <th>Supply Criticality</th>
+          <th>Conviction</th>
+          <th>Risk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>C1</td>
+          <td>Advanced Semiconductor Packaging</td>
+          <td>A, B</td>
+          <td>3</td>
+          <td class="high">HIGH</td>
+          <td class="high">HIGH</td>
+          <td class="med">MED</td>
+        </tr>
+        <tr>
+          <td>C2</td>
+          <td>EDA Software &amp; Chip IP</td>
+          <td>A</td>
+          <td>3</td>
+          <td class="high">HIGH</td>
+          <td class="high">HIGH</td>
+          <td class="low-risk">LOW</td>
+        </tr>
+        <tr>
+          <td>C3</td>
+          <td>AI Data Centre Power &amp; Cooling</td>
+          <td>B</td>
+          <td>3</td>
+          <td class="high">HIGH</td>
+          <td class="high">HIGH</td>
+          <td class="low-risk">LOW</td>
+        </tr>
+        <tr>
+          <td>C4</td>
+          <td>Precision Sensors &amp; LiDAR</td>
+          <td>C</td>
+          <td>3</td>
+          <td class="med">MED</td>
+          <td class="med">MED</td>
+          <td class="med">MED</td>
+        </tr>
+        <tr>
+          <td>C5</td>
+          <td>HBM &amp; High-Bandwidth Memory</td>
+          <td>A, B</td>
+          <td>3</td>
+          <td class="high">HIGH</td>
+          <td class="high">HIGH</td>
+          <td class="med">MED</td>
+        </tr>
+        <tr>
+          <td>C6</td>
+          <td>AI Data Infrastructure &amp; Orchestration</td>
+          <td>B, C</td>
+          <td>3</td>
+          <td class="med">MED</td>
+          <td class="med">MED</td>
+          <td class="med">MED</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="table-hint">Theme A = Compute/Chips · Theme B = Foundation Models/Infra · Theme C = Autonomous/Physical AI</p>
+  </div>
+
+  <div class="callout">
+    <span class="callout-label">Why These Are Non-Obvious</span>
+    None of these 18 companies trend on financial social media as "AI plays." ASE Technology, Synopsys, Vertiv, Keyence, SK Hynix, Informatica — these are supply chain facts, not narrative trades. They were high-conviction businesses before the AI wave, and the wave is now lifting all of their boats simultaneously. The key difference from owning NVDA at 35x sales: you are buying the picks-and-shovels merchants, not the gold rush story.
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" rows="2" placeholder="Comment on methodology..." data-section="S1 Methodology"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== S2: CLUSTER 1 — ADVANCED SEMICONDUCTOR PACKAGING ===== -->
+<div class="card" id="s2">
+  <div class="section-header">
+    <div class="section-badge">C1</div>
+    <div class="section-title">Advanced Semiconductor Packaging</div>
+  </div>
+  <span class="cluster-badge">Theme A · Theme B Linkage</span>
+  <p>The unsung bottleneck of the AI hardware stack — every NVDA Blackwell, AMD MI300X, and Cambricon chip needs advanced 2.5D/3D packaging to physically connect GPU dies to HBM memory stacks at ultra-high bandwidth. CoWoS capacity at TSMC is fully booked through 2026. OSATs (Outsourced Semiconductor Assembly and Test) are the relief valve — and they are printing money.</p>
+
+  <h2>Why High-Potential</h2>
+  <ul>
+    <li><strong>Hard physical constraint:</strong> Advanced packaging requires specialised equipment (lithography, thermal compression bonding) and multi-year factory buildouts. No shortcut exists.</li>
+    <li><strong>Pricing power:</strong> TSMC CoWoS-L/S reportedly fully booked; OSAT partners such as ASE commanding premium ASPs for CoWoP solutions.</li>
+    <li><strong>Customer lock-in:</strong> Packaging is co-designed with chip architecture — switching mid-generation is not feasible.</li>
+    <li><strong>Cross-theme demand:</strong> AI accelerators (Theme A), hyperscaler custom silicon (Theme B), and automotive AI chips (Theme C) all require advanced packaging.</li>
+  </ul>
+
+  <!-- Company 1: ASE Technology -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">ASE Technology Holding</span>
+      <span class="company-ticker">ASEH / ASX · NYSE</span>
+    </div>
+    <h3>Background</h3>
+    <p>World's largest OSAT (outsourced semiconductor assembly and test) company. Revenue scale: ~US$20B+ annually. Dominant in advanced IC packaging including CoWoS, SiP, and fan-out solutions serving NVDA, AMD, Apple, and Qualcomm.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>Advanced packaging revenue projected to surge from US$600M (2024) to US$3.2B (2025) — a near 5x jump driven directly by AI chipmaker demand, primarily Nvidia.</li>
+      <li>CoWoS capacity set to more than triple to 20,000–25,000 wafers/month by end-2025. New K18B plant in Kaohsiung groundbroken specifically for AI packaging demand.</li>
+      <li>Backlog for AI-related CoWoS assembly secured into 2027. CapEx raised by US$1B for 2025 to exceed US$6B total — management's confidence vote on demand durability.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Concentration on NVDA and a handful of AI customers. If NVDA shifts architectures or internalises more packaging via TSMC SoIC, ASE's premium volumes could compress. Trade restrictions on China operations also add geopolitical exposure.</p>
+  </div>
+
+  <!-- Company 2: Amkor Technology -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Amkor Technology</span>
+      <span class="company-ticker">AMKR · NASDAQ</span>
+    </div>
+    <h3>Background</h3>
+    <p>Second-largest global OSAT. FY2025 net sales of US$6.71B (+6% YoY), with record advanced packaging revenue. Strong in 2.5D packaging (HDFO) and system-in-package for AI and HPC applications. US-based listing with manufacturing in Korea, Taiwan, Vietnam, and Portugal.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>Computing segment (AI/HPC) grew 16% for full-year 2025 and 6% in Q4 alone. Advanced packaging achieved new revenue record.</li>
+      <li>CEO Kevin Engel guided computing revenue to grow over 20% in 2026; 2.5D and HDFO platforms expected to nearly triple in revenue — a very specific and bullish data point.</li>
+      <li>Q4 2025 EPS of US$0.69 beat estimates by 56.8%, reflecting margin expansion from premium packaging ASPs and operational leverage.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Smaller scale than ASE limits negotiating power. Customer concentration in Apple (consumer electronics) means any Apple slowdown offsets AI tailwind. Execution risk on new factory ramps in Portugal and Vietnam.</p>
+  </div>
+
+  <!-- Company 3: JCET Group -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">JCET Group</span>
+      <span class="company-ticker">600584 · Shanghai A</span>
+    </div>
+    <h3>Background</h3>
+    <p>China's largest OSAT, spun out of Jiangsu Changjiang Electronics. FY2025 revenue of RMB 38.87B (~US$5.4B), up 8.1% YoY — record high. Advanced packaging revenue reached RMB 27B. Key supplier to Chinese AI chipmakers including Cambricon and Haiguang, insulated from US-China trade frictions that affect NVDA/AMD supply chains.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>Computing electronics revenue grew 42.6% YoY in 2025, driven by domestic AI chip demand as China's semiconductor self-sufficiency push accelerates.</li>
+      <li>Unique strategic position: as US OSATs face restrictions on serving Chinese chip companies, JCET fills the gap — it is the de facto packaging partner for China's emerging AI chip ecosystem.</li>
+      <li>Automotive electronics revenue grew 31.7% YoY, adding a second growth vector via Chinese EV/ADAS chip demand (BYD, ESTUN, Hesai customer overlap).</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>A-share liquidity risk for non-domestic investors. Revenue tied to China domestic chip demand — if US export controls on chip manufacturing equipment tighten further, JCET's customers face their own constraints. Gross margins lag global peers.</p>
+  </div>
+
+  <h2>Investment Scorecard</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Company</th><th>Ticker</th><th>AI Rev Exposure</th><th>Moat</th><th>Risk</th><th>Conviction</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ASE Technology</td><td>ASEH</td><td>~16% of revenue; growing to ~25%+</td><td>HIGH — scale + CoWoP IP</td><td>MED</td><td class="high">HIGH</td></tr>
+        <tr><td>Amkor</td><td>AMKR</td><td>~25% computing; all AI-adjacent</td><td>MED-HIGH — HDFO platform</td><td>MED</td><td class="high">HIGH</td></tr>
+        <tr><td>JCET Group</td><td>600584</td><td>~40%+ computing/AI segments</td><td>MED — China captive market</td><td>MED-HIGH</td><td class="med">MED</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Investment Thesis</span>
+    Advanced packaging is the physical bottleneck of the AI chip revolution. TSMC cannot serve all demand — OSATs like ASE and Amkor are not downstream commodities but critical path partners co-designing AI chip interconnects. With AI packaging revenue growing 5x in one year and backlogs locked to 2027, these companies are rare cases where demand visibility matches or exceeds semiconductor fab names, at a fraction of the valuation premium.
+  </div>
+
+  <div class="callout callout-orange">
+    <span class="callout-label">Watch Out</span>
+    "Advanced packaging" is not all packaging. Traditional IC assembly (wire bonding, leaded packages) is a low-margin commodity. Confirm that AI/advanced packaging revenue is broken out and growing — do not conflate with legacy business. Also watch for TSMC SoIC (system-on-integrated-chip) capacity expansion, which could partially substitute OSAT demand.
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Top Pick: ASEH</span>
+    ASE Technology is the highest-conviction C1 pick. World's largest OSAT, near-5x advanced packaging revenue growth in 2025, AI backlog secured to 2027, and a Taiwan listing that avoids China policy risk. Entry on broad semiconductor pullbacks is the preferred approach.
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" rows="2" placeholder="Comment on C1 Advanced Packaging..." data-section="C1 Advanced Packaging"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== S3: CLUSTER 2 — EDA SOFTWARE & CHIP IP ===== -->
+<div class="card" id="s3">
+  <div class="section-header">
+    <div class="section-badge">C2</div>
+    <div class="section-title">EDA Software &amp; Chip IP</div>
+  </div>
+  <span class="cluster-badge">Theme A Linkage · All 6 Chip Companies</span>
+  <p>Every chip that NVDA, AMD, AVGO, Cambricon, Haiguang, and SMIC design passes through EDA (Electronic Design Automation) tools and licenced IP blocks before a single wafer is processed. The EDA duopoly of Synopsys and Cadence, plus Arm's CPU/NPU IP, form an absolute chokepoint in the AI chip supply chain. Switching costs are effectively infinite — chip designs are built inside these tools over multi-year development cycles.</p>
+
+  <h2>Why High-Potential</h2>
+  <ul>
+    <li><strong>Near-infinite switching costs:</strong> Entire design teams, PDKs, and IP libraries are embedded in EDA vendor environments. Re-qualification alone takes 2–4 years.</li>
+    <li><strong>Revenue visibility:</strong> Both SNPS and CDNS operate on 3-year backlog contracts. SNPS exited FY2025 with a record US$11.4B backlog.</li>
+    <li><strong>AI multiplier within EDA:</strong> AI chips are more complex (chiplet designs, 3D integration) and require more EDA hours per tapeout than previous generations.</li>
+    <li><strong>Arm royalty leverage:</strong> Every additional Arm-based AI chip sold generates automatic royalty revenue — pure operating leverage with no incremental cost.</li>
+  </ul>
+
+  <!-- Company 1: Synopsys -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Synopsys</span>
+      <span class="company-ticker">SNPS · NASDAQ</span>
+    </div>
+    <h3>Background</h3>
+    <p>The world's #1 EDA company by revenue. FY2025 revenue of US$7.054B (+15% YoY). Completed the Ansys acquisition (US$35B), adding simulation software and transforming SNPS into a broader engineering design platform. Nearly 5,000 active AI-assisted design users among Tier-1 semiconductor customers.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>Design Automation revenue grew 65% YoY in Q4 FY2025, reflecting surging demand as AI chipmakers accelerate tapeout cycles.</li>
+      <li>Record backlog of US$11.4B — 41% higher than a year earlier. This is 18 months of forward revenue visibility. Most software companies would kill for this.</li>
+      <li>FY2026 guidance of US$9.61B (mid-point) includes US$2.9B Ansys contribution. Combined SNPS+Ansys creates the most comprehensive chip-to-system design platform — essential for AI factory buildouts.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>China revenue declined 18% in FY2025 due to export controls — this is a real and ongoing headwind. At ~17–18% of prior revenue, China exposure is material. Premium valuation (~40x forward earnings) leaves limited margin for error on growth deceleration.</p>
+  </div>
+
+  <!-- Company 2: Cadence -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Cadence Design Systems</span>
+      <span class="company-ticker">CDNS · NASDAQ</span>
+    </div>
+    <h3>Background</h3>
+    <p>The world's #2 EDA platform. FY2025 revenue of US$5.297B (+14% YoY). Operates at a 45% operating margin — extraordinary for a software company of its scale. Record backlog of US$7.8B as of year-end 2025. Known for digital full-flow EDA, custom/analog design, and Cadence IP.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>Core EDA grew 13% in FY2025 driven by hyperscaler adoption — hyperscalers (MSFT, GOOGL, META, Baidu, Alibaba) are now designing their own custom AI chips inside Cadence tools.</li>
+      <li>IP business grew nearly 25% in 2025, driven by AI, HPC, and automotive customers licensing Cadence SerDes and memory interface IP for chiplet integration.</li>
+      <li>Hardware emulation (used to validate AI chip designs pre-silicon) added 30+ new customers in 2025. Each hardware system sold generates years of follow-on software licensing.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Same China exposure risk as Synopsys. Valuation is demanding but not quite as stretched as SNPS. The bigger risk is if AI chip complexity plateaus — Cadence's revenue growth is highly correlated to the number and complexity of new AI chip tapeouts per year.</p>
+  </div>
+
+  <!-- Company 3: Arm Holdings -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Arm Holdings</span>
+      <span class="company-ticker">ARM · NASDAQ</span>
+    </div>
+    <h3>Background</h3>
+    <p>Designs the CPU, GPU, and NPU IP that is licensed to virtually every chip company globally. Arm-based chips power Apple Silicon, Qualcomm Snapdragon, AWS Graviton, Google TPUs, and increasingly AI edge devices. Revenue model: licence fees upfront + royalties per chip shipped.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>Royalty revenue grew 27% YoY to a record US$737M in its most recent quarter. Data centre royalties doubled YoY as hyperscalers shift to Arm-based server chips. Hyperscaler Arm share approaching 50%.</li>
+      <li>Arm claims the AGI CPU strategy that could grow total revenue from ~US$4B (2025) to US$25B by 2031. The near-term story is royalty leverage — every Arm Neoverse chip sold by AWS, Google, or Microsoft generates compounding royalty income.</li>
+      <li>Armv9 architecture commands higher royalty rates than Armv8 — as AI deployments shift to latest-gen hardware, Arm's per-chip revenue automatically increases without additional sales effort.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>At current valuation (>100x forward earnings), Arm prices in substantial execution on the AGI chip ambitions that generate "material revenue" only from 2028. The stock is not cheap — it is a quality bet on the long-term dominance of Arm architecture in AI, which is high-probability but priced for perfection near-term.</p>
+  </div>
+
+  <h2>Investment Scorecard</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Company</th><th>Ticker</th><th>AI Rev Exposure</th><th>Moat</th><th>Risk</th><th>Conviction</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Synopsys</td><td>SNPS</td><td>~80%+ of EDA tied to chip design</td><td>VERY HIGH — US$11.4B backlog</td><td>MED (China)</td><td class="high">HIGH</td></tr>
+        <tr><td>Cadence</td><td>CDNS</td><td>~80%+ of EDA tied to chip design</td><td>VERY HIGH — 45% op margins</td><td>MED (China)</td><td class="high">HIGH</td></tr>
+        <tr><td>Arm Holdings</td><td>ARM</td><td>~100% — all royalties from chips</td><td>EXTREME — architecture lock-in</td><td>HIGH (valuation)</td><td class="high">HIGH</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Investment Thesis</span>
+    EDA and chip IP are the most durable moats in the entire AI supply chain. Synopsys and Cadence together control ~90% of the EDA market, with switching costs that are effectively permanent — multi-billion dollar chip designs are not re-platformed mid-cycle. As AI chips grow more complex (chiplets, 3D stacking, custom architectures), EDA demand per chip design hour increases. Both companies can grow revenue at double-digits for a decade without winning a single new account.
+  </div>
+
+  <div class="callout callout-orange">
+    <span class="callout-label">Watch Out</span>
+    US export controls are tightening the China EDA market. SNPS and CDNS are already seeing China revenue declines. Watch for further BIS restrictions targeting EDA tool exports — this is a known and ongoing risk that could grow from 18% headwind to a more systemic revenue gap.
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Top Pick: CDNS</span>
+    Cadence is the preferred C2 entry for risk-adjusted conviction. Slightly lower valuation than SNPS, same durable moat, 45% operating margins, and a record US$7.8B backlog. The IP business growing 25% adds a second revenue vector beyond core EDA. More insulated from China exposure than Synopsys given customer mix.
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" rows="2" placeholder="Comment on C2 EDA & Chip IP..." data-section="C2 EDA & Chip IP"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== S4: CLUSTER 3 — AI DATA CENTRE POWER & COOLING ===== -->
+<div class="card" id="s4">
+  <div class="section-header">
+    <div class="section-badge">C3</div>
+    <div class="section-title">AI Data Centre Power &amp; Cooling</div>
+  </div>
+  <span class="cluster-badge">Theme B Linkage · All 6 Foundation Model Companies</span>
+  <p>Every GPU cluster needs power delivery and thermal management before it can turn on. MSFT, GOOGL, META, Baidu, Alibaba, and Tencent are collectively committing over US$300B to data centre capex in 2025–2026. The physical infrastructure layer — power conversion, uninterruptible power supply, liquid cooling, and high-speed networking — is an underappreciated beneficiary that grows proportionally with every dollar of hyperscaler spend.</p>
+
+  <h2>Why High-Potential</h2>
+  <ul>
+    <li><strong>Proportional capex capture:</strong> For every US$1 of GPU spend, approximately US$0.50–1.00 is spent on power and cooling. This ratio rises with AI rack densities (now 100–400kW per rack vs 10kW previously).</li>
+    <li><strong>Liquid cooling inflection:</strong> Air cooling reaches physical limits above ~50kW per rack. Liquid cooling is no longer optional for AI clusters — it is mandatory. This creates a new product cycle for incumbents.</li>
+    <li><strong>Long backlog visibility:</strong> Vertiv's backlog reached US$9.5B (+30% YoY); Eaton's total backlog hit record US$19.6B. These are 12–24 month visibility windows.</li>
+    <li><strong>Network bandwidth as constraint:</strong> AI training and inference require ultra-low-latency, ultra-high-bandwidth network fabrics — Arista Networks is the de facto standard for AI data centre spine networking.</li>
+  </ul>
+
+  <!-- Company 1: Vertiv -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Vertiv Holdings</span>
+      <span class="company-ticker">VRT · NYSE</span>
+    </div>
+    <h3>Background</h3>
+    <p>The leading provider of power and cooling infrastructure for data centres — UPS systems, precision cooling, power distribution units, and thermal management. Revenue scale: ~US$10B+ (FY2025 guidance raised to US$10.16–10.24B). Serves all major hyperscalers globally.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>Q3 2025 revenue of US$2.676B, up 29% YoY. Americas segment grew 43%. Organic orders grew approximately 60% YoY in Q3 2025 — this is demand backlog building, not yet revenue.</li>
+      <li>Backlog of US$9.5B with a book-to-bill ratio of ~1.4x — every dollar of revenue recognised is being replaced by 1.4x new orders. Revenue acceleration is the base case.</li>
+      <li>Liquid cooling product line directly addresses the GPU rack density problem. Vertiv's CEO explicitly called the liquid-cooling inflection "accelerating and evolving" for AI workloads specifically.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Vertiv's revenue is highly concentrated in hyperscaler customers. Any pause or capex cycle reversal from the top 5 hyperscalers would crater orders quickly. Supply chain execution risk on scaling liquid cooling manufacturing — a new product category at volume.</p>
+  </div>
+
+  <!-- Company 2: Eaton -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Eaton Corporation</span>
+      <span class="company-ticker">ETN · NYSE</span>
+    </div>
+    <h3>Background</h3>
+    <p>Diversified power management conglomerate with ~US$27.4B in FY2025 revenue. The data centre segment has become the primary growth engine, with electrical Americas orders accelerating 200% in Q4 2025. Eaton partnered directly with Nvidia on the "Beam Rubin DSX" grid-to-chip power architecture for AI factories — a notable technical validation of its position.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>Data centre business grew 40% in Q3 2025 alone. Total backlog reached a record US$19.6B — roughly 9 months of forward revenue. Eaton's revenue target of US$33.7B by 2028 implies sustained high-single-digit annual growth.</li>
+      <li>Nvidia partnership on grid-to-chip power architecture (announced March 2025) positions Eaton as a preferred supplier for AI factory buildouts — not just a commodity vendor but an integrated power architecture partner.</li>
+      <li>Acquisition of Boyd Thermal (US$9.5B) for liquid cooling and Resilient Power Systems (US$150M) shows strategic intent to own the full power+cooling stack, not just one product line.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Eaton is a diversified industrial — 60%+ of revenue comes from non-data-centre businesses (aerospace, vehicle, industrial). AI tailwind is real but diluted by legacy segments. If data centre capex moderates, the stock multiple could compress quickly given it is now priced as an AI infrastructure play.</p>
+  </div>
+
+  <!-- Company 3: Arista Networks -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Arista Networks</span>
+      <span class="company-ticker">ANET · NYSE</span>
+    </div>
+    <h3>Background</h3>
+    <p>The leading vendor of cloud networking switches and software for large data centres. FY2025 revenue of US$9B (+28.6% YoY). AI data centre networking revenue exceeded US$2.75B in 2025, up from a US$1.5B target set 12 months prior. Operating model: merchant silicon (Broadcom) + proprietary EOS software.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>AI and data centre products contributed 65% of FY2025 revenue. AI networking revenue more than doubled in 18 months — from ~US$750M target to actual US$2.75B delivery.</li>
+      <li>AI networking revenue expected to double again in 2026 to US$3.25B. The upgrade cycle from 400GbE to 800GbE switches is happening now as AI GPU clusters require higher bandwidth between nodes.</li>
+      <li>Q4 2025 revenue of US$2.488B, up 28.9% YoY. Arista's software moat (EOS) creates sticky recurring revenue — once a data centre is automated with EOS, ripping it out is not an option mid-generation.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Cisco is aggressively re-entering the AI networking market. Juniper has been acquired. If Broadcom (merchant silicon supplier) launches competing network switching products or if hyperscalers vertically integrate networking silicon (as they have done with CPUs/GPUs), Arista's hardware margin could compress. Customer concentration in top 5 hyperscalers is notable.</p>
+  </div>
+
+  <h2>Investment Scorecard</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Company</th><th>Ticker</th><th>AI Rev Exposure</th><th>Moat</th><th>Risk</th><th>Conviction</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Vertiv</td><td>VRT</td><td>~60%+ data centre; majority AI</td><td>HIGH — liquid cooling IP</td><td>MED</td><td class="high">HIGH</td></tr>
+        <tr><td>Eaton</td><td>ETN</td><td>~30–35% data centre; NVIDIA partner</td><td>MED-HIGH — scale + NVDA tie-in</td><td>LOW-MED</td><td class="high">HIGH</td></tr>
+        <tr><td>Arista Networks</td><td>ANET</td><td>~65% AI/cloud; 30%+ AI networking</td><td>HIGH — EOS software moat</td><td>MED</td><td class="high">HIGH</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Investment Thesis</span>
+    Power and networking infrastructure are the unsexy but non-optional layer of AI data centre buildouts. A GPU cluster without power delivery and network fabric is an expensive paperweight. Vertiv, Eaton, and Arista capture a fixed share of every dollar of hyperscaler capex — and that capex is being committed publicly, multi-year, by MSFT, GOOGL, META, and the Chinese hyperscalers simultaneously. The backlog visibility (US$9.5B at Vertiv, US$19.6B at Eaton) is unlike anything seen in industrial history.
+  </div>
+
+  <div class="callout callout-orange">
+    <span class="callout-label">Watch Out</span>
+    All three companies are exposed to a scenario where hyperscaler AI capex pauses or shifts timeline. The 200%+ order growth at Eaton and 60%+ at Vertiv reflects backlog building — if AI monetisation disappoints (hyperscalers cannot generate AI revenue to justify the capex), cancellations could hit hard. Watch hyperscaler capex guidance calls quarterly for early warning.
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Top Pick: VRT</span>
+    Vertiv is the highest-conviction C3 pick. Pure-play on data centre power and cooling with US$9.5B backlog (1.4x book-to-bill), 29% revenue growth, and liquid cooling positioned at the inflection. Less diluted by non-AI revenues than Eaton. Entry on broad market pullbacks preferred — the stock is volatile but the underlying demand is not.
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" rows="2" placeholder="Comment on C3 Power & Cooling..." data-section="C3 Power & Cooling"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== S5: CLUSTER 4 — PRECISION SENSORS & LIDAR ===== -->
+<div class="card" id="s5">
+  <div class="section-header">
+    <div class="section-badge">C4</div>
+    <div class="section-title">Precision Sensors &amp; LiDAR</div>
+  </div>
+  <span class="cluster-badge">Theme C Linkage · Physical AI Enablers</span>
+  <p>Physical AI — autonomous vehicles, industrial robots, surgical systems — cannot exist without perception. Sensors are the eyes and ears of every robot, EV, autonomous vehicle, and smart factory. This cluster spans machine vision (Cognex, Keyence) for industrial automation and LiDAR (Hesai) for automotive and robotics — the lowest-level physical enablers of the physical AI megatrend.</p>
+
+  <h2>Why High-Potential</h2>
+  <ul>
+    <li><strong>Non-substitutable hardware:</strong> Software models need sensor data to learn and act. No sensor = no physical AI. Unlike pure software, sensor vendors cannot be disrupted by a model upgrade.</li>
+    <li><strong>Volume leverage:</strong> As TSLA, BYD, ESTUN, and Hesai (as customer) scale production, sensor attachment rates per vehicle/robot generate compounding volume growth.</li>
+    <li><strong>Industrial AI retrofit cycle:</strong> Factories globally are adding machine vision to quality control and robotics integration — a multi-decade retrofit opportunity.</li>
+    <li><strong>China LiDAR dominance:</strong> Hesai is the world's first profitable LiDAR company, with Chinese OEM relationships unmatched by Western peers.</li>
+  </ul>
+
+  <!-- Company 1: Cognex -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Cognex Corporation</span>
+      <span class="company-ticker">CGNX · NASDAQ</span>
+    </div>
+    <h3>Background</h3>
+    <p>The global leader in machine vision systems — cameras, vision sensors, and AI-powered software for factory automation. FY2025 revenue of US$994M (+9% YoY). Primary markets: logistics, consumer electronics, automotive, packaging. Gross margins consistently above 70% — a software-like business in hardware form.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>AI-embedded vision systems reduce deployment complexity — Cognex's stated differentiation is AI tools that make vision systems "easier to deploy" without specialist engineering. This lowers the barrier for SME manufacturers to adopt machine vision, expanding the addressable market.</li>
+      <li>Adjusted EBITDA margin reached 21.5% in FY2025 (+440bps YoY) — margin recovery signals the capex downcycle in consumer electronics and EVs is bottoming, with factory automation re-investment beginning.</li>
+      <li>Deep integration with ROK (Rockwell Automation) customer base — as Rockwell deploys industrial AI software, Cognex vision systems are the natural sensor layer, creating a cross-selling opportunity.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Cognex is cyclically exposed to EV factory buildout timelines (a major revenue source) and consumer electronics (Apple supply chain). Both have been headwinds in 2023–2024. The AI tailwind is real but small relative to these macro cyclical forces at current scale. Revenue growth at 9% is modest compared to digital AI peers.</p>
+  </div>
+
+  <!-- Company 2: Keyence -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Keyence Corporation</span>
+      <span class="company-ticker">6861 · Tokyo Prime</span>
+    </div>
+    <h3>Background</h3>
+    <p>Japan's most profitable industrial technology company. Revenue of ¥1,059B (~US$7.3B) for FY ending March 2025. Operating margins consistently above 50% — unmatched in global industrials. Fabless + direct-sales model: Keyence designs sensors and vision systems, outsources manufacturing, and sells direct to factories globally, eliminating distributor margin and owning customer relationships.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>Committed to embedding AI across 50+ product lines — a stated roadmap, not a concept. Predictive maintenance platform launched for industrial customers creates a recurring software revenue layer on top of hardware.</li>
+      <li>Direct sales model gives Keyence unparalleled insight into factory digitalisation trends globally. As physical AI (robots, smart manufacturing) expands, Keyence is already inside those factories with sensor relationships.</li>
+      <li>At 50%+ operating margin with ¥1 trillion revenue, Keyence is not cheap, but it is the world's highest-quality industrial technology franchise — a compounder that grows regardless of which AI model wins.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Yen strength is a structural headwind — most of Keyence's revenue is earned overseas and converted back to JPY. A further JPY appreciation cycle would mechanically reduce reported revenue without underlying business deterioration. Japanese market also limits accessibility for non-Asia investors.</p>
+  </div>
+
+  <!-- Company 3: Hesai Group -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Hesai Group</span>
+      <span class="company-ticker">HSAI · NASDAQ</span>
+    </div>
+    <h3>Background</h3>
+    <p>The world's largest and first profitable LiDAR company. FY2025 revenue of US$432.9M (+45.8% YoY). Shipped 1,620,406 LiDAR units in 2025. Customers include leading Chinese EV OEMs (BYD, Li Auto, NIO, SAIC) and robotics companies. US-listed Chinese company; clear beneficiary of China's physical AI buildout.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>First profitable LiDAR company globally — Q4 2025 revenue of US$143.1M, GAAP net income positive for full year 2025 at US$62M. Profitability is the key differentiator — peers like Luminar remain loss-making with no credible path to scale.</li>
+      <li>2026 shipment guidance raised to 3–3.5M units (vs 1.62M in 2025), with capacity planned for 4M+ units. The volume ramp is driven by BYD, ESTUN, and autonomous robotics deployments — exact customer overlap with Theme C Micro names.</li>
+      <li>Robotics as the second growth vector: autonomous delivery robots, warehouse robots, and humanoid robots all require LiDAR. Hesai's AT128 (automotive-grade) and QT128 (short-range robotics) platforms address both markets.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>US-China geopolitical risk is the primary concern — Hesai is on US government watch lists due to Chinese military-civil fusion concerns. Any export restriction, delisting threat, or US customer ban would materially impair the business. Tariffs on Chinese hardware also create pricing pressure for any non-China customers.</p>
+  </div>
+
+  <h2>Investment Scorecard</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Company</th><th>Ticker</th><th>AI Rev Exposure</th><th>Moat</th><th>Risk</th><th>Conviction</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cognex</td><td>CGNX</td><td>~100% industrial automation/AI</td><td>HIGH — software-grade margins</td><td>MED (cyclical)</td><td class="med">MED</td></tr>
+        <tr><td>Keyence</td><td>6861</td><td>~100% industrial automation/AI</td><td>EXTREME — direct sales + margins</td><td>LOW-MED</td><td class="high">HIGH</td></tr>
+        <tr><td>Hesai</td><td>HSAI</td><td>~100% autonomous/physical AI</td><td>MED-HIGH — scale + profitability</td><td>HIGH (geopolitical)</td><td class="med">MED</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Investment Thesis</span>
+    Physical AI is the next decade's defining megatrend — robots, autonomous vehicles, and smart factories require sensor inputs as a foundation. Keyence is the highest-quality long-term compounder in this space: 50%+ margins, direct customer access, and a deliberate AI integration roadmap. Hesai captures the China physical AI boom at volume scale with a clear path to sustained profitability. Together they cover the industrial and automotive dimensions of physical AI sensing.
+  </div>
+
+  <div class="callout callout-orange">
+    <span class="callout-label">Watch Out</span>
+    Hesai carries meaningful geopolitical risk that is binary in nature — a US blacklisting or ADR delisting would be a severe event regardless of fundamentals. Size position accordingly. Cognex and Keyence carry cyclical risk tied to global manufacturing capex; do not over-extrapolate in a capex upcycle. Machine vision adoption still requires factory owners to invest — that spending is discretionary in recessions.
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Top Pick: 6861 Keyence</span>
+    Keyence is the highest-conviction C4 pick for a quality-first investor. Unmatched margins, direct sales model, and embedded relationships in the world's largest factories. The AI integration roadmap is additive to an already world-class business. Accessible via Tokyo Prime or OTC; hold in JPY to capture potential yen appreciation asymmetry.
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" rows="2" placeholder="Comment on C4 Sensors & LiDAR..." data-section="C4 Sensors & LiDAR"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== S6: CLUSTER 5 — HBM & HIGH-BANDWIDTH MEMORY ===== -->
+<div class="card" id="s6">
+  <div class="section-header">
+    <div class="section-badge">C5</div>
+    <div class="section-title">HBM &amp; High-Bandwidth Memory</div>
+  </div>
+  <span class="cluster-badge">Theme A · Theme B Linkage</span>
+  <p>High Bandwidth Memory (HBM) is the most critical constraint in the AI accelerator supply chain after TSMC packaging. Every NVDA H200/B200 and AMD MI300X integrates HBM3E stacks — without them, the GPU cannot achieve the memory bandwidth needed for large AI models. The HBM market is an effective triopoly: SK Hynix dominant, Micron ramping aggressively, Samsung qualifying. Pricing power is extreme.</p>
+
+  <h2>Why High-Potential</h2>
+  <ul>
+    <li><strong>Artificial scarcity:</strong> HBM requires 3D stacking technology (TSV — Through-Silicon Via) developed over a decade. New entrants are effectively impossible in any 5-year horizon.</li>
+    <li><strong>Price discipline:</strong> SK Hynix and Samsung are reportedly planning a 20% price hike for 2026 HBM3E supply — a sign of confident pricing power in a seller's market.</li>
+    <li><strong>TAM explosion:</strong> HBM TAM for calendar 2025 exceeds US$35B, and demand is growing faster than supply. Every new AI accelerator generation uses more HBM stacks per chip.</li>
+    <li><strong>Micron's underdog opportunity:</strong> Micron's share was ~21% in mid-2025 (vs SK Hynix 62%) — significant catch-up potential as HBM3E 12hi production ramps, with multibillion-dollar HBM revenue now confirmed.</li>
+  </ul>
+
+  <!-- Company 1: SK Hynix -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">SK Hynix</span>
+      <span class="company-ticker">000660 · Korea Exchange</span>
+    </div>
+    <h3>Background</h3>
+    <p>The world's dominant HBM supplier. Revenue scale: ~US$66B+ in FY2025 (total memory). NVIDIA drives approximately 27% of SK Hynix total revenue — an extraordinary single-customer concentration that is also extraordinary business quality. HBM3E market share: 62% in Q2 2025, 57% in Q3 2025. Remains NVIDIA's primary HBM supplier for Blackwell and Rubin platforms.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>NVIDIA drove ~₩11 trillion in H1 2025 revenue from SK Hynix alone. SK Hynix sold out its entire DRAM, NAND, and HBM supply to Nvidia through 2026 — there is literally no spare capacity. This is the most demand-certain supply arrangement in semiconductors.</li>
+      <li>HBM3E to remain flagship through 2026 (accounting for ~two-thirds of HBM shipments). SK Hynix's HBM4 samples delivered to NVIDIA, with Rubin GPU integration on track — the customer relationship is multi-generational.</li>
+      <li>Overtook Samsung as world's largest memory chip supplier by revenue in 2025 — a historic first, driven entirely by HBM market leadership.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Samsung is closing the HBM4 gap. If Samsung completes NVIDIA qualification (HBM4 samples delivered, expected contracts in 2026), SK Hynix's share will compress from 62% towards 50%. The Korea Exchange listing also means FX risk (KRW) and less familiar accounting for non-Korean investors.</p>
+  </div>
+
+  <!-- Company 2: Micron Technology -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Micron Technology</span>
+      <span class="company-ticker">MU · NASDAQ</span>
+    </div>
+    <h3>Background</h3>
+    <p>The only US-based DRAM and NAND manufacturer. FY2025 total revenue approximately US$35–38B. Q4 FY2025 revenue of US$11.32B (+46% YoY). HBM market share of ~21% in mid-2025, with management confirming multibillion-dollar HBM revenue for the fiscal year and active production ramp of HBM3E 12hi (the highest-stack, highest-value product).</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>HBM3E 12hi yield ramp described by management as "progressing extremely well" — the key risk of the past 12 months (yield problems) appears to be resolving. Once yields normalise, Micron's cost per HBM unit falls dramatically.</li>
+      <li>Q2 FY2026 guidance reflects US$18.7B revenue, 68% gross margins — a profit supercycle. Pricing power in HBM and data centre DRAM is flowing directly to margins. This is not commodity memory pricing behaviour.</li>
+      <li>US-based manufacturing gives Micron a structural advantage in US government AI infrastructure spending (CHIPS Act) and insulation from China export control escalation that could hit Korean and Taiwanese peers.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Micron is a cyclical business — memory industry pricing can reverse sharply when supply builds. HBM is structurally tighter than DRAM/NAND, but if AI chip volume expectations disappoint, HBM demand softens and pricing discipline breaks. Micron also remains #3 in HBM behind SK Hynix and potentially Samsung.</p>
+  </div>
+
+  <!-- Company 3: Samsung Electronics -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Samsung Electronics</span>
+      <span class="company-ticker">005930 · Korea Exchange</span>
+    </div>
+    <h3>Background</h3>
+    <p>The world's largest semiconductor company by revenue. HBM market share: approximately 17% in Q2 2025 (lagging significantly after yield problems delayed NVIDIA qualification). Samsung cleared NVIDIA's 12-layer HBM3E qualification in September 2025. HBM4 samples delivered to NVIDIA (paid samples, pre-contract phase) — qualification race against SK Hynix active.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>The OpenAI–Samsung HBM partnership announced April 2026 signals a new diversification of HBM supply beyond NVIDIA — OpenAI is procuring direct, bypassing the GPU OEM supply chain. This creates a new demand channel for Samsung's HBM output.</li>
+      <li>Samsung has demonstrated 11Gbps HBM4 data transfer speed — outpacing SK Hynix's 10Gbps — in NVIDIA's latest Rubin platform testing. Speed leadership in next-gen HBM is meaningful for win rate in 2026+ contracts.</li>
+      <li>Samsung's scale advantage: foundry + DRAM + NAND + HBM under one roof creates integration options (SoIC packaging + HBM) that pure-play memory competitors cannot offer. Logical partner for NVIDIA's increasingly vertically integrated supply strategy.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Samsung's HBM division has been a consistent underperformer vs expectations — multiple delays, lower yields, and competitive share loss vs SK Hynix over 2023–2024. Execution risk remains. Management restructuring underway. Also carries Korea-specific political/governance risk. The stock is a recovery play, not a confirmed compounder.</p>
+  </div>
+
+  <h2>Investment Scorecard</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Company</th><th>Ticker</th><th>AI Rev Exposure</th><th>Moat</th><th>Risk</th><th>Conviction</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SK Hynix</td><td>000660</td><td>~27% revenue from NVIDIA alone</td><td>VERY HIGH — HBM market leader</td><td>MED (Samsung catch-up)</td><td class="high">HIGH</td></tr>
+        <tr><td>Micron</td><td>MU</td><td>Multibillion HBM; ~30%+ data centre</td><td>HIGH — US-only manufacturer</td><td>MED (cyclical)</td><td class="high">HIGH</td></tr>
+        <tr><td>Samsung</td><td>005930</td><td>~17% HBM share; growing</td><td>MED-HIGH — scale + HBM4 speed</td><td>HIGH (execution)</td><td class="med">MED</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Investment Thesis</span>
+    HBM is not commodity memory — it is engineered, high-margin, supply-constrained infrastructure. A US$35B+ TAM in 2025 growing proportionally with AI accelerator volume creates multi-year demand runway. SK Hynix is the dominant player capturing premium ASPs and is sold out through 2026. Micron is the high-upside catch-up story with US manufacturing advantages and improving HBM yields. Both are better risk/reward than owning NVDA at peak cycle: they sell the picks to the gold miners without needing to choose who wins the AI model race.
+  </div>
+
+  <div class="callout callout-orange">
+    <span class="callout-label">Watch Out</span>
+    HBM is still tied to AI chip volume. If NVIDIA Blackwell/Rubin shipments disappoint, or if hyperscalers pause data centre buildouts, HBM pricing will correct faster than supply can adjust. The memory industry's history of oversupply cycles is not erased by AI demand — it is deferred. Monitor NVDA quarterly guidance as the leading indicator for HBM demand momentum.
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Top Pick: MU</span>
+    Micron is the highest-conviction C5 pick for non-Korean investors. US-listed, US-manufactured, improving HBM3E yields, multibillion-dollar HBM revenue confirmed, 68% gross margin guided. Less geopolitically exposed than SK Hynix (Korea-listed). The catch-up from 21% to 30%+ HBM share is a multi-year earnings growth story regardless of who wins the LLM race.
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" rows="2" placeholder="Comment on C5 HBM Memory..." data-section="C5 HBM Memory"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== S7: CLUSTER 6 — AI DATA INFRASTRUCTURE & ORCHESTRATION ===== -->
+<div class="card" id="s7">
+  <div class="section-header">
+    <div class="section-badge">C6</div>
+    <div class="section-title">AI Data Infrastructure &amp; Orchestration</div>
+  </div>
+  <span class="cluster-badge">Theme B · Theme C Linkage</span>
+  <p>AI models are only as good as the data they are trained and operated on. Every enterprise AI deployment — whether at MSFT, GOOGL, Baidu, or Alibaba — requires data pipelines, governance frameworks, and orchestration platforms to manage, clean, and deploy training and inference data at scale. This cluster captures the software layer that sits between raw data and functional AI — an unglamorous but structurally necessary tier.</p>
+
+  <h2>Why High-Potential</h2>
+  <ul>
+    <li><strong>AI makes data infrastructure more valuable, not less:</strong> Agentic AI and LLM deployments require higher data quality, lower latency, and stronger governance than previous analytics workloads. Incumbent platforms with embedded data estate become essential.</li>
+    <li><strong>Sticky recurring revenue:</strong> Data cloud and integration platforms have 90%+ net revenue retention — once a data pipeline is built on Snowflake or Informatica, migration costs are prohibitive.</li>
+    <li><strong>Enterprise AI monetisation is now:</strong> Palantir grew revenue 56% in 2025 and guided 61% growth for 2026 — AI Platform (AIP) is not a concept, it is closing US$10M+ enterprise contracts at scale.</li>
+    <li><strong>Government demand:</strong> Palantir's government segment (US Department of Defense, allied agencies) provides a countercyclical revenue floor unavailable to commercial SaaS peers.</li>
+  </ul>
+
+  <!-- Company 1: Palantir -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Palantir Technologies</span>
+      <span class="company-ticker">PLTR · NYSE</span>
+    </div>
+    <h3>Background</h3>
+    <p>Enterprise and government AI platform company. FY2025 revenue of US$4.475B (+56% YoY) — the highest growth rate as a public company. AIP (AI Platform) launched mid-2023 has become the primary enterprise AI deployment platform for regulated industries (defence, healthcare, manufacturing, utilities). US commercial revenue grew 137% YoY in Q4 2025.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>AIP bridges the gap between general-purpose LLMs (public data only) and enterprise AI (private, regulated data). This is the exact gap that MSFT, GOOGL, and Meta cannot easily fill for regulated customers — Palantir owns the enterprise data orchestration layer that makes AI usable in classified, regulated, or proprietary environments.</li>
+      <li>Q4 2025 deal momentum: 204 deals over US$1M, 53 deals over US$10M. Existing customers expanding significantly — US$7M contract growing to US$31M, healthcare deal at US$96M. Net revenue retention indicates this is expanding platform adoption, not one-time implementations.</li>
+      <li>FY2026 guidance of US$7.18–7.20B revenue (+61% YoY). Profitable on GAAP basis. Rule of 40 score of 114% in Q3 2025 — extraordinary for a business of this scale and complexity.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Palantir's valuation is extreme — priced well above 100x earnings at current levels. The US government contract base provides stability but also creates political/budget risk if defence spending is cut. Commercial AIP is early-stage and customer concentration in high-value contracts (vs broad platform adoption) creates lumpiness.</p>
+  </div>
+
+  <!-- Company 2: Snowflake -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Snowflake</span>
+      <span class="company-ticker">SNOW · NYSE</span>
+    </div>
+    <h3>Background</h3>
+    <p>Cloud-native data warehousing and AI data cloud platform. FY2025 product revenue of US$3.5B (+30% YoY). 11,000+ customers. Net revenue retention of 125–126% — customers consistently expand usage. Crossed US$100M AI revenue run rate (from within the platform, not just data storage). CEO Sridhar Ramaswamy is executing a pivot from data warehouse to AI Data Cloud.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>Every enterprise building AI on their own data needs a governed, secure, cloud-native data platform. Snowflake is the default choice for large enterprises — MSFT Azure, AWS, and GCP all have Snowflake integrations, meaning it benefits from cloud capex regardless of which hyperscaler wins enterprise workloads.</li>
+      <li>Snowflake Cortex (in-platform LLM inference) and AI features crossed US$100M revenue run rate — AI usage within the data cloud is a new, incremental revenue stream layered on top of existing data storage/compute revenue.</li>
+      <li>FY2026 product revenue guidance of US$4.325B — management raised guidance multiple times through 2025, indicating demand is tracking above initial expectations.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Consumption-based pricing means revenue is unpredictable quarter-to-quarter. If enterprises optimise queries (reduce compute consumption), revenue can disappoint even with growing customer counts. Competition from Databricks (private, aggressive), Google BigQuery, and Microsoft Fabric is intensifying — Snowflake must continuously justify premium pricing against hyperscaler native offerings that are bundled or subsidised.</p>
+  </div>
+
+  <!-- Company 3: Informatica -->
+  <div class="company-card">
+    <div class="company-header">
+      <span class="company-name">Informatica</span>
+      <span class="company-ticker">INFA · NYSE</span>
+    </div>
+    <h3>Background</h3>
+    <p>Enterprise data management and integration platform. Q3 2025 total revenues of US$439M, cloud subscription revenue growing 31% YoY to US$230M. Cloud Subscription ARR reached US$969M (+29.5% YoY). AI-powered IDMC (Intelligent Data Management Cloud) is the core platform. Total ARR of US$1.75B provides strong revenue visibility.</p>
+    <h3>AI Tailwind — Why Now</h3>
+    <ul>
+      <li>AI governance and data quality are becoming mandatory for enterprise AI deployments — regulators and boards are demanding explainable, governed AI. Informatica's data cataloguing, lineage, and quality tools are the compliance infrastructure for enterprise AI, creating non-discretionary demand.</li>
+      <li>Processed 143.3 trillion cloud transactions per month (+41% YoY) — scale of data flowing through Informatica's platform grows with every new enterprise AI workload deployed. More AI workloads = more data integration demand = higher Informatica consumption.</li>
+      <li>The company targets customers running agentic AI initiatives — a specific, high-value enterprise segment where data provenance and quality directly determine AI output reliability. This is a premium demand signal.</li>
+    </ul>
+    <h3>Key Risk</h3>
+    <p>Informatica's overall revenue growth (3–4% total ARR growth) is slower than cloud-pure peers — the business is mid-transition from on-premise licensing to cloud subscription. The transition creates near-term revenue headwinds as on-premise contracts wind down faster than cloud ARR builds. SAP and Talend also compete aggressively in data integration. The risk is growth stagnation rather than revenue loss.</p>
+  </div>
+
+  <h2>Investment Scorecard</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Company</th><th>Ticker</th><th>AI Rev Exposure</th><th>Moat</th><th>Risk</th><th>Conviction</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Palantir</td><td>PLTR</td><td>~100% — AIP is the core product</td><td>VERY HIGH — gov + enterprise moat</td><td>HIGH (valuation)</td><td class="high">HIGH</td></tr>
+        <tr><td>Snowflake</td><td>SNOW</td><td>~100% — AI data cloud positioning</td><td>HIGH — data estate lock-in</td><td>MED (competition)</td><td class="med">MED-HIGH</td></tr>
+        <tr><td>Informatica</td><td>INFA</td><td>~70% cloud; AI governance focus</td><td>MED-HIGH — data lineage IP</td><td>MED (growth)</td><td class="med">MED</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Investment Thesis</span>
+    The enterprise AI wave requires data infrastructure before it requires AI models. Companies cannot deploy LLMs on their internal data without first having clean, governed, accessible data pipelines. Palantir, Snowflake, and Informatica are not "AI-adjacent" — they are the data foundation that every enterprise AI initiative sits on top of. Palantir is the highest-conviction pick: GAAP profitable, 56% revenue growth, government revenue floor, and AIP expanding into enterprise at scale. It is expensive but it is executing.
+  </div>
+
+  <div class="callout callout-orange">
+    <span class="callout-label">Watch Out</span>
+    Data infrastructure valuations remain elevated. If AI monetisation timelines slip — enterprises invest in AI but revenue from AI products disappoints — discretionary data cloud spending budgets get cut first. Palantir's valuation specifically requires sustained 50%+ growth for years to justify current prices. The business quality is real; the valuation demands execution perfection. Initiate on dips, not at all-time highs.
+  </div>
+
+  <div class="callout callout-green">
+    <span class="callout-label">Top Pick: PLTR</span>
+    Palantir is the highest-conviction C6 pick. It is the only company in this report that is simultaneously growing at 56%, GAAP profitable, holding government contract floors, and seeing commercial AIP expansion at 137% YoY. The valuation is a real concern — position sizing matters. But for long-term AI data infrastructure exposure, PLTR is the clearest compound story in this cluster.
+  </div>
+
+  <div class="comment-block">
+    <textarea class="comment-input" rows="2" placeholder="Comment on C6 Data Infrastructure..." data-section="C6 Data Infrastructure"></textarea>
+    <div class="comment-actions">
+      <button class="send-btn" onclick="sendComment(this)">Send</button>
+      <span class="comment-status"></span>
+    </div>
+  </div>
+</div>
+
+<!-- SUBMIT BLOCK -->
+<div class="submit-block">
+  <button class="submit-btn" id="submit-btn" onclick="submitReview()">Submit Full Review</button>
+  <p id="submit-status"></p>
+</div>
+
+</div><!-- end .page -->
+
+<script>
+const ZOOM_STEPS=[13,14,15,16,17,18,20,22];let zoomIdx=3;
+function zoomIn(){if(zoomIdx<ZOOM_STEPS.length-1)setZoom(++zoomIdx);}
+function zoomOut(){if(zoomIdx>0)setZoom(--zoomIdx);}
+function setZoom(i){document.documentElement.style.setProperty('--base-font',ZOOM_STEPS[i]+'px');}
+function toggleTheme(){const h=document.documentElement;const d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('theme-btn').textContent=d?'🌙':'☀️';}
+async function sendComment(btn){const b=btn.closest('.comment-block');const t=b.querySelector('.comment-input');const s=b.querySelector('.comment-status');const txt=t.value.trim();if(!txt)return;btn.disabled=true;s.textContent='Saving…';try{const r=await fetch(CONFIG.endpoint,{method:'POST',body:JSON.stringify({action:'comment',token:CONFIG.token,reportId:CONFIG.reportId,reportTitle:CONFIG.reportTitle,section:t.dataset.section,comment:txt})});const j=await r.json();if(j.status==='ok'){s.textContent='✓ Saved';t.value='';}else{s.textContent='✗ '+j.message;}}catch{s.textContent='✗ Failed';}finally{btn.disabled=false;}}
+async function submitReview(){const btn=document.getElementById('submit-btn');const s=document.getElementById('submit-status');btn.disabled=true;s.textContent='Submitting…';try{const r=await fetch(CONFIG.endpoint,{method:'POST',body:JSON.stringify({action:'submit',token:CONFIG.token,reportId:CONFIG.reportId,reportTitle:CONFIG.reportTitle})});const j=await r.json();s.textContent=j.status==='ok'?'✓ Submitted':'✗ '+j.message;}catch{s.textContent='✗ Failed';}finally{btn.disabled=false;}}
+</script>
+</body>
+</html>

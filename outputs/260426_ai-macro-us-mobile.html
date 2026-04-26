@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Next Waves: US Macro Strategy 2025-2035</title>
+<style>
+:root {
+  --blue-dark:#1a3a5c; --blue-mid:#2471a3; --blue-light:#eaf4fb; --blue-border:#aed6f1;
+  --orange:#b03a2e; --orange-light:#fdf2f0; --orange-border:#e59898;
+  --green:#1e8449; --green-light:#eafaf1;
+  --text:#1c2533; --text-muted:#5a6a7a; --bg:#f2f4f7; --card:#ffffff;
+  --border:#dde4ed; --nav-bg:#1a3a5c; --nav-text:#ffffff;
+  --input-bg:#f8fafc; --input-border:#c8d6e5;
+}
+[data-theme="dark"] {
+  --blue-dark:#2471a3; --blue-mid:#5dade2; --blue-light:#1a2a3a; --blue-border:#2c4a6a;
+  --orange:#e07060; --orange-light:#2a1a18; --orange-border:#8b4040;
+  --green:#52c78a; --green-light:#0f2a1a;
+  --text:#e8edf2; --text-muted:#8a9bac; --bg:#0f1923; --card:#1a2535;
+  --border:#2a3a4a; --nav-bg:#0f1923; --nav-text:#e8edf2;
+  --input-bg:#1e2d3d; --input-border:#2a3a4a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:var(--base-font,16px);line-height:1.65;color:var(--text);background:var(--bg);}
+.sticky-nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);padding:8px 12px;display:flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(0,0,0,.25);flex-wrap:wrap;}
+.nav-title{color:var(--nav-text);font-weight:700;font-size:13px;white-space:nowrap;}
+.nav-pills{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-pill{background:rgba(255,255,255,.15);color:var(--nav-text);border:none;border-radius:12px;padding:3px 8px;font-size:11px;cursor:pointer;text-decoration:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:28px;}
+.nav-pill:hover{background:rgba(255,255,255,.3);}
+.nav-controls{display:flex;gap:4px;flex-shrink:0;margin-left:auto;}
+.ctrl-btn{background:rgba(255,255,255,.15);color:var(--nav-text);border:none;border-radius:6px;padding:4px 8px;font-size:12px;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:36px;}
+.ctrl-btn:hover{background:rgba(255,255,255,.25);}
+.page{max-width:600px;margin:0 auto;padding:16px 14px 80px;}
+@media(min-width:768px){.page{max-width:720px;padding:24px 24px 80px;}body{font-size:var(--base-font,17px);}}
+@media(min-width:1024px){.page{max-width:860px;}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.section-badge{background:var(--blue-mid);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+.section-title{font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--blue-dark);}
+h2{font-size:17px;font-weight:700;color:var(--blue-mid);margin:16px 0 8px;}
+h3{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:14px 0 6px;color:var(--text);}
+p{margin-bottom:10px;}
+ul,ol{padding-left:20px;margin-bottom:10px;}
+li{margin-bottom:4px;}
+.table-wrap{overflow-x:auto;margin:12px 0;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+th{background:var(--blue-dark);color:#fff;padding:8px 10px;text-align:left;font-weight:700;}
+td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:nth-child(even) td{background:var(--input-bg);}
+.table-hint{font-size:11px;color:var(--text-muted);text-align:center;font-style:italic;margin-top:4px;}
+.callout{background:var(--blue-light);border-left:4px solid var(--blue-mid);border-radius:0 8px 8px 0;padding:12px 14px;margin:14px 0;}
+.callout-orange{background:var(--orange-light);border-left-color:var(--orange);}
+.callout-green{background:var(--green-light);border-left-color:var(--green);}
+.callout-label{font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:4px;color:var(--blue-mid);}
+.callout-orange .callout-label{color:var(--orange);}
+.callout-green .callout-label{color:var(--green);}
+.comment-block{margin-top:16px;border-top:1px solid var(--border);padding-top:14px;}
+.comment-input{width:100%;display:block;font-size:16px;font-family:inherit;padding:8px 10px;border:1px solid var(--input-border);border-radius:8px;background:var(--input-bg);color:var(--text);resize:vertical;-webkit-appearance:none;}
+.comment-actions{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.send-btn{background:var(--blue-mid);color:#fff;border:none;border-radius:8px;padding:6px 16px;font-size:14px;font-weight:600;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:36px;}
+.comment-status{font-size:13px;color:var(--text-muted);}
+.submit-block{text-align:center;padding:24px 0;}
+.submit-btn{background:var(--green);color:#fff;border:none;border-radius:10px;padding:12px 28px;font-size:16px;font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-appearance:none;min-height:44px;}
+#submit-status{margin-top:8px;font-size:14px;color:var(--text-muted);}
+.source-note{font-size:11px;font-style:italic;color:var(--text-muted);text-align:center;margin-top:8px;}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;margin-left:6px;}
+.badge-high{background:#fde8e8;color:#b03a2e;}
+.badge-med{background:#fef3e8;color:#956010;}
+.badge-low{background:#eafaf1;color:#1e8449;}
+.maturity-bar{display:flex;gap:6px;align-items:center;margin:12px 0;}
+.maturity-pip{width:36px;height:12px;border-radius:6px;background:var(--border);}
+.maturity-pip.filled{background:var(--blue-mid);}
+.maturity-label{font-size:13px;font-weight:700;color:var(--blue-mid);margin-left:4px;}
+.hero-stat{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0;}
+.stat-box{background:var(--blue-light);border:1px solid var(--blue-border);border-radius:10px;padding:10px 14px;flex:1;min-width:120px;text-align:center;}
+.stat-num{font-size:22px;font-weight:800;color:var(--blue-dark);}
+.stat-label{font-size:11px;color:var(--text-muted);margin-top:2px;}
+</style>
+</head>
+<body>
+<script>
+const CONFIG = {
+  endpoint: 'https://script.google.com/macros/s/AKfycbxebGoKMGmazBwIVA8QilB7Eyqdit4i5riCH1u65p_M3KczcItcS7ey-Az_Y8Kn7XXSQA/exec',
+  token: 'vscc-2026-xk9',
+  reportId: '260426_ai-macro-us',
+  reportTitle: 'AI Next Waves: US Macro Strategy 2025-2035'
+};
+</script>
+
+<nav class="sticky-nav">
+  <span class="nav-title">&#127482;&#127480; US AI Strategy</span>
+  <div class="nav-pills">
+    <a class="nav-pill" href="#s1">S1</a>
+    <a class="nav-pill" href="#s2">S2</a>
+    <a class="nav-pill" href="#s3">S3</a>
+    <a class="nav-pill" href="#s4">S4</a>
+    <a class="nav-pill" href="#s5">S5</a>
+    <a class="nav-pill" href="#s6">S6</a>
+    <a class="nav-pill" href="#s7">S7</a>
+    <a class="nav-pill" href="#s8">S8</a>
+  </div>
+  <div class="nav-controls">
+    <button class="ctrl-btn" onclick="zoomOut()">A&#8722;</button>
+    <button class="ctrl-btn" onclick="zoomIn()">A+</button>
+    <button class="ctrl-btn" id="theme-btn" onclick="toggleTheme()">&#127769;</button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- S1: Executive Summary -->
+  <div class="card" id="s1">
+    <div class="section-header">
+      <div class="section-badge">1</div>
+      <div class="section-title">Executive Summary</div>
+    </div>
+
+    <div class="hero-stat">
+      <div class="stat-box">
+        <div class="stat-num">$500B</div>
+        <div class="stat-label">Stargate AI infra pledge</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">$640B+</div>
+        <div class="stat-label">Semiconductor supply chain commitments</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">93%</div>
+        <div class="stat-label">US share of global LLM site visits (Aug 2025)</div>
+      </div>
+    </div>
+
+    <h3>AI Maturity Rating — United States</h3>
+    <div class="maturity-bar">
+      <div class="maturity-pip filled"></div>
+      <div class="maturity-pip filled"></div>
+      <div class="maturity-pip filled"></div>
+      <div class="maturity-pip filled"></div>
+      <div class="maturity-pip filled"></div>
+      <span class="maturity-label">5 / 5 — Global Leader</span>
+    </div>
+    <p style="font-size:12px;color:var(--text-muted);">Rated on: frontier model capability, compute infrastructure, national strategy coherence, private capital mobilisation, export control leverage.</p>
+
+    <h3>5 TLDR Bullets</h3>
+    <ul>
+      <li><strong>All-in on dominance, not safety:</strong> Trump's Jan 2025 EO (14179) scrapped Biden's guardrails and reoriented the entire federal AI agenda around speed, deregulation, and geopolitical primacy over China — with light-touch federal oversight preempting state-level rules (Dec 2025 EO).</li>
+      <li><strong>$500B infrastructure bet already in motion:</strong> Stargate — backed by OpenAI, Oracle, SoftBank, NVIDIA and AMD — announced Jan 21 2025, first Texas campus live by Sep 2025, targeting 10 GW of AI compute capacity by 2029. Hyperscalers (Alphabet, Amazon, Meta, Microsoft) spending a combined $650B in 2025 alone.</li>
+      <li><strong>CHIPS Act yields but faces turbulence:</strong> $30.9B in direct awards to 19 companies across 40 projects; TSMC committed $165B in total US investment. However, $7.4B in R&D funds clawed back from Natcast in Aug 2025, signalling administrative volatility.</li>
+      <li><strong>Export controls tightening selectively:</strong> Biden's AI Diffusion Rule rescinded May 2025 but replaced with stricter bilateral enforcement — BIS compliance expectations raised, Operation Gatekeeper arrested a $160M chip smuggling network to China in Dec 2025.</li>
+      <li><strong>Research infrastructure scaling up:</strong> NAIRR supports 600+ projects across all 50 states; NSF invested $100M in 5 new AI Research Institutes (Jul 2025); DoD allocated $100M for Frontier AI Pilots and sandboxes across FY2024-25.</li>
+    </ul>
+
+    <div class="callout callout-orange">
+      <span class="callout-label">Key Investor Watch</span>
+      The US strategy is structurally bullish for AI infrastructure, frontier model developers, and defence-AI primes — but the deregulatory pivot creates uncertainty for AI safety-focused bets and introduces state-vs-federal legal friction that may delay enterprise AI adoption in regulated sectors.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" rows="2" placeholder="Add your note on S1..." data-section="S1 Executive Summary"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Save Note</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2: National AI Vision & Goals -->
+  <div class="card" id="s2">
+    <div class="section-header">
+      <div class="section-badge">2</div>
+      <div class="section-title">National AI Vision &amp; Goals</div>
+    </div>
+
+    <div class="callout">
+      <span class="callout-label">Stated Vision</span>
+      "Sustain and enhance United States' global AI dominance to promote human flourishing, economic competitiveness, and national security." — EO 14179, Jan 23 2025
+    </div>
+
+    <h2>Core Doctrinal Pillars (2025-2035)</h2>
+    <ul>
+      <li><strong>American AI Primacy:</strong> Maintain a 6–12 month frontier model lead over China across all benchmark categories. US models held 93% of global LLM site visits as of Aug 2025.</li>
+      <li><strong>Light-Touch Federal Regulation:</strong> Mar 2026 White House legislative blueprint urges Congress to preempt state AI laws, replacing fragmented state rules with a single innovation-first federal framework. Dec 2025 EO directed Commerce Dept to evaluate and penalise states with "onerous" AI laws by withholding BEAD broadband funds.</li>
+      <li><strong>AI-First Federal Government:</strong> DoD AI Acceleration Strategy (Jan 2026) targets "AI-first" military operations — four Pace-Setting Projects covering infrastructure, data pipelines, models, and talent, with $100M in FY2024-25 seed funding.</li>
+      <li><strong>Open Research Ecosystem:</strong> NAIRR provides shared compute, data, and training resources to 6,000+ students across all 50 states and Puerto Rico. NSF's 29 federally funded AI Institutes form a coordinated national R&D network.</li>
+      <li><strong>Strategic Technology Control:</strong> Export controls on advanced AI chips and model weights maintained as a geopolitical lever, while bilateral agreements with allies (Five Eyes, Japan, South Korea, Netherlands, Taiwan) protect supply chain integrity.</li>
+    </ul>
+
+    <h2>Key Milestones Timeline</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Milestone</th><th>Significance</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Jan 23, 2025</td><td>EO 14179 signed — "Removing Barriers to American Leadership in AI"</td><td>Reverses Biden safety EO, launches AI Action Plan mandate</td></tr>
+          <tr><td>Jan 21, 2025</td><td>Stargate Project announced ($500B, 4 partners)</td><td>Largest single AI infrastructure commitment in US history</td></tr>
+          <tr><td>May 2025</td><td>Biden AI Diffusion Rule rescinded; BIS heightened chip compliance issued</td><td>Signals enforcement-first, not rules-first approach to export controls</td></tr>
+          <tr><td>Jun 2025</td><td>AISI renamed to CAISI; mission shifted from safety to standards &amp; innovation</td><td>AI safety deprioritised institutionally</td></tr>
+          <tr><td>Jul 2025</td><td>"Winning the AI Race: America's AI Action Plan" released</td><td>Detailed roadmap: compute, talent, alliances, sector applications</td></tr>
+          <tr><td>Aug 2025</td><td>$7.4B CHIPS R&D funds clawed back from Natcast</td><td>Administrative volatility in semiconductor R&D pipeline</td></tr>
+          <tr><td>Sep 2025</td><td>Stargate Texas flagship campus operational; 5 new sites announced</td><td>$400B+ committed; 7 GW capacity secured</td></tr>
+          <tr><td>Dec 2025</td><td>EO on "National Policy Framework for AI" — preempts state laws</td><td>Federal-state AI regulatory war begins; AI Litigation Task Force created</td></tr>
+          <tr><td>Mar 2026</td><td>White House releases legislative AI framework blueprint</td><td>Signals intent to codify light-touch AI regulation into law</td></tr>
+          <tr><td>2027 (target)</td><td>NAIRR full Operations Center launch (NAIRR-OC)</td><td>Transition from pilot to permanent national AI research infrastructure</td></tr>
+          <tr><td>2029</td><td>Stargate 10 GW target; full $500B deployment</td><td>US AI compute becomes single largest global cluster</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" rows="2" placeholder="Add your note on S2..." data-section="S2 National Vision"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Save Note</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3: Key Policies & Regulations -->
+  <div class="card" id="s3">
+    <div class="section-header">
+      <div class="section-badge">3</div>
+      <div class="section-title">Key Policies &amp; Regulations</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Policy / Action</th><th>Date</th><th>What It Does</th><th>Investor Impact</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>EO 14179 — Removing Barriers to American AI Leadership</strong></td>
+            <td>Jan 23, 2025</td>
+            <td>Revokes Biden's EO 14110; directs OSTP to produce an AI Action Plan within 180 days; removes "burdensome" AI safety requirements from federal procurement</td>
+            <td><span class="badge badge-high">Bullish</span> Unleashes AI deployment in federal contracts; removes compliance overhead for frontier model developers</td>
+          </tr>
+          <tr>
+            <td><strong>AI Action Plan — "Winning the AI Race"</strong></td>
+            <td>Jul 23, 2025</td>
+            <td>Detailed national roadmap: accelerate compute buildout, protect US frontier models from distillation by adversaries, strengthen alliances, grow AI talent pipeline</td>
+            <td><span class="badge badge-high">Bullish</span> Directs federal procurement toward US AI firms; creates talent pipeline programmes; signals sustained government demand</td>
+          </tr>
+          <tr>
+            <td><strong>EO — National Policy Framework for AI</strong></td>
+            <td>Dec 11, 2025</td>
+            <td>Directs AG to form AI Litigation Task Force to challenge state AI laws; instructs Commerce to penalise states via BEAD fund withholding; instructs FTC to publish AI compliance policy by Mar 11 2026</td>
+            <td><span class="badge badge-high">Bullish</span> Reduces regulatory patchwork risk for national AI products; but creates legal battles in regulated industries (health, finance)</td>
+          </tr>
+          <tr>
+            <td><strong>White House AI Legislative Blueprint</strong></td>
+            <td>Mar 20, 2026</td>
+            <td>Urges Congress to codify federal preemption of state AI laws; innovation-first, light-touch oversight; avoid mandatory risk assessments for most AI applications</td>
+            <td><span class="badge badge-high">Bullish</span> If passed, significantly reduces compliance costs for AI developers; bearish for AI safety/governance vendors</td>
+          </tr>
+          <tr>
+            <td><strong>BIS AI Diffusion Rule Rescission + Heightened Compliance Framework</strong></td>
+            <td>May 13, 2025</td>
+            <td>Rescinds Biden's tiered global chip export rule; replaces with enforcement-first approach — heightened due diligence requirements on all chip exporters/re-exporters regarding China-linked end uses</td>
+            <td><span class="badge badge-med">Mixed</span> Removes rigid tier system (helps allied data center operators) but increases compliance burden for chip distributors globally</td>
+          </tr>
+          <tr>
+            <td><strong>FTC AI Enforcement Pivot</strong></td>
+            <td>Ongoing 2025</td>
+            <td>Dropped Biden-era enforcement against Rytr (AI writing tool); shifted to "circumspect" enforcement using existing statutes (FTC Act Sec.5, COPPA, FCRA); launched inquiry into AI companion chatbots and minors</td>
+            <td><span class="badge badge-high">Bullish</span> Reduces enforcement risk for most AI products; retains scrutiny on children's AI and deceptive marketing claims</td>
+          </tr>
+          <tr>
+            <td><strong>CAISI (formerly AISI) — Center for AI Standards &amp; Innovation</strong></td>
+            <td>Jun 2025</td>
+            <td>NIST's US AI Safety Institute renamed and mission narrowed to standards/innovation; safety evaluation function deprioritised; retains $20M NIST-MITRE AI cybersecurity partnership</td>
+            <td><span class="badge badge-med">Mixed</span> AI safety tooling/evaluation vendors lose federal tailwind; standards compliance work grows for enterprise AI deployers</td>
+          </tr>
+          <tr>
+            <td><strong>Operation Gatekeeper (DOJ/BIS)</strong></td>
+            <td>Dec 8, 2025</td>
+            <td>Multi-defendant enforcement action disrupted $160M in illegal AI chip exports to China and Hong Kong; signals aggressive criminal prosecution of export control violations</td>
+            <td><span class="badge badge-med">Mixed</span> Raises compliance costs and liability exposure for chip distributors with China exposure; positive for US-only AI supply chains</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">Sources: White House, BIS/Commerce, DOJ, FTC, NIST — 2025-2026</p>
+
+    <div class="callout callout-orange">
+      <span class="callout-label">Regulatory Trend</span>
+      The US is converging on a federal-preemption, light-touch model. The 50-state regulatory patchwork that threatened AI development is being actively dismantled via litigation and funding leverage. EU-style ex-ante risk assessment requirements are explicitly rejected. This is the most permissive regulatory environment among major AI powers.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" rows="2" placeholder="Add your note on S3..." data-section="S3 Policies"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Save Note</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4: Infrastructure & Compute Investment -->
+  <div class="card" id="s4">
+    <div class="section-header">
+      <div class="section-badge">4</div>
+      <div class="section-title">Infrastructure &amp; Compute Investment</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Initiative</th><th>$ Investment</th><th>Timeline</th><th>Strategic Goal</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Stargate Project</strong> (OpenAI + Oracle + SoftBank + MGX)</td>
+            <td>$500B total; $400B+ committed by Sep 2025</td>
+            <td>Launched Jan 2025; flagship Texas campus live Sep 2025; 10 GW target by 2029</td>
+            <td>Largest sovereign AI compute cluster; 6 sites confirmed (TX x2, NM, OH, WI + undisclosed); secures US AI training supremacy through decade-end</td>
+          </tr>
+          <tr>
+            <td><strong>Hyperscaler CapEx 2025</strong> (Alphabet + Amazon + Meta + Microsoft)</td>
+            <td>$650B combined for 2025 fiscal year</td>
+            <td>Deployment throughout 2025; multi-year programmes extending to 2028+</td>
+            <td>Cloud AI infrastructure, GPU clusters, custom AI silicon (TPU, Trainium, MTIA); underpins commercial AI services globally</td>
+          </tr>
+          <tr>
+            <td><strong>TSMC US Expansion</strong> (Arizona fabs, CHIPS-backed)</td>
+            <td>$165B total ($65B originally + $100B Mar 2025 expansion)</td>
+            <td>First fab operational 2024; advanced N2 node fab planned 2028+</td>
+            <td>Onshores leading-edge semiconductor production; reduces dependence on Taiwan supply chain; CHIPS Act direct awards support</td>
+          </tr>
+          <tr>
+            <td><strong>CHIPS Act — Direct Semiconductor Awards</strong></td>
+            <td>$30.9B direct grants + $5.5B loans (19 companies, 40 projects)</td>
+            <td>Awards ongoing through 2025-2026; $100M CARISSMA AI/semiconductor R&D (Oct 2024)</td>
+            <td>Rebuild domestic fab capacity across memory, logic, packaging; AI-focused R&D on next-gen semiconductor manufacturing using ML/autonomous experimentation</td>
+          </tr>
+          <tr>
+            <td><strong>DoD AI Compute &amp; Sandboxes</strong></td>
+            <td>$20M (Compute/AI Sandbox programme, FY2025)</td>
+            <td>Launched early 2025</td>
+            <td>Secure compute environments for classified frontier AI experimentation; supports warfighting AI development without cloud vendor exposure</td>
+          </tr>
+          <tr>
+            <td><strong>NAIRR — National AI Research Resource</strong></td>
+            <td>Federated (15 federal agencies + 28 private partners); full NAIRR-OC solicitation open</td>
+            <td>Pilot live Jan 2024; NAIRR-OC permanent infra targeted 2027</td>
+            <td>Democratises AI compute access to academic researchers; 600+ projects, 6,000+ students; prevents compute monopolisation by private hyperscalers</td>
+          </tr>
+          <tr>
+            <td><strong>NIST AI Manufacturing + Cybersecurity Centers</strong></td>
+            <td>$20M NIST + MITRE; up to $70M for AI Resilient Manufacturing Institute (5 years)</td>
+            <td>Announced Dec 2025; Manufacturing Institute award pending</td>
+            <td>AI applications in industrial manufacturing and critical infrastructure security; Manufacturing USA programme integration</td>
+          </tr>
+          <tr>
+            <td><strong>NVIDIA Stargate GPU Supply Agreement</strong></td>
+            <td>$100B (NVIDIA to supply AI processors to Stargate)</td>
+            <td>Sep 2025 announcement; delivery through 2026-2028</td>
+            <td>Secures GB200/Blackwell supply chain for US national AI compute; strategic lock-in of US-allied GPU supply</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">Sources: White House, OpenAI, Commerce Dept, CHIPS.gov, NIST — 2024-2026</p>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Infrastructure Thesis</span>
+      Total visible US AI compute investment (public + private) exceeds $1.3T through 2029. This is not a stimulus programme — it is a sustained structural buildout. The bottleneck is shifting from capital to land, power, water, and skilled labour. Adjacent infrastructure plays (power grids, cooling, fibre, data center REITs) are structurally supported.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" rows="2" placeholder="Add your note on S4..." data-section="S4 Infrastructure"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Save Note</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5: Priority Sectors -->
+  <div class="card" id="s5">
+    <div class="section-header">
+      <div class="section-badge">5</div>
+      <div class="section-title">Priority Sectors</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Sector</th><th>Key Programme</th><th>Funding</th><th>Why It Matters</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Defence &amp; National Security</strong></td>
+            <td>DoD AI Acceleration Strategy; Frontier AI Pilots (CDAO + DIU); AI Rapid Capabilities Cell (AI RCC)</td>
+            <td>$100M FY2024-25 ($35M Frontier AI Pilots, $20M Compute Sandboxes, $5M GIDE, $40M GenAI for small business)</td>
+            <td>AI-first military is the stated doctrine. Command &amp; control, logistics, autonomous systems, ISR are all AI priority areas. Defence primes (Palantir, Anduril, Shield AI) are primary beneficiaries.</td>
+          </tr>
+          <tr>
+            <td><strong>Semiconductor &amp; Advanced Manufacturing</strong></td>
+            <td>CHIPS Act Manufacturing Incentives; TSMC/Intel/Micron/Samsung US fab expansion; CARISSMA AI semiconductor R&D</td>
+            <td>$52.7B CHIPS Act (2022-2032); $30.9B awarded to date; $100M CARISSMA</td>
+            <td>Domestic chip supply is existential to AI strategy. Without onshore N2/N3 node production, all US AI runs on Taiwan-sourced silicon. TSMC Arizona is the centrepiece hedge.</td>
+          </tr>
+          <tr>
+            <td><strong>AI Research &amp; Foundational Science</strong></td>
+            <td>NSF AI Research Institutes (29 total, 5 new Jul 2025); NAIRR compute access; NSF IFML (UT Austin), NSF AI-MI (Cornell)</td>
+            <td>$100M Jul 2025 (NSF + Capital One + Intel); $500M+ total across all 29 institutes historically</td>
+            <td>Talent pipeline and foundational research upstream. Institutes cover materials discovery, machine learning theory, human-AI interaction, drug synthesis, STEM education.</td>
+          </tr>
+          <tr>
+            <td><strong>Healthcare &amp; Life Sciences</strong></td>
+            <td>NSF iSAT (AI tutoring in STEM/health ed); AI drug discovery programmes (NSF MMLI at UIUC); NIH AI research grants</td>
+            <td>Part of $100M NSF Jul 2025 tranche; NIH AI supplemental grants ongoing</td>
+            <td>AI-accelerated drug discovery and clinical decision support are high-value public goods. MMLI specifically targets molecular synthesis automation — direct impact on biotech R&D pipelines.</td>
+          </tr>
+          <tr>
+            <td><strong>Energy &amp; Critical Infrastructure</strong></td>
+            <td>NIST AI for Resilient Manufacturing Institute; DOE NAIRR node (Oak Ridge National Lab); USSF AI Strategic Action Plan FY2025</td>
+            <td>$70M+ NIST Manufacturing Institute (5 years); DOE contribution to NAIRR</td>
+            <td>AI for grid optimisation, predictive maintenance, and supply chain resilience. AI is a dual-use critical infrastructure both as consumer (power-hungry data centers) and enabler (smart grid management).</td>
+          </tr>
+          <tr>
+            <td><strong>Financial Services</strong></td>
+            <td>FTC AI compliance framework (existing statutes: FCRA, ECOA); no new sector-specific AI rules anticipated; Capital One co-funding NSF AI Institutes</td>
+            <td>No dedicated federal AI-for-finance programme; private sector leading</td>
+            <td>Light-touch federal approach means financial AI (fraud detection, credit scoring, trading) will be governed by existing regulations. Regulatory clarity is positive for deployment; absence of prescriptive rules reduces compliance risk.</td>
+          </tr>
+          <tr>
+            <td><strong>Education &amp; Workforce</strong></td>
+            <td>NSF iSAT (University of Colorado Boulder); NSF IFML online masters initiative (UT Austin); NAIRR student access (6,000+ students, all 50 states)</td>
+            <td>Embedded in $100M NSF AI Institute round</td>
+            <td>Talent shortage is the binding constraint on US AI leadership. NSF is building the supply through STEM integration and graduate programmes. Key input to sustaining frontier model development advantage.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">Sources: NSF, DoD, NIST, Commerce Dept — 2024-2026</p>
+
+    <div class="callout">
+      <span class="callout-label">Sector Priority Hierarchy</span>
+      Defence and semiconductors are structural federal priorities with hard budget lines. Research/education and healthcare are federally seeded but primarily private-sector grown. Financial services and most enterprise AI sectors are being left to market forces with existing-law guardrails only.
+    </div>
+
+    <div class="comment-block">
+      <textarea class="comment-input" rows="2" placeholder="Add your note on S5..." data-section="S5 Priority Sectors"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Save Note</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6: International Strategy -->
+  <div class="card" id="s6">
+    <div class="section-header">
+      <div class="section-badge">6</div>
+      <div class="section-title">International Strategy</div>
+    </div>
+
+    <h2>Alliance Architecture</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Partner / Group</th><th>Mechanism</th><th>Key AI Dimension</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Five Eyes + Japan + South Korea + Netherlands + Taiwan</strong></td>
+            <td>Export control coordination; CHIPS supply chain bilateral agreements</td>
+            <td>ASML EUV lithography lock-out to China; TSMC production security; IMEC research collaboration</td>
+          </tr>
+          <tr>
+            <td><strong>G7 AI Governance</strong></td>
+            <td>Hiroshima AI Process (2023-ongoing); G7 Code of Conduct for AI developers</td>
+            <td>Voluntary governance standards; US resisting binding multilateral AI rules to preserve flexibility</td>
+          </tr>
+          <tr>
+            <td><strong>International Network of AI Safety Institutes</strong></td>
+            <td>Launched Nov 2024 (Commerce + State Dept); 10+ national AISI participants</td>
+            <td>Technical information sharing on frontier model evaluations; now de-emphasised under Trump but structure persists</td>
+          </tr>
+          <tr>
+            <td><strong>Middle East / Gulf Sovereign Wealth</strong></td>
+            <td>SoftBank (Vision Fund, Stargate) channels Gulf capital; MGX (UAE) is Stargate co-investor</td>
+            <td>$500B Stargate partly funded by Gulf capital — geopolitically sensitive; MGX is UAE state-linked entity</td>
+          </tr>
+          <tr>
+            <td><strong>EU</strong></td>
+            <td>Divergent regulatory approach; US legislative blueprint explicitly rejects EU AI Act model</td>
+            <td>Risk of EU market access friction for US AI products that don't comply with EU AI Act high-risk requirements</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Competition with China</h2>
+    <ul>
+      <li><strong>Model capability gap:</strong> US frontier models lead Chinese equivalents by 6-12 months on most benchmarks (Apr 2026). US models hold 93% of global LLM site visits vs China's fast-rising share (up 460% in 2 months to Aug 2025).</li>
+      <li><strong>Hardware leverage:</strong> China's domestic chips (Huawei Ascend series) made up ~41% of China's AI chip market in 2025 — up sharply from near-zero pre-sanctions — but remain 1-2 generations behind NVIDIA/AMD in compute density.</li>
+      <li><strong>Knowledge distillation threat:</strong> Apr 2026 White House memo flagged tens of thousands of proxies and jailbreaking techniques being used by foreign actors to extract knowledge from US frontier models — a new front in the AI competition beyond hardware.</li>
+      <li><strong>Open-source flanking:</strong> US China Economic Security Review Commission (Mar 2026) warned China is using open-source AI diffusion strategy (e.g. DeepSeek releases) to build global AI ecosystem influence, potentially undermining US export control effectiveness.</li>
+      <li><strong>Standards competition:</strong> East Asia Forum (Feb 2026) analysis: AI technical standards — ISO, IEEE, ITU — are the new battleground, with China seeking to embed its AI governance preferences into global standards bodies.</li>
+      <li><strong>Hyperscaler scale advantage:</strong> US hyperscalers planning to deploy hundreds of thousands of AI accelerators in gigawatt-scale data centers in 2025 — scale China's state-led compute cannot match in the near term.</li>
+    </ul>
+
+    <div class="callout callout-orange">
+      <span class="callout-label">Geopolitical Risk Watch</span>
+      UAE's MGX is a co-investor in Stargate — creating a potential national security review risk if US-UAE relations deteriorate or Congress scrutinises Gulf capital in critical AI infrastructure. CFIUS oversight of Stargate's ownership structure is a latent tail risk.
+    </div>
+
+    <h2>Tech-Transfer Restrictions</h2>
+    <ul>
+      <li><strong>BIS Entity List:</strong> Huawei, SMIC, and 100+ Chinese AI/semiconductor firms remain listed, blocking US technology transfers.</li>
+      <li><strong>Model Weights Controls:</strong> Biden's Jan 2025 AI Diffusion Rule included first-ever controls on AI model weights exports. Rescinded by Trump but BIS retains authority; enforcement posture maintained bilaterally.</li>
+      <li><strong>Cloud Service Restrictions:</strong> BIS compliance guidance flags that US cloud providers servicing Chinese customers on advanced AI workloads may trigger export control liability.</li>
+      <li><strong>Operation Gatekeeper (Dec 2025):</strong> DOJ disrupted $160M chip smuggling network to China/HK — criminal prosecution of export control evasion now active.</li>
+    </ul>
+
+    <div class="comment-block">
+      <textarea class="comment-input" rows="2" placeholder="Add your note on S6..." data-section="S6 International Strategy"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Save Note</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S7: Risks & Constraints -->
+  <div class="card" id="s7">
+    <div class="section-header">
+      <div class="section-badge">7</div>
+      <div class="section-title">Risks &amp; Constraints</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Risk</th><th>Severity</th><th>Likelihood</th><th>Mitigation</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CHIPS Act administrative volatility</strong> — $7.4B R&D clawback from Natcast (Aug 2025) signals funding instability; future awards may be restructured or delayed</td>
+            <td><span class="badge badge-high">H</span></td>
+            <td><span class="badge badge-med">M</span></td>
+            <td>Investors should prefer direct CHIPS beneficiaries with signed, disbursed awards (TSMC, Intel, Samsung) over R&D pipeline plays dependent on Natcast-style intermediaries</td>
+          </tr>
+          <tr>
+            <td><strong>Federal-State AI legal conflict</strong> — Dec 2025 EO triggers litigation over preemption; 30+ states have active AI legislation; outcome uncertain for 2-4 years</td>
+            <td><span class="badge badge-med">M</span></td>
+            <td><span class="badge badge-high">H</span></td>
+            <td>Enterprise AI deployers in health, insurance, employment (high-risk sectors) face compliance ambiguity until courts resolve; build modular compliance architectures; watch California, Illinois, Texas as bellwether jurisdictions</td>
+          </tr>
+          <tr>
+            <td><strong>Power &amp; infrastructure bottleneck</strong> — Stargate 10 GW target exceeds current US data center power capacity; grid permitting 2-5 year lag; water scarcity in Texas/Arizona sites</td>
+            <td><span class="badge badge-high">H</span></td>
+            <td><span class="badge badge-high">H</span></td>
+            <td>Long-duration power purchase agreements, nuclear SMR partnerships (Microsoft/Constellation model), and onsite generation are being pursued; permitting reform needed but politically contested</td>
+          </tr>
+          <tr>
+            <td><strong>AI talent shortage</strong> — Binding constraint cited across DoD AI strategy, NSF institutes, and hyperscalers; H-1B visa policy uncertainty under Trump administration</td>
+            <td><span class="badge badge-high">H</span></td>
+            <td><span class="badge badge-high">H</span></td>
+            <td>NSF AI Institutes building domestic pipeline (30-year horizon); short-term mitigation requires visa policy stability — currently uncertain; wage inflation pressure on AI labour costs for all players</td>
+          </tr>
+          <tr>
+            <td><strong>AI model distillation / knowledge exfiltration by China</strong> — Apr 2026 White House memo: 10,000s of proxies harvesting US model outputs; DeepSeek R1 demonstrated distillation effectiveness</td>
+            <td><span class="badge badge-high">H</span></td>
+            <td><span class="badge badge-high">H</span></td>
+            <td>Technical countermeasures (model fingerprinting, output watermarking) being developed; BIS exploring model weight controls; US frontier lead may erode faster than hardware controls can compensate</td>
+          </tr>
+          <tr>
+            <td><strong>Gulf capital in Stargate (UAE/MGX)</strong> — CFIUS scrutiny risk; UAE has historically maintained China ties; geopolitical shift could trigger forced divestiture</td>
+            <td><span class="badge badge-med">M</span></td>
+            <td><span class="badge badge-low">L</span></td>
+            <td>MGX shareholding structure in Stargate not fully disclosed; monitor CFIUS filings and any Congressional AI infrastructure security hearings</td>
+          </tr>
+          <tr>
+            <td><strong>AI-driven systemic financial risk</strong> — Rapid AI adoption in trading, credit, and insurance without sector-specific guardrails; FTC relying on existing statutes (FCRA, ECOA) which predate LLM era</td>
+            <td><span class="badge badge-high">H</span></td>
+            <td><span class="badge badge-med">M</span></td>
+            <td>SEC, CFTC, CFPB retaining sector oversight authority even as FTC pivots; financial AI deployers should monitor guidance from sector-specific regulators, not just FTC</td>
+          </tr>
+          <tr>
+            <td><strong>CHIPS R&D pipeline gap</strong> — $7.4B Natcast clawback + restructuring leaves a gap in coordinated national semiconductor R&D; private sector cannot fully substitute for national lab coordination</td>
+            <td><span class="badge badge-med">M</span></td>
+            <td><span class="badge badge-med">M</span></td>
+            <td>Commerce Dept opened new R&D funding opportunities post-Natcast; watch new NSTC operator selection and CHIPS R&D programme restructuring in H1 2026</td>
+          </tr>
+          <tr>
+            <td><strong>China domestic chip catch-up</strong> — Huawei Ascend + SMIC N+2 node achieving 41% of China AI chip market share; quality gap narrowing, not widening, under sanctions pressure</td>
+            <td><span class="badge badge-high">H</span></td>
+            <td><span class="badge badge-med">M</span></td>
+            <td>US controls are slowing but not stopping China's chip development; 5-7 year window of compute advantage may be shorter than assumed; accelerate US software/model capability moats while hardware lead persists</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-hint">H = High, M = Medium, L = Low. Sources: White House, DoD, BIS, USCC, NSF — 2025-2026</p>
+
+    <div class="comment-block">
+      <textarea class="comment-input" rows="2" placeholder="Add your note on S7..." data-section="S7 Risks"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Save Note</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- S8: Key Takeaways for Investors -->
+  <div class="card" id="s8">
+    <div class="section-header">
+      <div class="section-badge">8</div>
+      <div class="section-title">Key Takeaways for Investors</div>
+    </div>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Investor Positioning Summary</span>
+      The US macro AI environment in 2025-2026 is structurally the most capital-friendly and growth-oriented among major AI powers. The risk is execution and geopolitics, not regulatory overhang. Position accordingly.
+    </div>
+
+    <h3>5 Actionable Bullets</h3>
+    <ol>
+      <li style="margin-bottom:14px;">
+        <strong>Own the AI infrastructure stack, not just the models.</strong> The $500B Stargate commitment + $650B hyperscaler CapEx in 2025 alone creates durable, multi-year tailwinds for data center REITs (Equinix, Digital Realty), power infrastructure (Constellation, Vistra, NuScale for SMRs), cooling systems, and fibre networks. The power bottleneck is real — energy infrastructure adjacent to AI data center corridors (Texas ERCOT, Arizona APS grid) is the next squeeze point.
+      </li>
+      <li style="margin-bottom:14px;">
+        <strong>CHIPS Act — concentrate on disbursed awards, not pipeline.</strong> With $7.4B in R&D funds clawed back from Natcast and administrative restructuring underway, semiconductor R&D pipeline plays carry elevated binary risk. Prefer companies with signed and funded CHIPS awards: TSMC AZ (committed $165B total), Intel (CHIPS award under review but largest domestic fab player), Micron ($6.1B award). Avoid pure R&D intermediaries until new NSTC operator structure is clear.
+      </li>
+      <li style="margin-bottom:14px;">
+        <strong>Defence AI is the highest-conviction federal spending theme.</strong> DoD's "AI-first" doctrine is bipartisan — it predates and survives administration changes. Palantir (AIP for Defence), Anduril (autonomous systems), Shield AI (autonomous air operations), and established primes (Lockheed, Raytheon) with AI-integrated platforms are direct beneficiaries of the $100M FY2025 Frontier AI Pilots seed and a much larger sustained pipeline. Watch CDAO contract awards and Joint All-Domain Command and Control (JADC2) programme funding.
+      </li>
+      <li style="margin-bottom:14px;">
+        <strong>Export control volatility creates opportunity in US-allied chip supply chains.</strong> BIS's enforcement-first approach (not rules-based tiering) creates compliance complexity for global chip distributors — but rewards companies with clean, verifiable US + allied-country-only supply chains. ASML (Netherlands, ITAR-adjacent), Tokyo Electron, and US NAND/DRAM producers (Micron, Western Digital) benefit from tightening China access as pricing power shifts. Monitor BIS Entity List updates and DOJ enforcement actions quarterly.
+      </li>
+      <li style="margin-bottom:14px;">
+        <strong>Federal-state legal friction is a near-term headwind for enterprise AI in regulated sectors — hedge by sector.</strong> The AI Litigation Task Force and BEAD funding leverage will take 2-4 years to resolve fully. In the interim, AI applications in healthcare (HIPAA + state laws), financial services (CFPB + state consumer laws), and employment (state bias laws) carry elevated compliance uncertainty. Prefer enterprise AI vendors with modular, jurisdiction-configurable compliance architectures. The deregulatory trend is directionally correct but execution is slower than White House signalling implies.
+      </li>
+    </ol>
+
+    <div class="callout">
+      <span class="callout-label">Watch List — 6-Month Catalysts</span>
+      <ul style="margin-top:6px;">
+        <li>FTC AI policy statement (deadline: Mar 11, 2026) — sets tone for AI enforcement</li>
+        <li>New NSTC operator selection + CHIPS R&D programme restructure (H1 2026)</li>
+        <li>Congressional action on White House AI legislative blueprint — preemption battle</li>
+        <li>NAIRR-OC solicitation award — marks transition to permanent AI research infrastructure</li>
+        <li>Stargate site 6 (Wisconsin) + site 7 capacity disclosures — tracks $500B deployment pace</li>
+        <li>BIS updated Entity List / new AI chip controls — quarterly BIS Federal Register</li>
+      </ul>
+    </div>
+
+    <p class="source-note">Data sourced from: White House (EO 14179, Dec 2025 EO, Jul 2025 AI Action Plan, Mar 2026 blueprint), DoD/CDAO, NSF, NIST, BIS/Commerce, DOJ, FTC, OpenAI/Stargate, TSMC, GAO, RAND, Brookings, USCC — 2024-2026. Compiled Apr 26, 2026.</p>
+
+    <div class="comment-block">
+      <textarea class="comment-input" rows="2" placeholder="Add your note on S8..." data-section="S8 Investor Takeaways"></textarea>
+      <div class="comment-actions">
+        <button class="send-btn" onclick="sendComment(this)">Save Note</button>
+        <span class="comment-status"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="submit-block">
+    <button class="submit-btn" id="submit-btn" onclick="submitReview()">Submit Full Review</button>
+    <p id="submit-status"></p>
+  </div>
+
+</div>
+
+<script>
+const ZOOM_STEPS=[13,14,15,16,17,18,20,22];let zoomIdx=3;
+function zoomIn(){if(zoomIdx<ZOOM_STEPS.length-1)setZoom(++zoomIdx);}
+function zoomOut(){if(zoomIdx>0)setZoom(--zoomIdx);}
+function setZoom(i){document.documentElement.style.setProperty('--base-font',ZOOM_STEPS[i]+'px');}
+function toggleTheme(){const h=document.documentElement;const d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('theme-btn').textContent=d?'\u{1F319}':'☀️';}
+async function sendComment(btn){const b=btn.closest('.comment-block');const t=b.querySelector('.comment-input');const s=b.querySelector('.comment-status');const txt=t.value.trim();if(!txt)return;btn.disabled=true;s.textContent='Saving…';try{const r=await fetch(CONFIG.endpoint,{method:'POST',body:JSON.stringify({action:'comment',token:CONFIG.token,reportId:CONFIG.reportId,reportTitle:CONFIG.reportTitle,section:t.dataset.section,comment:txt})});const j=await r.json();if(j.status==='ok'){s.textContent='✓ Saved';t.value='';}else{s.textContent='✗ '+j.message;}}catch{s.textContent='✗ Failed';}finally{btn.disabled=false;}}
+async function submitReview(){const btn=document.getElementById('submit-btn');const s=document.getElementById('submit-status');btn.disabled=true;s.textContent='Submitting…';try{const r=await fetch(CONFIG.endpoint,{method:'POST',body:JSON.stringify({action:'submit',token:CONFIG.token,reportId:CONFIG.reportId,reportTitle:CONFIG.reportTitle})});const j=await r.json();s.textContent=j.status==='ok'?'✓ Submitted':'✗ '+j.message;}catch{s.textContent='✗ Failed';}finally{btn.disabled=false;}}
+</script>
+</body>
+</html>
